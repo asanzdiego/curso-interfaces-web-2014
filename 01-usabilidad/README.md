@@ -1,6 +1,6 @@
 # Usabilidad Web
 
-En este apartado veremos:
+En este apartado:
 
 - Primero se definen varios términos importantes: **usabilidad, accesibilidad, arquitectura de la información, experiencia de usuario y diseño centrado en el usuario**.
 

@@ -1,8 +1,8 @@
 # Less, un preprocesador CSS
 
-En este apartado veremos:
+En este apartado:
 
-- Una breve introducción, contando **qué es 'Less'** y cuales son sus **principales ventajas**.
+- Veremos primero una breve introducción, contando **qué es 'Less'** y cuales son sus **principales ventajas**.
 
 - Siguiendo con una explicación de las distintas formas con las que podemos **trabajar con 'Less'**.
 

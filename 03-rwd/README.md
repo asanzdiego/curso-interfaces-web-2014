@@ -1,8 +1,8 @@
 # Responsive Web Design (Diseño Web Adaptable)
 
-En este apartado veremos:
+En este apartado:
 
-- En primer lugar una introducción, contando que es eso del 'Responsive Web Design' (Diseño Web Adaptable), que **beneficios** tiene, y cual es la diferencia entre '**Graceful degradation**' y '**Progessive enhancement**'.
+- Veremos en primer lugar una introducción, contando que es eso del 'Responsive Web Design' (Diseño Web Adaptable), que **beneficios** tiene, y cual es la diferencia entre '**Graceful degradation**' y '**Progessive enhancement**'.
 
 - Seguidamente, se exponen varios **ejemplos de sitios web** realizados con esa filosofía.
 

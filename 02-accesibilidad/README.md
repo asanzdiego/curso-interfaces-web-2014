@@ -1,8 +1,8 @@
 # Accesibilidad Web
 
-En este apartado veremos:
+En este apartado:
 
-- Primero una breve introducción sobre accesibilidad web: **objetivos, WAI, WCAG, etc**.
+- Primero veremos una breve introducción sobre accesibilidad web: **objetivos, WAI, WCAG, etc**.
 
 - Después se enumeran las **directrices POUR**: Perceptible, Operable, Comprensible, Robusto
 

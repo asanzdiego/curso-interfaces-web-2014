@@ -1,8 +1,8 @@
 # Bootstrap, un framework CSS
 
-En este apartado veremos:
+En este apartado:
 
-- Qué es Bootstrap, sus **ventajas e inconvenientes**, y como empezar a usarlo.
+- Veremos primero qué es Bootstrap, sus **ventajas e inconvenientes**, y como empezar a usarlo.
 
 - Luego veremos las distintas **características del framework**: el sistema de rejilla, la tipografía, las tablas, los formularios, los botones, las imágenes, los helpers...
 
