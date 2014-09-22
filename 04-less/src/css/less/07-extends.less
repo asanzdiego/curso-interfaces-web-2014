@@ -1,0 +1,20 @@
+.animal {
+  background-color: black;
+  color: white;
+}
+
+.leon {
+  &:extend(.animal);
+  background-color: red;
+}
+
+.pinguino {
+  &:extend(.animal);
+  background-color: blue;
+}
+
+.tux {
+  &:extend(.pinguino);
+  color: orange;
+  font-weight: bold;
+}

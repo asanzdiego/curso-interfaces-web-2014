@@ -1,0 +1,26 @@
+@color: red;
+
+#minamespace {
+	.claro {
+		background-color: lighten(@color, 30%);
+	}
+    .oscuro {
+        background-color: darken(@color, 30%);
+    }
+}
+
+.claro {
+    background-color: lighten(@color, 10%);
+}
+
+.oscuro {
+    background-color: darken(@color, 10%);
+}
+
+h1 {
+	#minamespace > .claro;
+}
+
+p {
+    #minamespace > .oscuro;
+}

@@ -1,0 +1,2034 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="generator" content="pandoc" />
+  <meta name="description" content="Bootstrap, un framework CSS" />
+  <meta name="author" content="Adolfo Sanz De Diego" />
+  <title>Bootstrap, un framework CSS</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/reveal.min.css">
+	<!-- For syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/simple.css" id="theme">
+  <!--
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/default.css" id="theme">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/beige.css" id="theme">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/blood.css" id="theme">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/default.css" id="theme">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/moon.css" id="theme">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/night.css" id="theme">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/serif.css" id="theme">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/simple.css" id="theme">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/sky.css" id="theme">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/solarized.css" id="theme">
+  -->
+
+
+	<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+	<link rel="stylesheet" href="../lib/reveal.js-master/css/print/pdf.css" type="text/css" media="print">
+
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/simple.css" type="text/css" media="print">
+  <!--
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/default.css" type="text/css" media="print">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/beige.css" type="text/css" media="print">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/blood.css" type="text/css" media="print">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/default.css" type="text/css" media="print">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/moon.css" type="text/css" media="print">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/night.css" type="text/css" media="print">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/serif.css" type="text/css" media="print">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/simple.css" type="text/css" media="print">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/sky.css" type="text/css" media="print">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/solarized.css" type="text/css" media="print">
+  -->
+
+  <!-- Overwrite images -->
+  <style type="text/css">
+    pre {
+      background: rgba(255, 255, 255, 0.9);
+      color: #222;
+    }
+    code {
+      white-space: pre;
+    }
+    .reveal section img {
+      margin: 15px 0px;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.9);
+    }
+    strong {
+      color: #777
+    }
+    a:hover {
+      text-decoration: underline !important;
+    }
+    h1.title {
+      font-size: 300% !important;
+    }
+    h1 {
+      font-size: 250% !important;
+    }
+    h2 {
+      font-size: 150% !important;
+    }
+    @media print { 
+      #only-print-parent { display: table !important; } 
+      #only-print-child { display: table-cell !important; vertical-align: middle;}
+      h1.title { font-size: 350% !important;}
+      h1 { font-size: 300% !important; }
+      h2 { font-size: 200% !important; }
+    }
+  </style>
+
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="only-print-parent">
+    <div id="only-print-child">
+      <h1 class="title">Bootstrap, un framework CSS</h2>
+      <h2 class="author">Adolfo Sanz De Diego</h2>
+      <h3 class="date">Septiembre 2014</h3>
+    </div>
+</section>
+
+<section><section id="el-autor" class="titleslide slide level1"><h1><span class="header-section-number">1</span> El autor</h1></section><section id="adolfo-sanz-de-diego" class="slide level2">
+<h2><span class="header-section-number">1.1</span> Adolfo Sanz De Diego</h2>
+<ul>
+<li><p><strong>Antiguo programador web JEE (6 años)</strong></p></li>
+<li><p>Hoy en día:</p>
+<ul>
+<li><strong>Profesor de FP (6 años)</strong>:
+<ul>
+<li>Hardware, Sistemas Operativos</li>
+<li>Redes, Programación</li>
+</ul></li>
+<li><strong>Formador Freelance (3 años)</strong>:
+<ul>
+<li>Java, Android</li>
+<li>JavaScript, jQuery</li>
+<li>JSF, Spring, Hibernate</li>
+<li>Groovy &amp; Grails</li>
+</ul></li>
+</ul></li>
+</ul>
+</section><section id="algunos-proyectos" class="slide level2">
+<h2><span class="header-section-number">1.2</span> Algunos proyectos</h2>
+<ul>
+<li><p>Fundador y/o creador:</p>
+<ul>
+<li><strong>Hackathon Lovers</strong>: <a href="http://hackathonlovers.com">http://hackathonlovers.com</a></li>
+<li><strong>Tweets Sentiment</strong>: <a href="http://tweetssentiment.com">http://tweetssentiment.com</a></li>
+<li><strong>MarkdownSlides</strong>: <a href="https://github.com/asanzdiego/markdownslides">https://github.com/asanzdiego/markdownslides</a></li>
+</ul></li>
+<li><p>Co-fundador y/o co-creador:</p>
+<ul>
+<li><strong>PeliTweets</strong>: <a href="http://pelitweets.com">http://pelitweets.com</a></li>
+<li><strong>Password Manager Generator</strong>: <a href="http://pasmangen.github.io">http://pasmangen.github.io</a></li>
+</ul></li>
+</ul>
+</section><section id="donde-encontrarme" class="slide level2">
+<h2><span class="header-section-number">1.3</span> ¿Donde encontrarme?</h2>
+<ul>
+<li><p>Mi nick: <strong>asanzdiego</strong></p>
+<ul>
+<li>AboutMe: <a href="http://about.me/asanzdiego">http://about.me/asanzdiego</a></li>
+<li>GitHub: <a href="http://github.com/asanzdiego">http://github.com/asanzdiego</a></li>
+<li>Twitter: <a href="http://twitter.com/asanzdiego">http://twitter.com/asanzdiego</a></li>
+<li>Blog: <a href="http://asanzdiego.blogspot.com.es">http://asanzdiego.blogspot.com.es</a></li>
+<li>LinkedIn: <a href="http://www.linkedin.com/in/asanzdiego">http://www.linkedin.com/in/asanzdiego</a></li>
+<li>Google+: <a href="http://plus.google.com/+AdolfoSanzDeDiego">http://plus.google.com/+AdolfoSanzDeDiego</a></li>
+</ul></li>
+</ul>
+</section></section>
+<section><section id="introducción" class="titleslide slide level1"><h1><span class="header-section-number">2</span> Introducción</h1></section><section id="qué-es" class="slide level2">
+<h2><span class="header-section-number">2.1</span> ¿Qué es?</h2>
+<ul>
+<li><p>Boostrap es un <strong>framework CSS, liberado por Twitter</strong> y muy popular hoy en día.</p></li>
+<li><p>Está pensado para hacer un desarrollo <strong>Mobile First</strong></p></li>
+</ul>
+</section><section id="ventajas-i" class="slide level2">
+<h2><span class="header-section-number">2.2</span> Ventajas (I)</h2>
+<ul>
+<li><p>Utiliza componentes y servicios creados por la <strong>comunidad web</strong>.</p></li>
+<li><p>Utiliza un conjunto de <strong>buenas prácticas</strong> que perdurarán en el tiempo.</p></li>
+<li><p>Utiliza <strong>HTML5 y CSS3</strong></p></li>
+</ul>
+</section><section id="ventajas-ii" class="slide level2">
+<h2><span class="header-section-number">2.3</span> Ventajas (II)</h2>
+<ul>
+<li><p>Implementa un <strong>sistema de rejillas</strong>, que por defecto incluye 12 columnas.</p></li>
+<li><p>Utiliza <strong>LESS</strong>, un preprocesador CSS. (Ahora también soporta Saas).</p></li>
+<li><p>Es <strong>OOCSS</strong>, osea CSS Orientado a Objetos: organizado por módulos independientes y reutilizables.</p></li>
+</ul>
+</section><section id="ventajas-iii" class="slide level2">
+<h2><span class="header-section-number">2.4</span> Ventajas (III)</h2>
+<ul>
+<li><p>Hay una enorme <strong>comunidad detrás</strong>.</p></li>
+<li><p>Herramienta <strong>sencilla y ágil</strong> para construir sitios web e interfaces.</p></li>
+<li><p>Tiene un <strong>theme</strong> por defecto bastante optimizado y que puedes modificar fácilmente.</p></li>
+</ul>
+</section><section id="desventajas-i" class="slide level2">
+<h2><span class="header-section-number">2.5</span> Desventajas (I)</h2>
+<ul>
+<li><p>Es necesario <strong>adaptarse a su forma de trabajo</strong>, si bien su curva de aprendizaje es liviana, deberás comprender y familiarizarte con su estructura y nomenclatura.</p></li>
+<li><p>Debes adaptar tu diseño a un grid de <strong>12 columnas</strong>.</p></li>
+<li><p>Trae <strong>anchos y márgenes por defecto</strong>, que a veces son un poco tediosos de cambiar.</p></li>
+</ul>
+</section><section id="desventajas-ii" class="slide level2">
+<h2><span class="header-section-number">2.6</span> Desventajas (II)</h2>
+<ul>
+<li><p>Es complicado <strong>cambiar de versión</strong> si has realizado modificaciones profundas sobre el core.</p></li>
+<li><p>Si necesitas <strong>añadir componentes que no existen</strong>, debes hacerlos tú mismo en CSS y cuidar de que mantenga coherencia con tu diseño y cuidando el responsive.</p></li>
+<li><p>A veces hacer <strong>implementar un diseño impuesto</strong>, puede llegar a resultar bastante difícil, al menos si eres un perfeccionista.</p></li>
+</ul>
+</section><section id="descarga" class="slide level2">
+<h2><span class="header-section-number">2.7</span> Descarga</h2>
+<ul>
+<li><p>Si sólo quieres <strong>lo fundamental</strong>:</p>
+<ul>
+<li><a href="https://github.com/twbs/bootstrap/releases/download/v3.2.0/bootstrap-3.2.0-dist.zip">https://github.com/twbs/bootstrap/releases/download/v3.2.0/bootstrap-3.2.0-dist.zip</a></li>
+</ul></li>
+</ul>
+<pre><code>bootstrap/
+├── css/
+│   ├── bootstrap.css
+│   ├── bootstrap.min.css
+│   ├── bootstrap-theme.css
+│   └── bootstrap-theme.min.css
+├── js/
+│   ├── bootstrap.js
+│   └── bootstrap.min.js
+└── fonts/</code></pre>
+</section><section id="plantilla-básica" class="slide level2">
+<h2><span class="header-section-number">2.8</span> Plantilla básica</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta name=&quot;viewport&quot;...&gt;
+    &lt;title&gt;Template&lt;/title&gt;
+    &lt;link href=&quot;bootstrap.min.css&quot;...&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello, world!&lt;/h1&gt;
+    &lt;script src=&quot;.../jquery.min.js&quot;&gt;
+    &lt;/script&gt;
+    &lt;script src=&quot;bootstrap.min.js&quot;&gt;
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</section></section>
+<section><section id="resumen-css" class="titleslide slide level1"><h1><span class="header-section-number">3</span> Resumen CSS</h1></section><section id="html5-doctype" class="slide level2">
+<h2><span class="header-section-number">3.1</span> HTML5 doctype</h2>
+<ul>
+<li>Bootstrap necesita un <strong>doctype de HTML5</strong>:</li>
+</ul>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  ...
+&lt;/html&gt;</code></pre>
+</section><section id="mobile-first" class="slide level2">
+<h2><span class="header-section-number">3.2</span> Mobile first</h2>
+<ul>
+<li><p>Desde la versión 3, Boostrap es <strong>Mobile first</strong>.</p></li>
+<li><p>Para garantizar un buen renderizado y un buen funcionamiento del zoom:</p></li>
+</ul>
+<pre><code>&lt;meta name=&quot;viewport&quot;
+   content=&quot;width=device-width,
+            initial-scale=1&quot;&gt;</code></pre>
+</section><section id="desactivar-zoom-i" class="slide level2">
+<h2><span class="header-section-number">3.3</span> Desactivar zoom (I)</h2>
+<ul>
+<li>Se puede desactivar el zoom con <strong>user-scalable=no</strong></li>
+</ul>
+<pre><code>&lt;meta name=&quot;viewport&quot;
+   content=&quot;width=device-width,
+            initial-scale=1,
+            maximum-scale=1,
+            user-scalable=no&quot;&gt;</code></pre>
+</section><section id="desactivar-zoom-ii" class="slide level2">
+<h2><span class="header-section-number">3.4</span> Desactivar zoom (II)</h2>
+<ul>
+<li>Hace que el sitio se parezca más una aplicación nativa, pero también lo hace <strong>menos accesible</strong>. En general, no se recomienda.</li>
+</ul>
+</section><section id="normalize.css" class="slide level2">
+<h2><span class="header-section-number">3.5</span> Normalize.css</h2>
+<ul>
+<li><p>Para un <strong>mejor renderizado</strong> en varios navegadores, Boostrap usa Normalize.css, un proyecto desarrollado por Nicolas Gallagher y Jonathan Neal:</p>
+<ul>
+<li><a href="http://necolas.github.io/normalize.css/">http://necolas.github.io/normalize.css/</a></li>
+</ul></li>
+</ul>
+</section></section>
+<section><section id="grid-system" class="titleslide slide level1"><h1><span class="header-section-number">4</span> Grid system</h1></section><section id="introducción-1" class="slide level2">
+<h2><span class="header-section-number">4.1</span> Introducción</h2>
+<ul>
+<li>Bootstrap incluye un <strong>sistema de rejilla responsive y mobile first de 12 columnas</strong>.</li>
+</ul>
+</section><section id="funcionamiento" class="slide level2">
+<h2><span class="header-section-number">4.2</span> Funcionamiento</h2>
+<ul>
+<li><p>El sistema de rejilla de Bootstrap <strong>funciona así</strong>:</p>
+<ul>
+<li>Se deben colocar .row dentro de un <strong>.container</strong> (ancho fijo) o <strong>.container-fluid</strong> (ancho completo).</li>
+<li>Utilice <strong>.row</strong> para crear grupos horizontales.</li>
+<li>El contenido se debe colocar entre .row y deben de ser <strong>hijos inmediatos</strong>.</li>
+<li>Si hay más de 12 columnas en una .row, esta son desplazadas abajo.</li>
+</ul></li>
+</ul>
+</section><section id="columna-i" class="slide level2">
+<h2><span class="header-section-number">4.3</span> 1 columna (I)</h2>
+<ul>
+<li>Ejemplo de 1 columna de un tamaño de 12</li>
+</ul>
+<figure>
+<img src="../img/1-columna.png" alt="1 columna" /><figcaption>1 columna</figcaption>
+</figure>
+</section><section id="columna-ii" class="slide level2">
+<h2><span class="header-section-number">4.4</span> 1 columna (II)</h2>
+<ul>
+<li>Ejemplo de 1 columna de un tamaño de 12</li>
+</ul>
+<pre><code>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-xs-12&quot;&gt;1&lt;/div&gt;
+  &lt;div class=&quot;col-xs-12&quot;&gt;2&lt;/div&gt;
+  &lt;div class=&quot;col-xs-12&quot;&gt;3&lt;/div&gt;
+  &lt;div class=&quot;col-xs-12&quot;&gt;4&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</section><section id="columnas-i" class="slide level2">
+<h2><span class="header-section-number">4.5</span> 2 columnas (I)</h2>
+<ul>
+<li>Ejemplo de 2 columnas de un tamaño de 6</li>
+</ul>
+<figure>
+<img src="../img/2-columnas.png" alt="2 columnas" /><figcaption>2 columnas</figcaption>
+</figure>
+</section><section id="columnas-ii" class="slide level2">
+<h2><span class="header-section-number">4.6</span> 2 columnas (II)</h2>
+<ul>
+<li>Ejemplo de 2 columnas de un tamaño de 6</li>
+</ul>
+<pre><code>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-xs-6&quot;&gt;1&lt;/div&gt;
+  &lt;div class=&quot;col-xs-6&quot;&gt;2&lt;/div&gt;
+  &lt;div class=&quot;col-xs-6&quot;&gt;3&lt;/div&gt;
+  &lt;div class=&quot;col-xs-6&quot;&gt;4&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</section><section id="columnas-i-1" class="slide level2">
+<h2><span class="header-section-number">4.7</span> 3 columnas (I)</h2>
+<ul>
+<li>Ejemplo de 3 columnas de un tamaño de 4</li>
+</ul>
+<figure>
+<img src="../img/3-columnas.png" alt="3 columnas" /><figcaption>3 columnas</figcaption>
+</figure>
+</section><section id="columnas-ii-1" class="slide level2">
+<h2><span class="header-section-number">4.8</span> 3 columnas (II)</h2>
+<ul>
+<li>Ejemplo de 3 columnas de un tamaño de 4</li>
+</ul>
+<pre><code>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-xs-4&quot;&gt;1&lt;/div&gt;
+  &lt;div class=&quot;col-xs-4&quot;&gt;2&lt;/div&gt;
+  &lt;div class=&quot;col-xs-4&quot;&gt;3&lt;/div&gt;
+  &lt;div class=&quot;col-xs-4&quot;&gt;4&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</section><section id="columnas-i-2" class="slide level2">
+<h2><span class="header-section-number">4.9</span> 4 columnas (I)</h2>
+<ul>
+<li>Ejemplo de 4 columnas de un tamaño de 3</li>
+</ul>
+<figure>
+<img src="../img/4-columnas.png" alt="4 columnas" /><figcaption>4 columnas</figcaption>
+</figure>
+</section><section id="columnas-ii-2" class="slide level2">
+<h2><span class="header-section-number">4.10</span> 4 columnas (II)</h2>
+<ul>
+<li>Ejemplo de 4 columnas de un tamaño de 3</li>
+</ul>
+<pre><code>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-xs-3&quot;&gt;1&lt;/div&gt;
+  &lt;div class=&quot;col-xs-3&quot;&gt;2&lt;/div&gt;
+  &lt;div class=&quot;col-xs-3&quot;&gt;3&lt;/div&gt;
+  &lt;div class=&quot;col-xs-3&quot;&gt;4&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</section><section id="multidispositivo" class="slide level2">
+<h2><span class="header-section-number">4.11</span> Multidispositivo</h2>
+<ul>
+<li>1 columna para xs (&lt;768px)</li>
+<li>2 columnas para sm (≥768px)</li>
+<li>3 columnas para md (≥992px)</li>
+<li>4 columnas para lg (≥1200px)</li>
+</ul>
+</section><section id="normal" class="slide level2">
+<h2><span class="header-section-number">4.12</span> Normal</h2>
+<pre><code>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-xs-12 col-sm-6
+    col-md-4 col-lg-3&quot;&gt;1&lt;/div&gt;
+  &lt;div class=&quot;col-xs-12 col-sm-6
+    col-md-4 col-lg-3&quot;&gt;2&lt;/div&gt;
+  &lt;div class=&quot;col-xs-12 col-sm-6
+    col-md-4 col-lg-3&quot;&gt;3&lt;/div&gt;
+  &lt;div class=&quot;col-xs-12 col-sm-6
+    col-md-4 col-lg-3&quot;&gt;4&lt;/didv&gt;
+&lt;/div&gt;</code></pre>
+</section><section id="clearfix-i" class="slide level2">
+<h2><span class="header-section-number">4.13</span> clearfix (I)</h2>
+<ul>
+<li>Problema cuando una capa tiene un alto mayor que la de los demás:</li>
+</ul>
+<figure>
+<img src="../img/clearfix.png" alt="Problema clearfix" /><figcaption>Problema clearfix</figcaption>
+</figure>
+</section><section id="clearfix-ii" class="slide level2">
+<h2><span class="header-section-number">4.14</span> clearfix (II)</h2>
+<pre><code>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;...&quot;&gt;1
+    Resize your viewport&lt;/div&gt;
+  &lt;div class=&quot;...&quot;&gt;2&lt;/div&gt;
+  &lt;div class=&quot;clearfix
+    visible-sm-block&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;...&quot;&gt;3&lt;/div&gt;
+  &lt;div class=&quot;clearfix
+    visible-md-block&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;...&quot;&gt;4&lt;/didv&gt;
+&lt;/div&gt;</code></pre>
+</section><section id="huecos-con-offset-i" class="slide level2">
+<h2><span class="header-section-number">4.15</span> Huecos con offset (I)</h2>
+<figure>
+<img src="../img/offset.png" alt="Huecos con offset" /><figcaption>Huecos con offset</figcaption>
+</figure>
+</section><section id="huecos-con-offset-ii" class="slide level2">
+<h2><span class="header-section-number">4.16</span> Huecos con offset (II)</h2>
+<pre><code>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-md-4&quot;&gt;
+    .col-md-4&lt;/div&gt;
+  &lt;div class=&quot;col-md-4
+    col-md-offset-4&quot;&gt;
+    .col-md-4 .col-md-offset-4&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</section><section id="huecos-con-offset-iii" class="slide level2">
+<h2><span class="header-section-number">4.17</span> Huecos con offset (III)</h2>
+<pre><code>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-md-3
+    col-md-offset-3&quot;&gt;.col-md-3
+      .col-md-offset-3&lt;/div&gt;
+  &lt;div class=&quot;col-md-3
+    col-md-offset-3&quot;&gt;.col-md-3
+      .col-md-offset-3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</section><section id="huecos-con-offset-iv" class="slide level2">
+<h2><span class="header-section-number">4.18</span> Huecos con offset (IV)</h2>
+<pre><code>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-md-6
+    col-md-offset-3&quot;&gt;.col-md-6
+      .col-md-offset-3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</section><section id="push-pull-i" class="slide level2">
+<h2><span class="header-section-number">4.19</span> push &amp; pull (I)</h2>
+<figure>
+<img src="../img/push-and-pull.png" alt="push &amp; pull" /><figcaption>push &amp; pull</figcaption>
+</figure>
+</section><section id="push-pull-ii" class="slide level2">
+<h2><span class="header-section-number">4.20</span> push &amp; pull (II)</h2>
+<pre><code>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-md-9
+    col-md-push-3&quot;&gt;
+    .col-md-9 .col-md-push-3&lt;/div&gt;
+  &lt;div class=&quot;col-md-3
+    col-md-pull-9&quot;&gt;
+    .col-md-3 .col-md-pull-9&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</section><section id="media-queries-i" class="slide level2">
+<h2><span class="header-section-number">4.21</span> Media Queries (I)</h2>
+<ul>
+<li>Estas son las Media Queries que se usan:</li>
+</ul>
+<pre><code>/* Extra small devices
+   (phones, less than 768px) */
+/* default in Bootstrap */
+
+/* Small devices
+   (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {}
+
+/* Medium devices
+   (desktops, 992px and up) */
+@media (min-width: @screen-md-min) {}
+
+/* Large devices
+   (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) {}</code></pre>
+</section><section id="media-queries-ii" class="slide level2">
+<h2><span class="header-section-number">4.22</span> Media Queries (II)</h2>
+<ul>
+<li>A veces también usan max-witdh para limitar ciertas reglas.</li>
+</ul>
+<pre><code>@media (max-width: @screen-xs-max) {}
+
+@media (min-width: @screen-sm-min)
+    and (max-width: @screen-sm-max) {}
+
+@media (min-width: @screen-md-min)
+    and (max-width: @screen-md-max) {}
+
+@media (min-width: @screen-lg-min) {}</code></pre>
+</section></section>
+<section><section id="tipografía" class="titleslide slide level1"><h1><span class="header-section-number">5</span> Tipografía</h1></section><section id="cabeceras-i" class="slide level2">
+<h2><span class="header-section-number">5.1</span> Cabeceras (I)</h2>
+<figure>
+<img src="../img/cabeceras.png" alt="Cabeceras" /><figcaption>Cabeceras</figcaption>
+</figure>
+</section><section id="cabeceras-ii" class="slide level2">
+<h2><span class="header-section-number">5.2</span> Cabeceras (II)</h2>
+<pre><code>&lt;h1&gt;h1.Cabeceras con Bootstrap
+  &lt;small&gt;Texto secundario&lt;/small&gt;&lt;/h1&gt;
+
+&lt;h2&gt;h2.Cabeceras con Bootstrap
+  &lt;small&gt;Texto secundario&lt;/small&gt;&lt;/h2&gt;</code></pre>
+</section><section id="párrafos-i" class="slide level2">
+<h2><span class="header-section-number">5.3</span> Párrafos (I)</h2>
+<figure>
+<img src="../img/parrafos.png" alt="Párrafos" /><figcaption>Párrafos</figcaption>
+</figure>
+</section><section id="párrafos-ii" class="slide level2">
+<h2><span class="header-section-number">5.4</span> Párrafos (II)</h2>
+<pre><code>&lt;p class=&quot;lead&quot;&gt;
+  Párrafo con class=&quot;lead&quot;&lt;/p&gt;
+
+&lt;p&gt;Párrafo normal&lt;/p&gt;
+
+&lt;p class=&quot;small&quot;&gt;
+  Párrafo con class=&quot;small&quot;&lt;/p&gt;</code></pre>
+</section><section id="textos-en-línea" class="slide level2">
+<h2><span class="header-section-number">5.5</span> Textos en línea</h2>
+<figure>
+<img src="../img/textos-en-linea.png" alt="Textos en línea" /><figcaption>Textos en línea</figcaption>
+</figure>
+</section><section id="strong" class="slide level2">
+<h2><span class="header-section-number">5.6</span> strong</h2>
+<ul>
+<li>mucho émfasis</li>
+</ul>
+<pre><code>&lt;p&gt;Puedes usar el tag strong para darle &lt;strong&gt;mucho émfasis&lt;/strong&gt; a un texto&lt;/p&gt;</code></pre>
+</section><section id="em" class="slide level2">
+<h2><span class="header-section-number">5.7</span> em</h2>
+<ul>
+<li>émfasis</li>
+</ul>
+<pre><code>&lt;p&gt;Puedes usar el tag em para darle &lt;em&gt;émfasis&lt;/em&gt; a un texto&lt;/p&gt;</code></pre>
+</section><section id="mark" class="slide level2">
+<h2><span class="header-section-number">5.8</span> mark</h2>
+<ul>
+<li>marcar</li>
+</ul>
+<pre><code>&lt;p&gt;Puedes usar el tag mark para &lt;mark&gt;marcar&lt;/mark&gt; un texto&lt;/p&gt;</code></pre>
+</section><section id="ins" class="slide level2">
+<h2><span class="header-section-number">5.9</span> ins</h2>
+<ul>
+<li>insertar un texto (mejor que subrallar)</li>
+</ul>
+<pre><code>&lt;p&gt;Puedes usar el tag ins para &lt;ins&gt;insertar&lt;/ins&gt; un texto&lt;/p&gt;</code></pre>
+</section><section id="del" class="slide level2">
+<h2><span class="header-section-number">5.10</span> del</h2>
+<ul>
+<li>borrar un texto (mejor que tachar)</li>
+</ul>
+<pre><code>&lt;p&gt;Puedes usar el tag del para &lt;del&gt;borrar&lt;/del&gt; un texto&lt;/p&gt;</code></pre>
+</section><section id="alineación" class="slide level2">
+<h2><span class="header-section-number">5.11</span> Alineación</h2>
+<figure>
+<img src="../img/alineacion.png" alt="Alineación" /><figcaption>Alineación</figcaption>
+</figure>
+</section><section id="izquierda" class="slide level2">
+<h2><span class="header-section-number">5.12</span> Izquierda</h2>
+<ul>
+<li>Texto alineado a la izquierda.</li>
+</ul>
+<pre><code>&lt;p class=&quot;text-left&quot;&gt;Texto alineado a la izquierda.&lt;/p&gt;</code></pre>
+</section><section id="centrado" class="slide level2">
+<h2><span class="header-section-number">5.13</span> Centrado</h2>
+<ul>
+<li>Texto centrado.</li>
+</ul>
+<pre><code>&lt;p class=&quot;text-center&quot;&gt;Texto centrado.&lt;/p&gt;</code></pre>
+</section><section id="derecha" class="slide level2">
+<h2><span class="header-section-number">5.14</span> Derecha</h2>
+<ul>
+<li>Texto alineado a la derecha.</li>
+</ul>
+<pre><code>&lt;p class=&quot;text-right&quot;&gt;Texto alineado a la derecha.&lt;/p&gt;</code></pre>
+</section><section id="justificado" class="slide level2">
+<h2><span class="header-section-number">5.15</span> Justificado</h2>
+<ul>
+<li>Texto justificado.</li>
+</ul>
+<pre><code>&lt;p class=&quot;text-justify&quot;&gt;Texto justificado.&lt;/p&gt;</code></pre>
+</section><section id="sin-ajuste" class="slide level2">
+<h2><span class="header-section-number">5.16</span> Sin ajuste</h2>
+<ul>
+<li>Texto sin ajuste.</li>
+</ul>
+<pre><code>&lt;p class=&quot;text-nowrap&quot;&gt;Texto sin ajuste.&lt;/p&gt;</code></pre>
+</section><section id="capitalización" class="slide level2">
+<h2><span class="header-section-number">5.17</span> Capitalización</h2>
+<figure>
+<img src="../img/capitalizacion.png" alt="Capitalización" /><figcaption>Capitalización</figcaption>
+</figure>
+</section><section id="minúsculas" class="slide level2">
+<h2><span class="header-section-number">5.18</span> Minúsculas</h2>
+<ul>
+<li>Minúsculas</li>
+</ul>
+<pre><code>&lt;p class=&quot;text-lowercase&quot;&gt;Lowercased text.&lt;/p&gt;</code></pre>
+</section><section id="mayúsculas" class="slide level2">
+<h2><span class="header-section-number">5.19</span> Mayúsculas</h2>
+<ul>
+<li>Mayúsculas</li>
+</ul>
+<pre><code>&lt;p class=&quot;text-uppercase&quot;&gt;Uppercased text.&lt;/p&gt;</code></pre>
+</section><section id="tipo-título" class="slide level2">
+<h2><span class="header-section-number">5.20</span> Tipo Título</h2>
+<ul>
+<li>Tipo Título</li>
+</ul>
+<pre><code>&lt;p class=&quot;text-capitalize&quot;&gt;Capitalized text.&lt;/p&gt;</code></pre>
+</section><section id="abreviaturas-i" class="slide level2">
+<h2><span class="header-section-number">5.21</span> Abreviaturas (I)</h2>
+<figure>
+<img src="../img/abreviaturas.png" alt="Abreviaturas" /><figcaption>Abreviaturas</figcaption>
+</figure>
+</section><section id="abreviaturas-ii" class="slide level2">
+<h2><span class="header-section-number">5.22</span> Abreviaturas (II)</h2>
+<pre><code>&lt;abbr title=&quot;HyperText Markup Language&quot;&gt;HTML&lt;/abbr&gt; es una abreviatura. Pasa el ratón por encima para averiguar de que se trata.</code></pre>
+</section><section id="direcciones-i" class="slide level2">
+<h2><span class="header-section-number">5.23</span> Direcciones (I)</h2>
+<figure>
+<img src="../img/direcciones.png" alt="Direcciones" /><figcaption>Direcciones</figcaption>
+</figure>
+</section><section id="direcciones-ii" class="slide level2">
+<h2><span class="header-section-number">5.24</span> Direcciones (II)</h2>
+<pre><code>&lt;address&gt;
+  &lt;strong&gt;Twitter, Inc.&lt;/strong&gt;&lt;br&gt;
+  795 Folsom Ave, Suite 600&lt;br&gt;
+  San Francisco, CA 94107&lt;br&gt;
+  &lt;abbr title=&quot;Phone&quot;&gt;P:&lt;/abbr&gt;
+  (123) 456-7890
+&lt;/address&gt;
+
+&lt;address&gt;
+  &lt;strong&gt;Full Name&lt;/strong&gt;&lt;br&gt;
+  &lt;a href=&quot;mailto:#&quot;&gt;info@name.com&lt;/a&gt;
+&lt;/address&gt;</code></pre>
+</section><section id="citas-i" class="slide level2">
+<h2><span class="header-section-number">5.25</span> Citas (I)</h2>
+<figure>
+<img src="../img/citas.png" alt="Citas" /><figcaption>Citas</figcaption>
+</figure>
+</section><section id="citas-ii" class="slide level2">
+<h2><span class="header-section-number">5.26</span> Citas (II)</h2>
+<pre><code>&lt;blockquote class=&quot;blockquote&quot;&gt;
+
+  &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;
+
+  &lt;footer&gt;Someone famous in &lt;cite title=&quot;Source Title&quot;&gt;Source Title&lt;/cite&gt;&lt;/footer&gt;
+
+&lt;/blockquote&gt;</code></pre>
+</section><section id="listas-i" class="slide level2">
+<h2><span class="header-section-number">5.27</span> Listas (I)</h2>
+<figure>
+<img src="../img/listas.png" alt="Listas" /><figcaption>Listas</figcaption>
+</figure>
+</section><section id="listas-ii" class="slide level2">
+<h2><span class="header-section-number">5.28</span> Listas (II)</h2>
+<pre><code>&lt;ul class=&quot;list-inline&quot;&gt;
+  &lt;li&gt;Peras&lt;/li&gt;
+  &lt;li&gt;Manzanas&lt;/li&gt;
+  &lt;li&gt;Naranjas&lt;/li&gt;
+  &lt;li&gt;Platanos&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+</section><section id="descripciones-i" class="slide level2">
+<h2><span class="header-section-number">5.29</span> Descripciones (I)</h2>
+<figure>
+<img src="../img/descripciones.png" alt="Descripciones" /><figcaption>Descripciones</figcaption>
+</figure>
+</section><section id="descripciones-ii" class="slide level2">
+<h2><span class="header-section-number">5.30</span> Descripciones (II)</h2>
+<pre><code>&lt;dl class=&quot;dl-horizontal&quot;&gt;
+  &lt;dt&gt;Descripción&lt;/dt&gt;
+  &lt;dd&gt;Perfecta para definir.&lt;/dd&gt;
+  &lt;dt&gt;Euismod&lt;/dt&gt;
+  &lt;dd&gt;Vestibulum id ligula...&lt;/dd&gt;
+  &lt;dt&gt;Felis euismod semper eget&lt;/dt&gt;
+  &lt;dd&gt;Fusce dapibus, tellus ...&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+</section></section>
+<section><section id="tablas" class="titleslide slide level1"><h1><span class="header-section-number">6</span> Tablas</h1></section><section id="clases" class="slide level2">
+<h2><span class="header-section-number">6.1</span> Clases</h2>
+<ul>
+<li><strong>table</strong>: para darle el formato</li>
+<li><strong>table-striped</strong>: para darle formato a las pares y a las impares</li>
+<li><strong>table-bordered</strong>: para ponerle bordes a la tabla</li>
+<li><strong>table-hover</strong>: para oscurecer la fila en donde está el ratón</li>
+<li><strong>table-condensed</strong>: para que ocupe menos espacio</li>
+</ul>
+</section><section id="responsive" class="slide level2">
+<h2><span class="header-section-number">6.2</span> Responsive</h2>
+<ul>
+<li>Poniendo la tabla dentro de una <strong>capa con class=table-responsive</strong> aparecerá un scroll horizontal en la tabla en dispositivos pequeños.</li>
+</ul>
+</section><section id="ejemplo-i" class="slide level2">
+<h2><span class="header-section-number">6.3</span> Ejemplo (I)</h2>
+<figure>
+<img src="../img/tabla.png" alt="Tabla" /><figcaption>Tabla</figcaption>
+</figure>
+</section><section id="ejemplo-ii" class="slide level2">
+<h2><span class="header-section-number">6.4</span> Ejemplo (II)</h2>
+<pre><code>&lt;div class=&quot;table-responsive&quot;&gt;
+  &lt;table class=&quot;table table-striped  table-bordered table-hover table-condensed&quot;&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th&gt;...
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;...
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+</section></section>
+<section><section id="formularios" class="titleslide slide level1"><h1><span class="header-section-number">7</span> Formularios</h1></section><section id="lo-básico-i" class="slide level2">
+<h2><span class="header-section-number">7.1</span> Lo básico (I)</h2>
+<ul>
+<li><p>Agrupar label + control con <strong>class=form-group</strong></p></li>
+<li><p>Input, textarea y select con <strong>class=form-control</strong></p></li>
+</ul>
+</section><section id="lo-básico-ii" class="slide level2">
+<h2><span class="header-section-number">7.2</span> Lo básico (II)</h2>
+<ul>
+<li><p>Layouts: <strong>normal, form-inline y form-horizontal</strong></p></li>
+<li><p>Para distribuir el contenido, se puede <strong>usar .col- pero no hace falta usar .row</strong></p></li>
+</ul>
+</section><section id="normal-1" class="slide level2">
+<h2><span class="header-section-number">7.3</span> Normal</h2>
+<figure>
+<img src="../img/formulario-normal.png" alt="Formulario normal" /><figcaption>Formulario normal</figcaption>
+</figure>
+</section><section id="inline" class="slide level2">
+<h2><span class="header-section-number">7.4</span> Inline</h2>
+<figure>
+<img src="../img/formulario-inline.png" alt="Formulario inline" /><figcaption>Formulario inline</figcaption>
+</figure>
+</section><section id="horizontal" class="slide level2">
+<h2><span class="header-section-number">7.5</span> Horizontal</h2>
+<figure>
+<img src="../img/formulario-horizontal.png" alt="Formulario horizontal" /><figcaption>Formulario horizontal</figcaption>
+</figure>
+</section><section id="ejemplo" class="slide level2">
+<h2><span class="header-section-number">7.6</span> Ejemplo</h2>
+<pre><code>&lt;form class=&quot;form&quot; role=&quot;form&quot;&gt;
+  &lt;div class=&quot;form-group&quot;&gt;
+    &lt;label for=&quot;inputEmail3&quot;
+      class=&quot;col-sm-2 control-label&quot;&gt;
+      Email&lt;/label&gt;
+    &lt;div class=&quot;col-sm-10&quot;&gt;
+      &lt;input class=&quot;form-control&quot;
+       id=&quot;inputEmail3&quot;
+       placeholder=&quot;Enter Email&quot;
+       type=&quot;email&quot;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;form-group&quot;&gt;
+    &lt;div class=&quot;col-sm-offset-2
+      col-sm-10&quot;&gt;
+      &lt;button type=&quot;submit&quot;
+        class=&quot;btn btn-default&quot;&gt;
+        Sign in&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+</section><section id="inputs" class="slide level2">
+<h2><span class="header-section-number">7.7</span> Inputs</h2>
+<ul>
+<li>Los de <strong>HTML5</strong>: text, password, datetime, datetime-local, date, month, time, week, number, email, url, search, tel, and color.</li>
+</ul>
+</section><section id="checkboxes-and-radios" class="slide level2">
+<h2><span class="header-section-number">7.8</span> Checkboxes and radios</h2>
+<ul>
+<li>Se puede usar <strong>class=checkbox-inline</strong> o <strong>class=radio-inline</strong></li>
+</ul>
+<pre><code>&lt;div class=&quot;radio&quot;&gt;
+  &lt;label&gt;
+    &lt;input type=&quot;radio&quot;
+      name=&quot;optionsRadios&quot;
+      id=&quot;optionsRadios1&quot;
+      value=&quot;option1&quot; checked&gt;
+      checked&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class=&quot;radio disabled&quot;&gt;
+  &lt;label&gt;
+    &lt;input type=&quot;radio&quot;
+      name=&quot;optionsRadios&quot;
+      id=&quot;optionsRadios3&quot;
+      value=&quot;option3&quot; disabled&gt;
+      disabled&lt;/label&gt;
+&lt;/div&gt;</code></pre>
+</section><section id="validaciones-i" class="slide level2">
+<h2><span class="header-section-number">7.9</span> Validaciones (I)</h2>
+<figure>
+<img src="../img/formulario-validaciones.png" alt="Formulario Validaciones" /><figcaption>Formulario Validaciones</figcaption>
+</figure>
+</section><section id="validaciones-ii" class="slide level2">
+<h2><span class="header-section-number">7.10</span> Validaciones (II)</h2>
+<ul>
+<li>Usar los helpers <strong>has-success, has-warning y has-error</strong></li>
+</ul>
+<pre><code>&lt;div class=&quot;form-group
+  has-success
+  has-feedback&quot;&gt;
+
+  &lt;label class=&quot;control-label&quot;
+    for=&quot;inputSuccess2&quot;&gt;
+    Input with success&lt;/label&gt;
+  &lt;input type=&quot;text&quot;
+    class=&quot;form-control&quot;
+    id=&quot;inputSuccess2&quot;&gt;
+  &lt;span class=&quot;glyphicon
+    glyphicon-ok
+    form-control-feedback&quot;&gt;&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+</section><section id="tamaños-i" class="slide level2">
+<h2><span class="header-section-number">7.11</span> Tamaños (I)</h2>
+<figure>
+<img src="../img/formulario-tamanios.png" alt="Tamaños" /><figcaption>Tamaños</figcaption>
+</figure>
+</section><section id="tamaños-ii" class="slide level2">
+<h2><span class="header-section-number">7.12</span> Tamaños (II)</h2>
+<ul>
+<li>Usar los helpers <strong>form-group-lg o form-group-sm</strong> o bien, en caso de inputs aislados que no estén dentro de un form-group, usar <strong>input-lg o input-sm</strong></li>
+</ul>
+<pre><code>&lt;form class=&quot;form-horizontal&quot;
+  role=&quot;form&quot;&gt;
+  &lt;div class=&quot;form-group
+    form-group-lg&quot;&gt;
+    &lt;label class=&quot;col-sm-2
+      control-label&quot;
+      for=&quot;formGroupInputLarge&quot;&gt;
+      Large label&lt;/label&gt;
+    &lt;div class=&quot;col-sm-10&quot;&gt;
+      &lt;input class=&quot;form-control&quot;
+        type=&quot;text&quot;
+        id=&quot;formGroupInputLarge&quot;
+        placeholder=&quot;Large input&quot;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+</section><section id="tamaños-iii" class="slide level2">
+<h2><span class="header-section-number">7.13</span> Tamaños (III)</h2>
+<ul>
+<li>Usar los helpers <strong>form-group-lg o form-group-sm</strong> o bien, en caso de inputs aislados que no estén dentro de un form-group, usar <strong>input-lg o input-sm</strong></li>
+</ul>
+<pre><code>&lt;form class=&quot;form-horizontal&quot; role=&quot;form&quot;&gt;
+  &lt;div class=&quot;form-group
+    form-group-sm&quot;&gt;
+    &lt;label class=&quot;col-sm-2
+      control-label&quot;
+      for=&quot;formGroupInputSmall&quot;&gt;
+      Small label&lt;/label&gt;
+    &lt;div class=&quot;col-sm-10&quot;&gt;
+      &lt;input class=&quot;form-control&quot;
+        type=&quot;text&quot;
+        id=&quot;formGroupInputSmall&quot;
+        placeholder=&quot;Small input&quot;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+</section></section>
+<section><section id="botones" class="titleslide slide level1"><h1><span class="header-section-number">8</span> Botones</h1></section><section id="ejemplos" class="slide level2">
+<h2><span class="header-section-number">8.1</span> Ejemplos</h2>
+<figure>
+<img src="../img/botones-ejemplos.png" alt="Ejemplos de botones" /><figcaption>Ejemplos de botones</figcaption>
+</figure>
+</section><section id="tipos-i" class="slide level2">
+<h2><span class="header-section-number">8.2</span> Tipos (I)</h2>
+<figure>
+<img src="../img/botones-tipos.png" alt="Tipos de botones" /><figcaption>Tipos de botones</figcaption>
+</figure>
+</section><section id="tipos-ii" class="slide level2">
+<h2><span class="header-section-number">8.3</span> Tipos (II)</h2>
+<pre><code>&lt;button type=&quot;button&quot;
+  class=&quot;btn&quot;&gt;
+  Button&lt;/button&gt;
+
+&lt;button type=&quot;button&quot;
+  class=&quot;btn btn-default&quot;&gt;
+  Default&lt;/button&gt;
+
+&lt;button type=&quot;button&quot;
+  class=&quot;btn btn-primary&quot;&gt;
+  Primary&lt;/button&gt;
+
+...</code></pre>
+</section><section id="activados-i" class="slide level2">
+<h2><span class="header-section-number">8.4</span> Activados (I)</h2>
+<figure>
+<img src="../img/botones-activados.png" alt="Botones activados" /><figcaption>Botones activados</figcaption>
+</figure>
+</section><section id="activados-ii" class="slide level2">
+<h2><span class="header-section-number">8.5</span> Activados (II)</h2>
+<pre><code>&lt;button type=&quot;button&quot;
+  class=&quot;btn active&quot;&gt;
+  Button&lt;/button&gt;
+
+&lt;button type=&quot;button&quot;
+  class=&quot;btn active btn-default&quot;&gt;
+  Default&lt;/button&gt;
+
+&lt;button type=&quot;button&quot;
+  class=&quot;btn active btn-primary&quot;&gt;
+  Primary&lt;/button&gt;
+
+...</code></pre>
+</section><section id="desactivados-i" class="slide level2">
+<h2><span class="header-section-number">8.6</span> Desactivados (I)</h2>
+<figure>
+<img src="../img/botones-desactivados.png" alt="Botones activados" /><figcaption>Botones activados</figcaption>
+</figure>
+</section><section id="desactivados-ii" class="slide level2">
+<h2><span class="header-section-number">8.7</span> Desactivados (II)</h2>
+<pre><code>&lt;button type=&quot;button&quot;
+  disabled=&quot;disabled&quot;
+  class=&quot;btn active&quot;&gt;
+  Button&lt;/button&gt;
+
+&lt;button type=&quot;button&quot;
+  disabled=&quot;disabled&quot;
+  class=&quot;btn active btn-default&quot;&gt;
+  Default&lt;/button&gt;
+
+&lt;button type=&quot;button&quot;
+  disabled=&quot;disabled&quot;
+  class=&quot;btn active btn-primary&quot;&gt;
+  Primary&lt;/button&gt;
+
+...</code></pre>
+</section><section id="enlaces-i" class="slide level2">
+<h2><span class="header-section-number">8.8</span> Enlaces (I)</h2>
+<figure>
+<img src="../img/botones-enlaces.png" alt="Tamaños de los botones" /><figcaption>Tamaños de los botones</figcaption>
+</figure>
+</section><section id="enlaces-ii" class="slide level2">
+<h2><span class="header-section-number">8.9</span> Enlaces (II)</h2>
+<pre><code>&lt;a href=&quot;#&quot;
+  class=&quot;btn btn-primary&quot;
+  role=&quot;button&quot;&gt;
+  Primary link&lt;/a&gt;
+
+&lt;a href=&quot;#&quot;
+  class=&quot;btn btn-primary active&quot;
+  role=&quot;button&quot;&gt;
+  Primary link Active&lt;/a&gt;
+
+&lt;a href=&quot;#&quot;
+  class=&quot;btn btn-primary disabled&quot;
+  role=&quot;button&quot;&gt;
+  Primary link Disabled&lt;/a&gt;</code></pre>
+</section><section id="tamaños-i-1" class="slide level2">
+<h2><span class="header-section-number">8.10</span> Tamaños (I)</h2>
+<figure>
+<img src="../img/botones-tamanios.png" alt="Tamaños de los botones" /><figcaption>Tamaños de los botones</figcaption>
+</figure>
+</section><section id="tamaños-ii-1" class="slide level2">
+<h2><span class="header-section-number">8.11</span> Tamaños (II)</h2>
+<pre><code>&lt;button type=&quot;button&quot;
+  class=&quot;btn btn-primary btn-lg&quot;&gt;
+  Large button&lt;/button&gt;
+
+&lt;button type=&quot;button&quot;
+  class=&quot;btn btn-primary&quot;&gt;
+  Default button&lt;/button&gt;
+
+&lt;button type=&quot;button&quot;
+  class=&quot;btn btn-primary btn-sm&quot;&gt;
+  Small button&lt;/button&gt;
+
+&lt;button type=&quot;button&quot;
+  class=&quot;btn btn-primary btn-xs&quot;&gt;
+  Extra small button&lt;/button&gt;</code></pre>
+</section><section id="expandir-i" class="slide level2">
+<h2><span class="header-section-number">8.12</span> Expandir (I)</h2>
+<figure>
+<img src="../img/botones-expandir.png" alt="Expandir los botones" /><figcaption>Expandir los botones</figcaption>
+</figure>
+</section><section id="expandir-ii" class="slide level2">
+<h2><span class="header-section-number">8.13</span> Expandir (II)</h2>
+<pre><code>&lt;button type=&quot;button&quot;
+  class=&quot;btn btn-primary btn-lg
+  btn-block&quot;&gt;Large button&lt;/button&gt;
+
+&lt;button type=&quot;button&quot;
+  class=&quot;btn btn-primary
+  btn-block&quot;&gt;Default button&lt;/button&gt;
+
+&lt;button type=&quot;button&quot;
+  class=&quot;btn btn-primary btn-sm
+  btn-block&quot;&gt;Small button&lt;/button&gt;
+
+&lt;button type=&quot;button&quot;
+  class=&quot;btn btn-primary btn-xs
+  btn-block&quot;&gt;Extra small&lt;/button&gt;</code></pre>
+</section></section>
+<section><section id="imágenes" class="titleslide slide level1"><h1><span class="header-section-number">9</span> Imágenes</h1></section><section id="responsive-1" class="slide level2">
+<h2><span class="header-section-number">9.1</span> Responsive</h2>
+<ul>
+<li>Añadir <strong>class=img-responsive</strong> pondrá max-size=100% y height=auto.</li>
+</ul>
+</section><section id="efectos-i" class="slide level2">
+<h2><span class="header-section-number">9.2</span> Efectos (I)</h2>
+<figure>
+<img src="../img/imagenes.png" alt="Efectos de imágenes" /><figcaption>Efectos de imágenes</figcaption>
+</figure>
+</section><section id="efectos-ii" class="slide level2">
+<h2><span class="header-section-number">9.3</span> Efectos (II)</h2>
+<ul>
+<li>Se pueden añadir efectos:
+<ul>
+<li><strong>class=img-rounded</strong>: redondea los bordes de la foto.</li>
+<li><strong>class=img-circle</strong>: convierte la foto en circular.</li>
+<li><strong>class=img-thumbnail</strong>: deja un pequeño recuadro a la foto.</li>
+</ul></li>
+</ul>
+</section></section>
+<section><section id="helpers" class="titleslide slide level1"><h1><span class="header-section-number">10</span> Helpers</h1></section><section id="textos-coloreados-i" class="slide level2">
+<h2><span class="header-section-number">10.1</span> Textos coloreados (I)</h2>
+<figure>
+<img src="../img/textos-coloreados.png" alt="Textos coloreados" /><figcaption>Textos coloreados</figcaption>
+</figure>
+</section><section id="textos-coloreados-ii" class="slide level2">
+<h2><span class="header-section-number">10.2</span> Textos coloreados (II)</h2>
+<pre><code>&lt;p class=&quot;text-muted&quot;&gt;
+  text-muted&lt;/p&gt;
+
+&lt;p class=&quot;text-primary&quot;&gt;
+  text-primary&lt;/p&gt;
+
+&lt;p class=&quot;text-success&quot;&gt;
+  text-success&lt;/p&gt;
+
+&lt;p class=&quot;text-info&quot;&gt;
+  text-info&lt;/p&gt;
+
+&lt;p class=&quot;text-warning&quot;&gt;
+  text-warning&lt;/p&gt;
+
+&lt;p class=&quot;text-danger&quot;&gt;
+  text-dangerx&lt;/p&gt;</code></pre>
+</section><section id="colores-de-fondo-i" class="slide level2">
+<h2><span class="header-section-number">10.3</span> Colores de fondo (I)</h2>
+<figure>
+<img src="../img/colores-de-fondo.png" alt="Colores de fondo" /><figcaption>Colores de fondo</figcaption>
+</figure>
+</section><section id="colores-de-fondo-ii" class="slide level2">
+<h2><span class="header-section-number">10.4</span> Colores de fondo (II)</h2>
+<pre><code>&lt;p class=&quot;bg-primary&quot;&gt;
+  bg-primary&lt;/p&gt;
+
+&lt;p class=&quot;bg-success&quot;&gt;
+  bg-success&lt;/p&gt;
+
+&lt;p class=&quot;bg-info&quot;&gt;
+  bg-info&lt;/p&gt;
+
+&lt;p class=&quot;bg-warning&quot;&gt;
+  bg-warning&lt;/p&gt;
+
+&lt;p class=&quot;bg-danger&quot;&gt;
+  bg-danger&lt;/p&gt;</code></pre>
+</section><section id="float-y-clearfix" class="slide level2">
+<h2><span class="header-section-number">10.5</span> float y clearfix</h2>
+<pre><code>&lt;div class=&quot;pull-left&quot;&gt;
+  pull-left&lt;/div&gt;
+
+&lt;div class=&quot;pull-right&quot;&gt;
+  pull-right&lt;/div&gt;
+
+&lt;p&gt;antes del clearfix&lt;/p&gt;
+
+&lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;
+
+&lt;p&gt;después del clearfix&lt;/p&gt;</code></pre>
+</section><section id="mostrar-y-ocultar" class="slide level2">
+<h2><span class="header-section-number">10.6</span> Mostrar y ocultar</h2>
+<pre><code>&lt;p&gt;class=show &gt; display: block&lt;/p&gt;
+&lt;div class=&quot;show&quot;&gt;show&lt;/div&gt;
+
+&lt;p&gt;class=hidden &gt; display: none&lt;/p&gt;
+&lt;div class=&quot;hidden&quot;&gt;hidden&lt;/div&gt;
+
+&lt;p&gt;class=invisible &gt; visibility: hidden (no desaparece del dom) &lt;/p&gt;
+&lt;div class=&quot;invisible&quot;&gt;invisible&lt;/div&gt;
+
+&lt;p&gt;class=text-hide&lt;/p&gt; útil cuando quieres una imagen de fondo
+&lt;div class=&quot;text-hide&quot;&gt;text-hide&lt;/div&gt;</code></pre>
+</section><section id="accesibilidad" class="slide level2">
+<h2><span class="header-section-number">10.7</span> Accesibilidad</h2>
+<pre><code>&lt;p&gt;class=sr-only &gt; solo aparece en los lectores de pantalla&lt;/p&gt;
+
+&lt;p&gt;class=sr-only-focusable &gt; aparece cuando se hace foco sobre él&lt;/p&gt;
+
+&lt;a class=&quot;sr-only sr-only-focusable&quot; href=&quot;#content&quot;&gt;Skip to main content&lt;/a&gt;</code></pre>
+</section></section>
+<section><section id="responsive-2" class="titleslide slide level1"><h1><span class="header-section-number">11</span> Responsive</h1></section><section id="esconder-según-dispositivo" class="slide level2">
+<h2><span class="header-section-number">11.1</span> Esconder según dispositivo</h2>
+<pre><code>&lt;p class=&quot;hidden-xs
+  bg-primary&quot;&gt;hidden-xs&lt;/p&gt;
+
+&lt;p class=&quot;hidden-sm
+  bg-primary&quot;&gt;hidden-sm&lt;/p&gt;
+
+&lt;p class=&quot;hidden-md
+  bg-primary&quot;&gt;hidden-md&lt;/p&gt;
+
+&lt;p class=&quot;hidden-lg
+  bg-primary&quot;&gt;hidden-lg&lt;/p&gt;</code></pre>
+</section><section id="mostrar-como-block-según-dispositivo" class="slide level2">
+<h2><span class="header-section-number">11.2</span> Mostrar como block según dispositivo</h2>
+<pre><code>&lt;p class=&quot;visible-xs-block
+  bg-primary&quot;&gt;visible-block-xs&lt;/p&gt;
+
+&lt;p class=&quot;visible-sm-block
+  bg-primary&quot;&gt;visible-block-sm&lt;/p&gt;
+
+&lt;p class=&quot;visible-md-block
+  bg-primary&quot;&gt;visible-block-md&lt;/p&gt;
+
+&lt;p class=&quot;visible-lg-block
+  bg-primary&quot;&gt;visible-block-lg&lt;/p&gt;</code></pre>
+</section><section id="mostrar-como-inline-según-dispositivo" class="slide level2">
+<h2><span class="header-section-number">11.3</span> Mostrar como inline según dispositivo</h2>
+<pre><code>&lt;p class=&quot;visible-xs-inline
+  bg-primary&quot;&gt;visible-xs-inline&lt;/p&gt;
+
+&lt;p class=&quot;visible-sm-inline
+  bg-primary&quot;&gt;visible-sm-inline&lt;/p&gt;
+
+&lt;p class=&quot;visible-md-inline
+  bg-primary&quot;&gt;visible-md-inline&lt;/p&gt;
+
+&lt;p class=&quot;visible-lg-inline
+  bg-primary&quot;&gt;visible-lg-inline&lt;/p&gt;</code></pre>
+</section><section id="mostrar-u-ocultar-para-imprimir" class="slide level2">
+<h2><span class="header-section-number">11.4</span> Mostrar u ocultar para imprimir</h2>
+<pre><code>&lt;p class=&quot;hidden-print
+  bg-primary&quot;&gt;hidden-print&lt;/p&gt;
+
+&lt;p class=&quot;visible-print-block
+  bg-primary&quot;&gt;visible-print-block&lt;/p&gt;
+
+&lt;p class=&quot;visible-print-inline
+  bg-primary&quot;&gt;visible-print-inline&lt;/p&gt;</code></pre>
+</section></section>
+<section><section id="componentes" class="titleslide slide level1"><h1><span class="header-section-number">12</span> Componentes</h1></section><section id="iconos-i" class="slide level2">
+<h2><span class="header-section-number">12.1</span> Iconos (I)</h2>
+<ul>
+<li>Utiliza una versión reducida de <strong>glyphicons</strong>:
+<ul>
+<li><a href="http://glyphicons.com">http://glyphicons.com</a></li>
+</ul></li>
+<li>Alternativa <strong>Font-Awesome</strong>:
+<ul>
+<li><a href="http://fortawesome.github.io/Font-Awesome">http://fortawesome.github.io/Font-Awesome</a></li>
+</ul></li>
+</ul>
+</section><section id="iconos-ii" class="slide level2">
+<h2><span class="header-section-number">12.2</span> Iconos (II)</h2>
+<figure>
+<img src="../img/iconos.png" alt="Ejemplo de iconos" /><figcaption>Ejemplo de iconos</figcaption>
+</figure>
+</section><section id="iconos-iii" class="slide level2">
+<h2><span class="header-section-number">12.3</span> Iconos (III)</h2>
+<pre><code>&lt;button type=&quot;button&quot;
+  class=&quot;btn btn-default&quot;&gt;
+  &lt;span class=&quot;glyphicon
+    glyphicon-star&quot;&gt;&lt;/span&gt; Star
+&lt;/button&gt;</code></pre>
+</section><section id="dropdown-i" class="slide level2">
+<h2><span class="header-section-number">12.4</span> Dropdown (I)</h2>
+<figure>
+<img src="../img/dropdown.png" alt="Dropdown" /><figcaption>Dropdown</figcaption>
+</figure>
+</section><section id="dropdown-ii" class="slide level2">
+<h2><span class="header-section-number">12.5</span> Dropdown (II)</h2>
+<pre><code>&lt;div class=&quot;dropdown&quot;&gt;
+  &lt;button ... data-toggle=&quot;dropdown&quot;&gt;
+    Dropdown&lt;/button&gt;
+  &lt;ul ... class=&quot;dropdown-menu&quot;
+    role=&quot;menu&quot;&gt;
+    &lt;li role=&quot;presentation&quot;
+      class=&quot;dropdown-header&quot;&gt;
+      Header&lt;/li&gt;
+    &lt;li role=&quot;presentation&quot;
+      class=&quot;divider&quot;&gt;&lt;/li&gt;
+    &lt;li role=&quot;presentation&quot;&gt;
+      &lt;a role=&quot;menuitem&quot;... href=&quot;#&quot;&gt;
+      Action&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+</section><section id="button-groups-i" class="slide level2">
+<h2><span class="header-section-number">12.6</span> Button groups (I)</h2>
+<figure>
+<img src="../img/button-groups.png" alt="Button groups" /><figcaption>Button groups</figcaption>
+</figure>
+</section><section id="button-groups-ii" class="slide level2">
+<h2><span class="header-section-number">12.7</span> Button groups (II)</h2>
+<pre><code>&lt;div class=&quot;btn-group&quot;&gt;
+  &lt;button type=&quot;button&quot;
+    class=&quot;btn
+      btn-default&quot;&gt;Left&lt;/button&gt;
+
+  &lt;button type=&quot;button&quot;
+    class=&quot;btn
+      btn-default&quot;&gt;Middle&lt;/button&gt;
+
+  &lt;button type=&quot;button&quot;
+    class=&quot;btn
+      btn-default&quot;&gt;Right&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+</section><section id="input-groups-i" class="slide level2">
+<h2><span class="header-section-number">12.8</span> Input groups (I)</h2>
+<figure>
+<img src="../img/inputs-groups.png" alt="Input groups" /><figcaption>Input groups</figcaption>
+</figure>
+</section><section id="input-groups-ii" class="slide level2">
+<h2><span class="header-section-number">12.9</span> Input groups (II)</h2>
+<pre><code>&lt;div class=&quot;input-group&quot;&gt;
+  &lt;span
+   class=&quot;input-group-addon&quot;&gt;
+   @&lt;/span&gt;
+  &lt;input type=&quot;text&quot;
+    class=&quot;form-control&quot;
+    placeholder=&quot;Username&quot;&gt;
+&lt;/div&gt;</code></pre>
+</section><section id="varios" class="slide level2">
+<h2><span class="header-section-number">12.10</span> Varios</h2>
+<figure>
+<img src="../img/varios.png" alt="Tabs, pills, navbars, breadcrumbs" /><figcaption>Tabs, pills, navbars, breadcrumbs</figcaption>
+</figure>
+</section><section id="tabs" class="slide level2">
+<h2><span class="header-section-number">12.11</span> Tabs</h2>
+<pre><code>&lt;ul class=&quot;nav nav-tabs&quot;
+  role=&quot;tablist&quot;&gt;
+  &lt;li class=&quot;active&quot;&gt;
+    &lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Help&lt;/a&gt;&lt;/li&gt;
+  ...
+&lt;/ul&gt;</code></pre>
+</section><section id="pills" class="slide level2">
+<h2><span class="header-section-number">12.12</span> Pills</h2>
+<pre><code>&lt;ul class=&quot;nav nav-pills&quot;&gt;
+  &lt;li class=&quot;active&quot;&gt;
+    &lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Help&lt;/a&gt;&lt;/li&gt;
+  ...
+&lt;/ul&gt;</code></pre>
+</section><section id="navbars" class="slide level2">
+<h2><span class="header-section-number">12.13</span> Navbars</h2>
+<pre><code>&lt;nav ...&gt;
+  &lt;div class=&quot;container-fluid&quot;&gt;
+    &lt;div class=&quot;navbar-header&quot;&gt;
+      &lt;button ... id=&quot;collapse-1&quot;&gt;
+        &lt;span class=&quot;sr-only&quot;&gt;
+        Toggle navigation&lt;/span&gt;
+        ...
+      &lt;/button&gt;
+      &lt;a class=&quot;navbar-brand&quot;
+        href=&quot;#&quot;&gt;Brand&lt;/a&gt;&lt;/div&gt;
+    &lt;div ... id=&quot;collapse-1&quot;&gt;
+      &lt;ul class=&quot;nav navbar-nav
+        navbar-right&quot;&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link&lt;/a&gt;&lt;/li&gt;
+        ...
+      &lt;/ul&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+</section><section id="breadcrumbs" class="slide level2">
+<h2><span class="header-section-number">12.14</span> Breadcrumbs</h2>
+<pre><code>&lt;ol class=&quot;breadcrumb&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Library&lt;/a&gt;&lt;/li&gt;
+  &lt;li class=&quot;active&quot;&gt;Data&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+</section><section id="pagination-i" class="slide level2">
+<h2><span class="header-section-number">12.15</span> Pagination (I)</h2>
+<figure>
+<img src="../img/pagination.png" alt="Pagination" /><figcaption>Pagination</figcaption>
+</figure>
+</section><section id="pagination-ii" class="slide level2">
+<h2><span class="header-section-number">12.16</span> Pagination (II)</h2>
+<pre><code>&lt;ul class=&quot;pagination&quot;&gt;
+  &lt;li class=&quot;disabled&quot;&gt;
+    &lt;span&gt;&amp;laquo;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class=&quot;active&quot;&gt;
+    &lt;span&gt;1 
+      &lt;span class=&quot;sr-only&quot;&gt;
+      (current)&lt;/span&gt;
+      &lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;3&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;4&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;5&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&amp;raquo;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt; </code></pre>
+</section><section id="pager-i" class="slide level2">
+<h2><span class="header-section-number">12.17</span> Pager (I)</h2>
+<figure>
+<img src="../img/pager.png" alt="Pager" /><figcaption>Pager</figcaption>
+</figure>
+</section><section id="pager-ii" class="slide level2">
+<h2><span class="header-section-number">12.18</span> Pager (II)</h2>
+<pre><code>&lt;ul class=&quot;pager&quot;&gt;
+  &lt;li class=&quot;previous disabled&quot;&gt;
+    &lt;a href=&quot;#&quot;&gt;&amp;larr; Older&lt;/a&gt;&lt;/li&gt;
+  &lt;li class=&quot;next&quot;&gt;
+    &lt;a href=&quot;#&quot;&gt;Newer &amp;rarr;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+</section><section id="labels-i" class="slide level2">
+<h2><span class="header-section-number">12.19</span> Labels (I)</h2>
+<figure>
+<img src="../img/labels.png" alt="Labels" /><figcaption>Labels</figcaption>
+</figure>
+</section><section id="labels-ii" class="slide level2">
+<h2><span class="header-section-number">12.20</span> Labels (II)</h2>
+<pre><code>&lt;span class=&quot;label
+  label-default&quot;&gt;Default&lt;/span&gt;
+&lt;span class=&quot;label
+  label-primary&quot;&gt;Primary&lt;/span&gt;
+&lt;span class=&quot;label
+  label-success&quot;&gt;Success&lt;/span&gt;
+&lt;span class=&quot;label
+  label-info&quot;&gt;Info&lt;/span&gt;
+&lt;span class=&quot;label
+  label-warning&quot;&gt;Warning&lt;/span&gt;
+&lt;span class=&quot;label
+  label-danger&quot;&gt;Danger&lt;/span&gt;</code></pre>
+</section><section id="badges-i" class="slide level2">
+<h2><span class="header-section-number">12.21</span> Badges (I)</h2>
+<figure>
+<img src="../img/badges.png" alt="Badges" /><figcaption>Badges</figcaption>
+</figure>
+</section><section id="badges-ii" class="slide level2">
+<h2><span class="header-section-number">12.22</span> Badges (II)</h2>
+<pre><code>&lt;ul class=&quot;nav nav-pills&quot;&gt;
+  &lt;li class=&quot;active&quot;&gt;
+    &lt;a href=&quot;#&quot;&gt;Home
+      &lt;span class=&quot;badge&quot;&gt;
+        42&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Profile&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Messages
+    &lt;span class=&quot;badge&quot;&gt;
+      3&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+</section><section id="badges-iii" class="slide level2">
+<h2><span class="header-section-number">12.23</span> Badges (III)</h2>
+<pre><code>&lt;button class=&quot;btn btn-default&quot;
+  type=&quot;button&quot;&gt;Messages
+  &lt;span class=&quot;badge&quot;&gt;4&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+</section><section id="jumbotron-i" class="slide level2">
+<h2><span class="header-section-number">12.24</span> Jumbotron (I)</h2>
+<figure>
+<img src="../img/jumbotron.png" alt="Jumbotron" /><figcaption>Jumbotron</figcaption>
+</figure>
+</section><section id="jumbotron-ii" class="slide level2">
+<h2><span class="header-section-number">12.25</span> Jumbotron (II)</h2>
+<pre><code>&lt;div class=&quot;jumbotron&quot;&gt;
+  &lt;h1&gt;Hello, world!&lt;/h1&gt;
+  &lt;p&gt;...&lt;/p&gt;
+  &lt;p&gt;&lt;a 
+    class=&quot;btn btn-primary btn-lg&quot;
+    role=&quot;button&quot;&gt;
+    Learn more&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+</section><section id="thumbnails-i" class="slide level2">
+<h2><span class="header-section-number">12.26</span> Thumbnails (I)</h2>
+<figure>
+<img src="../img/thumbnails.png" alt="Thumbnails" /><figcaption>Thumbnails</figcaption>
+</figure>
+</section><section id="thumbnails-ii" class="slide level2">
+<h2><span class="header-section-number">12.27</span> Thumbnails (II)</h2>
+<pre><code>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-sm-6 col-md-4&quot;&gt;
+    &lt;div class=&quot;thumbnail&quot;&gt;
+      &lt;img src=&quot;img.jpg&quot;...&gt;
+      &lt;div class=&quot;caption&quot;&gt;
+        &lt;h3&gt;Thumbnail label&lt;/h3&gt;
+        &lt;p&gt;...&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</section><section id="alerts-i" class="slide level2">
+<h2><span class="header-section-number">12.28</span> Alerts (I)</h2>
+<figure>
+<img src="../img/alerts.png" alt="Alerts" /><figcaption>Alerts</figcaption>
+</figure>
+</section><section id="alerts-ii" class="slide level2">
+<h2><span class="header-section-number">12.29</span> Alerts (II)</h2>
+<pre><code>&lt;div class=&quot;alert alert-success&quot;
+  role=&quot;alert&quot;&gt;
+  &lt;strong&gt;Well done!&lt;/strong&gt;&lt;/div&gt;
+&lt;div class=&quot;alert alert-info&quot;
+  role=&quot;alert&quot;&gt;
+  &lt;strong&gt;Heads up!&lt;/strong&gt;&lt;/div&gt;
+&lt;div class=&quot;alert alert-warning&quot;
+  role=&quot;alert&quot;&gt;
+  &lt;strong&gt;Warning!&lt;/strong&gt;&lt;/div&gt;
+&lt;div class=&quot;alert alert-danger&quot;
+  role=&quot;alert&quot;&gt;
+  &lt;strong&gt;Oh snap!&lt;/strong&gt;&lt;/div&gt;</code></pre>
+</section><section id="progress-bar-i" class="slide level2">
+<h2><span class="header-section-number">12.30</span> Progress Bar (I)</h2>
+<figure>
+<img src="../img/progressbar.png" alt="Progress Bar" /><figcaption>Progress Bar</figcaption>
+</figure>
+</section><section id="progress-bar-ii" class="slide level2">
+<h2><span class="header-section-number">12.31</span> Progress Bar (II)</h2>
+<pre><code>&lt;div class=&quot;progress&quot;&gt;
+  &lt;div class=&quot;progress-bar&quot;
+    role=&quot;progressbar&quot;
+    aria-valuenow=&quot;0&quot;
+    aria-valuemin=&quot;0&quot;
+    aria-valuemax=&quot;100&quot;&gt;
+    0%&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;progress&quot;&gt;
+  &lt;div class=&quot;progress-bar&quot;
+    role=&quot;progressbar&quot;
+    aria-valuenow=&quot;2&quot;
+    aria-valuemin=&quot;0&quot;
+    aria-valuemax=&quot;100&quot;
+    style=&quot;width: 2%;&quot;&gt;
+    2%&lt;/div&gt;&lt;/div&gt;</code></pre>
+</section><section id="progress-bar-iii" class="slide level2">
+<h2><span class="header-section-number">12.32</span> Progress Bar (III)</h2>
+<pre><code>&lt;div class=&quot;progress&quot;&gt;
+  &lt;div class=&quot;progress-bar
+    progress-bar-success&quot;
+    ... style=&quot;width: 40%&quot;&gt;
+    &lt;span class=&quot;sr-only&quot;&gt;
+      40% Complete (success)...
+&lt;div class=&quot;progress&quot;&gt;
+  &lt;div class=&quot;progress-bar
+    progress-bar-info
+    progress-bar-striped&quot;
+    ... style=&quot;width: 20%&quot;&gt;
+    &lt;span class=&quot;sr-only&quot;&gt;
+      20% Complete...
+&lt;div class=&quot;progress&quot;&gt;
+  &lt;div class=&quot;progress-bar
+    progress-bar-warning
+    progress-bar-striped active&quot;
+    ... style=&quot;width: 60%&quot;&gt;
+    &lt;span class=&quot;sr-only&quot;&gt;
+    60% Complete (warning)...</code></pre>
+</section><section id="progress-bar-iv" class="slide level2">
+<h2><span class="header-section-number">12.33</span> Progress Bar (IV)</h2>
+<pre><code>&lt;div class=&quot;progress&quot;&gt;
+  &lt;div class=&quot;progress-bar&quot;
+    style=&quot;width: 35%&quot;&gt;
+    &lt;span class=&quot;sr-only&quot;&gt;
+    35% Complete (success)&lt;/span&gt;&lt;/div&gt;
+  &lt;div class=&quot;progress-bar
+    progress-bar-warning
+    progress-bar-striped&quot;
+    style=&quot;width: 20%&quot;&gt;
+    &lt;span class=&quot;sr-only&quot;&gt;
+    20% Complete (warning)&lt;/span&gt;&lt;/div&gt;
+  &lt;div class=&quot;progress-bar
+    progress-bar-danger
+    progress-bar-striped active&quot;
+    style=&quot;width: 10%&quot;&gt;
+    &lt;span class=&quot;sr-only&quot;&gt;
+    10% Complete (danger)&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</section><section id="media-i" class="slide level2">
+<h2><span class="header-section-number">12.34</span> Media (I)</h2>
+<figure>
+<img src="../img/media.png" alt="Media" /><figcaption>Media</figcaption>
+</figure>
+</section><section id="media-ii" class="slide level2">
+<h2><span class="header-section-number">12.35</span> Media (II)</h2>
+<pre><code>&lt;ul class=&quot;media-list&quot;&gt;
+  &lt;li class=&quot;media&quot;&gt;
+    &lt;a class=&quot;pull-left&quot; href=&quot;#&quot;&gt;
+      &lt;img src=&quot;img.png&quot;&gt;
+    &lt;/a&gt;
+    &lt;div class=&quot;media-body&quot;&gt;
+      &lt;h4 class=&quot;media-heading&quot;&gt;
+        Media heading&lt;/h4&gt;
+      &lt;p&gt;...&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+</section><section id="list-group-i" class="slide level2">
+<h2><span class="header-section-number">12.36</span> List group (I)</h2>
+<figure>
+<img src="../img/listgroup.png" alt="List group" /><figcaption>List group</figcaption>
+</figure>
+</section><section id="list-group-ii" class="slide level2">
+<h2><span class="header-section-number">12.37</span> List group (II)</h2>
+<pre><code>&lt;div class=&quot;list-group&quot;&gt;
+  &lt;a href=&quot;#&quot;
+    class=&quot;list-group-item active&quot;&gt;
+    Cras justo odio
+  &lt;/a&gt;
+  &lt;a href=&quot;#&quot;
+    class=&quot;list-group-item&quot;&gt;
+    Dapibus ac facilisis in&lt;/a&gt;
+    ...
+&lt;/div&gt;</code></pre>
+</section><section id="panel-group-i" class="slide level2">
+<h2><span class="header-section-number">12.38</span> Panel group (I)</h2>
+<figure>
+<img src="../img/panelgroup.png" alt="Panel group" /><figcaption>Panel group</figcaption>
+</figure>
+</section><section id="panel-group-ii" class="slide level2">
+<h2><span class="header-section-number">12.39</span> Panel group (II)</h2>
+<pre><code>&lt;div class=&quot;panel panel-primary&quot;&gt;
+  &lt;div class=&quot;panel-heading&quot;&gt;
+    &lt;h3 class=&quot;panel-title&quot;&gt;
+    Panel title&lt;/h3&gt;&lt;/div&gt;
+  &lt;div class=&quot;panel-body&quot;&gt;
+    Panel content&lt;/div&gt;
+  &lt;div class=&quot;panel-footer&quot;&gt;
+    Panel footer&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</section><section id="responsive-embed" class="slide level2">
+<h2><span class="header-section-number">12.40</span> Responsive embed</h2>
+<pre><code>&lt;div class=&quot;embed-responsive
+  embed-responsive-16by9&quot;&gt;
+  &lt;iframe
+    class=&quot;embed-responsive-item&quot;
+    src=&quot;//www.youtube.com/...&quot;
+    allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;</code></pre>
+</section></section>
+<section><section id="javascript" class="titleslide slide level1"><h1><span class="header-section-number">13</span> JavaScript</h1></section><section id="modal-i" class="slide level2">
+<h2><span class="header-section-number">13.1</span> Modal (I)</h2>
+<figure>
+<img src="../img/modal.png" alt="Dialogos modales" /><figcaption>Dialogos modales</figcaption>
+</figure>
+</section><section id="modal-ii" class="slide level2">
+<h2><span class="header-section-number">13.2</span> Modal (II)</h2>
+<pre><code>&lt;button
+  class=&quot;btn btn-primary btn-lg&quot;
+  data-toggle=&quot;modal&quot;
+  data-target=&quot;#myModal&quot;&gt;
+  Launch demo modal
+&lt;/button&gt;</code></pre>
+</section><section id="modal-iii" class="slide level2">
+<h2><span class="header-section-number">13.3</span> Modal (III)</h2>
+<pre><code>&lt;div class=&quot;modal fade&quot; id=&quot;myModal&quot;
+  tabindex=&quot;-1&quot; role=&quot;dialog&quot;
+  aria-labelledby=&quot;myModalLabel&quot;
+  aria-hidden=&quot;true&quot;&gt;
+  &lt;div class=&quot;modal-dialog&quot;&gt;
+    &lt;div class=&quot;modal-content&quot;&gt;
+      &lt;div class=&quot;modal-header&quot;&gt;
+        ...&lt;/div&gt;
+      &lt;div class=&quot;modal-body&quot;&gt;
+        ...&lt;/div&gt;
+      &lt;div class=&quot;modal-footer&quot;&gt;
+        ...&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</section><section id="tabs-i" class="slide level2">
+<h2><span class="header-section-number">13.4</span> Tabs (I)</h2>
+<figure>
+<img src="../img/tabs.png" alt="Tabs" /><figcaption>Tabs</figcaption>
+</figure>
+</section><section id="tabs-ii" class="slide level2">
+<h2><span class="header-section-number">13.5</span> Tabs (II)</h2>
+<pre><code>&lt;ul id=&quot;myTab&quot; class=&quot;nav nav-tabs&quot;
+  role=&quot;tablist&quot;&gt;
+  &lt;li class=&quot;&quot;&gt;
+    &lt;a href=&quot;#home&quot; role=&quot;tab&quot;
+      data-toggle=&quot;tab&quot;&gt;
+      Home&lt;/a&gt;&lt;/li&gt;
+  &lt;li class=&quot;active&quot;&gt;
+    &lt;a href=&quot;#profile&quot; role=&quot;tab&quot;
+      data-toggle=&quot;tab&quot;&gt;
+      Profile&lt;/a&gt;&lt;/li&gt;
+  ...
+&lt;/ul&gt;</code></pre>
+</section><section id="tabs-iii" class="slide level2">
+<h2><span class="header-section-number">13.6</span> Tabs (III)</h2>
+<pre><code>&lt;div id=&quot;myTabContent&quot;
+  class=&quot;tab-content&quot;&gt;
+  &lt;div class=&quot;tab-pane fade&quot;
+    id=&quot;home&quot;&gt;
+    &lt;p&gt;...&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;tab-pane fade
+    active in&quot; id=&quot;profile&quot;&gt;
+    &lt;p&gt;...&lt;/p&gt;
+  &lt;/div&gt;
+  ...
+&lt;/div&gt;</code></pre>
+</section><section id="tooltips-i" class="slide level2">
+<h2><span class="header-section-number">13.7</span> Tooltips (I)</h2>
+<figure>
+<img src="../img/tooltips.png" alt="Tooltips" /><figcaption>Tooltips</figcaption>
+</figure>
+</section><section id="tooltips-ii" class="slide level2">
+<h2><span class="header-section-number">13.8</span> Tooltips (II)</h2>
+<pre><code>&lt;script&gt;
+  $( document ).ready( function() {
+    $(&#39;[data-toggle=&quot;tooltip&quot;]&#39;)
+      .tooltip();
+  });
+&lt;/script&gt;</code></pre>
+</section><section id="tooltips-iii" class="slide level2">
+<h2><span class="header-section-number">13.9</span> Tooltips (III)</h2>
+<pre><code>&lt;p class=&quot;muted&quot;&gt;
+  Farm-to-table seitan, mcsweeney&#39;s
+  fixie sustainable quinoa 8-bit
+  american apparel
+  &lt;a href=&quot;#&quot;
+    data-toggle=&quot;tooltip&quot;
+    title=&quot;Another tooltip&quot;&gt;
+    have a&lt;/a&gt;
+  terry richardson vinyl chambray.&lt;/p&gt;</code></pre>
+</section><section id="tooltips-iv" class="slide level2">
+<h2><span class="header-section-number">13.10</span> Tooltips (IV)</h2>
+<pre><code>&lt;button type=&quot;button&quot;
+  class=&quot;btn btn-default&quot;
+  data-toggle=&quot;tooltip&quot;
+  data-placement=&quot;right&quot;
+  title=&quot;Tooltip on right&quot;&gt;
+    Tooltip on right&lt;/button&gt;</code></pre>
+</section><section id="popover-i" class="slide level2">
+<h2><span class="header-section-number">13.11</span> Popover (I)</h2>
+<figure>
+<img src="../img/popover.png" alt="Popover" /><figcaption>Popover</figcaption>
+</figure>
+</section><section id="popover-ii" class="slide level2">
+<h2><span class="header-section-number">13.12</span> Popover (II)</h2>
+<pre><code>&lt;script&gt;
+  $( document ).ready( function() {
+    $(&#39;[data-toggle=&quot;popover&quot;]&#39;)
+      .popover();
+  });
+&lt;/script&gt;</code></pre>
+</section><section id="popover-iii" class="slide level2">
+<h2><span class="header-section-number">13.13</span> Popover (III)</h2>
+<pre><code>&lt;button type=&quot;button&quot;
+  class=&quot;btn btn-default&quot;
+  title=&quot;Popover title&quot;
+  data-container=&quot;body&quot;
+  data-toggle=&quot;popover&quot;
+  data-placement=&quot;right&quot;
+  data-content=&quot;Vivamus
+    sagittis lacus vel
+    augue laoreet
+    rutrum faucibus.&quot;&gt;
+      Popover on right
+&lt;/button&gt;</code></pre>
+</section><section id="accordion-i" class="slide level2">
+<h2><span class="header-section-number">13.14</span> Accordion (I)</h2>
+<figure>
+<img src="../img/accordion.png" alt="Accordion" /><figcaption>Accordion</figcaption>
+</figure>
+</section><section id="accordion-ii" class="slide level2">
+<h2><span class="header-section-number">13.15</span> Accordion (II)</h2>
+<pre><code>&lt;div class=&quot;panel-group&quot;
+  id=&quot;accordion&quot;&gt;
+  &lt;div class=&quot;panel panel-default&quot;&gt;
+    &lt;div class=&quot;panel-heading&quot;&gt;
+      &lt;h4 class=&quot;panel-title&quot;&gt;
+        &lt;a data-toggle=&quot;collapse&quot;
+          data-parent=&quot;#accordion&quot;
+          href=&quot;#collapseOne&quot;&gt;
+            Group Item #1&lt;/a&gt;
+      &lt;/h4&gt;&lt;/div&gt;
+    &lt;div id=&quot;collapseOne&quot;
+      class=&quot;panel-collapse
+        collapse in&quot;&gt;
+      &lt;div class=&quot;panel-body&quot;&gt;
+        ...&lt;/div&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  ...
+&lt;/div&gt;</code></pre>
+</section><section id="carousel-i" class="slide level2">
+<h2><span class="header-section-number">13.16</span> Carousel (I)</h2>
+<figure>
+<img src="../img/carousel.png" alt="Carousel" /><figcaption>Carousel</figcaption>
+</figure>
+</section><section id="carousel-ii" class="slide level2">
+<h2><span class="header-section-number">13.17</span> Carousel (II)</h2>
+<pre><code>&lt;div class=&quot;container&quot;
+  style=&quot;max-width: 900px&quot;&gt;
+  &lt;div id=&quot;carousel-example-generic&quot;
+    class=&quot;carousel slide&quot;
+    data-ride=&quot;carousel&quot;&gt;
+    &lt;ol class=&quot;carousel-indicators&quot;&gt;
+      ...&lt;/ol&gt;
+    &lt;div class=&quot;carousel-inner&quot;&gt;
+      ...&lt;/div&gt;
+    &lt;a class=&quot;left carousel-control&quot;
+      ...&lt;/a&gt;
+    &lt;a class=&quot;right carousel-control&quot;
+      ...&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</section><section id="carousel-iii" class="slide level2">
+<h2><span class="header-section-number">13.18</span> Carousel (III)</h2>
+<pre><code>&lt;ol class=&quot;carousel-indicators&quot;&gt;
+  &lt;li data-target=&quot;
+    #carousel-example-generic&quot;
+    data-slide-to=&quot;0&quot; class=&quot;&quot;&gt;&lt;/li&gt;
+  &lt;li data-target=&quot;
+    #carousel-example-generic&quot;
+    data-slide-to=&quot;1&quot;
+    class=&quot;active&quot;&gt;&lt;/li&gt;
+  &lt;li data-target=&quot;
+    #carousel-example-generic&quot;
+    data-slide-to=&quot;2&quot; class=&quot;&quot;&gt;&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+</section><section id="carousel-iv" class="slide level2">
+<h2><span class="header-section-number">13.19</span> Carousel (IV)</h2>
+<pre><code>&lt;div class=&quot;carousel-inner&quot;&gt;
+  &lt;div class=&quot;item active left&quot;&gt;
+    &lt;img src=&quot;img1.png&quot;
+      data-src=&quot;...&quot;
+      alt=&quot;First slide&quot;&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;item next left&quot;&gt;
+    &lt;img src=&quot;img2.png&quot;
+      data-src=&quot;...&quot;
+      alt=&quot;Second slide&quot;&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;item&quot;&gt;
+    &lt;img src=&quot;img2.png&quot;
+      data-src=&quot;...&quot;
+      alt=&quot;Third slide&quot;&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</section><section id="carousel-v" class="slide level2">
+<h2><span class="header-section-number">13.20</span> Carousel (V)</h2>
+<pre><code>&lt;a class=&quot;left carousel-control&quot;
+  href=&quot;#carousel-example-generic&quot;
+  role=&quot;button&quot;
+  data-slide=&quot;prev&quot;&gt;
+  &lt;span class=&quot;glyphicon
+    glyphicon-chevron-left&quot;&gt;&lt;/span&gt;
+&lt;/a&gt;
+&lt;a class=&quot;right carousel-control&quot;
+  href=&quot;#carousel-example-generic&quot;
+  role=&quot;button&quot;
+  data-slide=&quot;next&quot;&gt;
+  &lt;span class=&quot;glyphicon
+    glyphicon-chevron-right&quot;&gt;&lt;/span&gt;
+&lt;/a&gt;</code></pre>
+</section></section>
+<section><section id="ejemplos-1" class="titleslide slide level1"><h1><span class="header-section-number">14</span> Ejemplos</h1></section><section id="índice" class="slide level2">
+<h2><span class="header-section-number">14.1</span> Índice</h2>
+<ul>
+<li>Using the framework</li>
+<li>Navbars in action</li>
+<li>Custom components</li>
+<li>Experiments</li>
+</ul>
+</section><section id="using-the-framework" class="slide level2">
+<h2><span class="header-section-number">14.2</span> Using the framework</h2>
+<ul>
+<li>Starter template</li>
+<li>Bootstrap theme</li>
+<li>Grids</li>
+<li>Jumbotron</li>
+<li>Narrow jumbotron</li>
+</ul>
+</section><section id="starter-template" class="slide level2">
+<h2><span class="header-section-number">14.3</span> Starter template</h2>
+<ul>
+<li><a href="http://getbootstrap.com/examples/starter-template">http://getbootstrap.com/examples/starter-template</a> <img src="../img/screenshots/starter-template.jpg" alt="Source: getbootstrap.com" /></li>
+</ul>
+</section><section id="bootstrap-theme" class="slide level2">
+<h2><span class="header-section-number">14.4</span> Bootstrap theme</h2>
+<ul>
+<li><a href="http://getbootstrap.com/examples/theme">http://getbootstrap.com/examples/theme</a> <img src="../img/screenshots/theme.jpg" alt="Source: getbootstrap.com" /></li>
+</ul>
+</section><section id="grids" class="slide level2">
+<h2><span class="header-section-number">14.5</span> Grids</h2>
+<ul>
+<li><a href="http://getbootstrap.com/examples/grid">http://getbootstrap.com/examples/grid</a> <img src="../img/screenshots/grid.jpg" alt="Source: getbootstrap.com" /></li>
+</ul>
+</section><section id="jumbotron" class="slide level2">
+<h2><span class="header-section-number">14.6</span> Jumbotron</h2>
+<ul>
+<li><a href="http://getbootstrap.com/examples/jumbotron">http://getbootstrap.com/examples/jumbotron</a> <img src="../img/screenshots/jumbotron.jpg" alt="Source: getbootstrap.com" /></li>
+</ul>
+</section><section id="narrow-jumbotron" class="slide level2">
+<h2><span class="header-section-number">14.7</span> Narrow jumbotron</h2>
+<ul>
+<li><a href="http://getbootstrap.com/examples/jumbotron-narrow">http://getbootstrap.com/examples/jumbotron-narrow</a> <img src="../img/screenshots/jumbotron-narrow.jpg" alt="Source: getbootstrap.com" /></li>
+</ul>
+</section><section id="navbars-in-action" class="slide level2">
+<h2><span class="header-section-number">14.8</span> Navbars in action</h2>
+<ul>
+<li>Navbar</li>
+<li>Static top navbar</li>
+<li>Fixed navbar</li>
+</ul>
+</section><section id="navbar" class="slide level2">
+<h2><span class="header-section-number">14.9</span> Navbar</h2>
+<ul>
+<li><a href="http://getbootstrap.com/examples/navbar">http://getbootstrap.com/examples/navbar</a> <img src="../img/screenshots/navbar.jpg" alt="Source: getbootstrap.com" /></li>
+</ul>
+</section><section id="static-top-navbar" class="slide level2">
+<h2><span class="header-section-number">14.10</span> Static top navbar</h2>
+<ul>
+<li><a href="http://getbootstrap.com/examples/navbar-static-top">http://getbootstrap.com/examples/navbar-static-top</a> <img src="../img/screenshots/navbar-static.jpg" alt="Source: getbootstrap.com" /></li>
+</ul>
+</section><section id="fixed-navbar" class="slide level2">
+<h2><span class="header-section-number">14.11</span> Fixed navbar</h2>
+<ul>
+<li><a href="http://getbootstrap.com/examples/navbar-fixed-top">http://getbootstrap.com/examples/navbar-fixed-top</a> <img src="../img/screenshots/navbar-fixed.jpg" alt="Source: getbootstrap.com" /></li>
+</ul>
+</section><section id="custom-components" class="slide level2">
+<h2><span class="header-section-number">14.12</span> Custom components</h2>
+<ul>
+<li>Cover</li>
+<li>Carousel</li>
+<li>Blog</li>
+<li>Dashboard</li>
+<li>Sign-in page</li>
+<li>Justified nav</li>
+<li>Sticky footer</li>
+<li>Sticky footer with navbar</li>
+</ul>
+</section><section id="cover" class="slide level2">
+<h2><span class="header-section-number">14.13</span> Cover</h2>
+<ul>
+<li><a href="http://getbootstrap.com/examples/cover">http://getbootstrap.com/examples/cover</a> <img src="../img/screenshots/cover.jpg" alt="Source: getbootstrap.com" /></li>
+</ul>
+</section><section id="carousel" class="slide level2">
+<h2><span class="header-section-number">14.14</span> Carousel</h2>
+<ul>
+<li><a href="http://getbootstrap.com/examples/carousel">http://getbootstrap.com/examples/carousel</a> <img src="../img/screenshots/carousel.jpg" alt="Source: getbootstrap.com" /></li>
+</ul>
+</section><section id="blog" class="slide level2">
+<h2><span class="header-section-number">14.15</span> Blog</h2>
+<ul>
+<li><a href="http://getbootstrap.com/examples/blog">http://getbootstrap.com/examples/blog</a> <img src="../img/screenshots/blog.jpg" alt="Source: getbootstrap.com" /></li>
+</ul>
+</section><section id="dashboard" class="slide level2">
+<h2><span class="header-section-number">14.16</span> Dashboard</h2>
+<ul>
+<li><a href="http://getbootstrap.com/examples/dashboard">http://getbootstrap.com/examples/dashboard</a> <img src="../img/screenshots/dashboard.jpg" alt="Source: getbootstrap.com" /></li>
+</ul>
+</section><section id="sign-in-page" class="slide level2">
+<h2><span class="header-section-number">14.17</span> Sign-in page</h2>
+<ul>
+<li><a href="http://getbootstrap.com/examples/signin">http://getbootstrap.com/examples/signin</a> <img src="../img/screenshots/sign-in.jpg" alt="Source: getbootstrap.com" /></li>
+</ul>
+</section><section id="justified-nav" class="slide level2">
+<h2><span class="header-section-number">14.18</span> Justified nav</h2>
+<ul>
+<li><a href="http://getbootstrap.com/examples/justified-nav">http://getbootstrap.com/examples/justified-nav</a> <img src="../img/screenshots/justified-nav.jpg" alt="Source: getbootstrap.com" /></li>
+</ul>
+</section><section id="sticky-footer" class="slide level2">
+<h2><span class="header-section-number">14.19</span> Sticky footer</h2>
+<ul>
+<li><a href="http://getbootstrap.com/examples/sticky-footer">http://getbootstrap.com/examples/sticky-footer</a> <img src="../img/screenshots/sticky-footer.jpg" alt="Source: getbootstrap.com" /></li>
+</ul>
+</section><section id="sticky-footer-with-navbar" class="slide level2">
+<h2><span class="header-section-number">14.20</span> Sticky footer with navbar</h2>
+<ul>
+<li><a href="http://getbootstrap.com/examples/sticky-footer-navbar">http://getbootstrap.com/examples/sticky-footer-navbar</a> <img src="../img/screenshots/sticky-footer-navbar.jpg" alt="Source: getbootstrap.com" /></li>
+</ul>
+</section><section id="experiments" class="slide level2">
+<h2><span class="header-section-number">14.21</span> Experiments</h2>
+<ul>
+<li>Non-responsive Bootstrap</li>
+<li>Offcanvas</li>
+</ul>
+</section><section id="non-responsive-bootstrap" class="slide level2">
+<h2><span class="header-section-number">14.22</span> Non-responsive Bootstrap</h2>
+<ul>
+<li><a href="http://getbootstrap.com/examples/non-responsive">http://getbootstrap.com/examples/non-responsive</a> <img src="../img/screenshots/non-responsive.jpg" alt="Source: getbootstrap.com" /></li>
+</ul>
+</section><section id="offcanvas" class="slide level2">
+<h2><span class="header-section-number">14.23</span> Offcanvas</h2>
+<ul>
+<li><a href="http://getbootstrap.com/examples/offcanvas">http://getbootstrap.com/examples/offcanvas</a> <img src="../img/screenshots/offcanvas.jpg" alt="Source: getbootstrap.com" /></li>
+</ul>
+</section></section>
+<section><section id="personalización" class="titleslide slide level1"><h1><span class="header-section-number">15</span> Personalización</h1></section><section id="tu-propio-css" class="slide level2">
+<h2><span class="header-section-number">15.1</span> Tu propio CSS</h2>
+<ul>
+<li><p>Una forma de personalizar tu página web hecha con bootstrap, es <strong>añadiendo un fichero CSS, después de las llamadas a los CSS de bootstrap</strong> (para que sobrescriba los valores)</p></li>
+<li><p>Esta es una <strong>forma muy manual y muy poco productiva</strong>.</p></li>
+</ul>
+</section><section id="página-customize" class="slide level2">
+<h2><span class="header-section-number">15.2</span> Página Customize</h2>
+<ul>
+<li>Desde la página web de bootstrap <a href="http://getbootstrap.com/customize">http://getbootstrap.com/customize</a> se pueden <strong>personalizar un montón de variables, y descargar una versión personaliada</strong> de bootstrap.</li>
+</ul>
+<figure>
+<img src="../img/customize.png" alt="Personalizar desde la página web de bootstrap" /><figcaption>Personalizar desde la página web de bootstrap</figcaption>
+</figure>
+<ul>
+<li>Esta forma es más productiva, pero <strong>sigue siendo bastante manual</strong>, y además no puedes tener un control de cambios eficiente.</li>
+</ul>
+</section><section id="compilar-less" class="slide level2">
+<h2><span class="header-section-number">15.3</span> Compilar Less</h2>
+<ul>
+<li>La forma <strong>más productiva y eficiente</strong> de personalizar bootstrap es <strong>compilando los ficheros Less del core a CSS</strong>.</li>
+</ul>
+</section></section>
+<section><section id="compilar-less-1" class="titleslide slide level1"><h1><span class="header-section-number">16</span> Compilar Less</h1></section><section id="descarga-1" class="slide level2">
+<h2><span class="header-section-number">16.1</span> Descarga</h2>
+<ul>
+<li><p>Para ver <strong>las tripas, y modificarlas (LESS)</strong>, hay que descargar la versión completa:</p>
+<ul>
+<li><a href="https://github.com/twbs/bootstrap/archive/v3.2.0.zip">https://github.com/twbs/bootstrap/archive/v3.2.0.zip</a></li>
+</ul></li>
+</ul>
+<pre><code>bootstrap/
+├── less/
+├── js/
+├── fonts/
+├── dist/
+│   ├── css/
+│   ├── js/
+│   └── fonts/
+└── docs/
+    └── examples/</code></pre>
+</section><section id="entorno" class="slide level2">
+<h2><span class="header-section-number">16.2</span> Entorno</h2>
+<ul>
+<li>Si queremos modificar el core (LESS), necesitamos:
+<ul>
+<li>intalar <strong>NodeJS</strong>,</li>
+<li>luego <strong>Grunt</strong></li>
+<li>y para terminar instalar las <strong>dependencias</strong>.</li>
+</ul></li>
+</ul>
+</section><section id="nodejs" class="slide level2">
+<h2><span class="header-section-number">16.3</span> NodeJS</h2>
+<ul>
+<li><p>NodeJS nos permite ejecutar <strong>JavaScript del lado del servidor</strong>.</p></li>
+<li>Para <strong>instalar NodeJS</strong>, hay que seguir las instrucciones de instalación de la página oficial para cada sistema operativo:
+<ul>
+<li><a href="http://nodejs.org">http://nodejs.org</a></li>
+</ul></li>
+</ul>
+</section><section id="grunt" class="slide level2">
+<h2><span class="header-section-number">16.4</span> Grunt</h2>
+<ul>
+<li><p>Grunt es un <strong>automatizador de tareas</strong> que se ejecuta sobre NodeJS.</p></li>
+<li><p>Una vez instalado NodeJS, <strong>hay que instalar Grunt desde el gestor de paquetes de node (npm)</strong> ejecutando en un terminal, como administrador, el siguiente comando:</p></li>
+</ul>
+<pre><code>$ npm install -g grunt-cli</code></pre>
+</section><section id="dependencias" class="slide level2">
+<h2><span class="header-section-number">16.5</span> Dependencias</h2>
+<ul>
+<li><p>Una vez instalado NodeJS y Grunt, hay que <strong>instalar las dependencias de bootstrap</strong>.</p></li>
+<li><p>Para ello hay que situarse en la carpeta de bootstrap y ejecutar:</p></li>
+</ul>
+<pre><code>../bootstrap$npm install</code></pre>
+</section><section id="default" class="slide level2">
+<h2><span class="header-section-number">16.6</span> Default</h2>
+<ul>
+<li>Si queremos lanzar <strong>todas las tareas por defecto de grunt</strong> (compilar, minificar, pasar los test, generar documentación...) tenemos que ejecutar lo siguiente</li>
+</ul>
+<pre><code>$ grunt</code></pre>
+</section><section id="dist" class="slide level2">
+<h2><span class="header-section-number">16.7</span> Dist</h2>
+<ul>
+<li>Si lo único que queremos es <strong>compilar y minificar el CSS y el JavaScript</strong>, tenemos que ejecutar lo siguiente:</li>
+</ul>
+<pre><code>$ grunt dist</code></pre>
+</section><section id="watch" class="slide level2">
+<h2><span class="header-section-number">16.8</span> Watch</h2>
+<ul>
+<li>También podemos <strong>recompilar automaticamente los ficheros Less a CSS cuando salvas los cambios</strong>, ejecutando el siguiente comando:</li>
+</ul>
+<pre><code>$ grunt watch</code></pre>
+<ul>
+<li>El problema es que <strong>sólo recompila ficheros Less a CSS, no los minifica</strong>.</li>
+</ul>
+</section><section id="personalizar" class="slide level2">
+<h2><span class="header-section-number">16.9</span> Personalizar</h2>
+<ul>
+<li>Uno de los ficheros que más se personaliza es <strong>/bootstrap/less/variables.less</strong>, pues en él están las variables más importantes que usa bootstrap.</li>
+</ul>
+</section></section>
+<section><section id="acerca-de" class="titleslide slide level1"><h1><span class="header-section-number">17</span> Acerca de</h1></section><section id="licencia" class="slide level2">
+<h2><span class="header-section-number">17.1</span> Licencia</h2>
+<ul>
+<li>Estas <strong>transparencias</strong> están hechas con:
+<ul>
+<li>MarkdownSlides: <a href="https://github.com/asanzdiego/markdownslides">https://github.com/asanzdiego/markdownslides</a></li>
+</ul></li>
+<li>Estas <strong>transparencias</strong> están bajo una licencia Creative Commons Reconocimiento-CompartirIgual 3.0:
+<ul>
+<li><a href="http://creativecommons.org/licenses/by-sa/3.0/es">http://creativecommons.org/licenses/by-sa/3.0/es</a></li>
+</ul></li>
+</ul>
+</section><section id="fuentes" class="slide level2">
+<h2><span class="header-section-number">17.2</span> Fuentes</h2>
+<ul>
+<li>Transparencias:
+<ul>
+<li><a href="https://github.com/asanzdiego/curso-interfaces-web-2014/05-bootstrap/slides">https://github.com/asanzdiego/curso-interfaces-web-2014/05-bootstrap/slides</a></li>
+</ul></li>
+<li>Código:
+<ul>
+<li><a href="https://github.com/asanzdiego/curso-interfaces-web-2014/05-bootstrap/src">https://github.com/asanzdiego/curso-interfaces-web-2014/05-bootstrap/src</a></li>
+</ul></li>
+</ul>
+</section><section id="bibliografía" class="slide level2">
+<h2><span class="header-section-number">17.3</span> Bibliografía</h2>
+<ul>
+<li>Página oficial de Bootstrap:
+<ul>
+<li><a href="http://getbootstrap.com">http://getbootstrap.com</a></li>
+</ul></li>
+<li>Bootstrap sí, pero no
+<ul>
+<li><a href="http://bruno.garciaechegaray.com/Bootstrap.The.Melee/presentation">http://bruno.garciaechegaray.com/Bootstrap.The.Melee/presentation</a></li>
+</ul></li>
+<li>Ventajas y desventajas de usar Bootstrap
+<ul>
+<li><a href="http://jorgelessin.com/ventajas-y-desventajas-de-usar-bootstrap">http://jorgelessin.com/ventajas-y-desventajas-de-usar-bootstrap</a></li>
+</ul></li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="../lib/reveal.js-master/lib/js/head.min.js"></script>
+  <script src="../lib/reveal.js-master/js/reveal.min.js"></script>
+
+  <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+      });
+    </script>
+  </body>
+</html>

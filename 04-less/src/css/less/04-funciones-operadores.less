@@ -1,0 +1,11 @@
+@borde:	1em;
+@color:	red;
+
+h1 {
+	background:	@color;
+	border: (@borde + 0.1em) solid darken(@color, 20%);
+}
+p {
+	background:	lighten(@color, 30%);
+	border: (@borde - 0.1em) solid @color;
+}

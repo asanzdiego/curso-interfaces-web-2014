@@ -1,0 +1,218 @@
+/* Author: bruno@garciaechegaray.com */
+
+/* ### RESET ###*/
+ul, li, p {
+	margin: 0;
+	padding:0; 
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
+ }
+
+/* ### MIXINS ### */
+.mx_blocks {
+	width: 100%;
+	height: @var_blocks_height;
+	margin-bottom: @var_blocks_margin;	
+	transition: all .2s ease;
+}
+
+/*### VARS ###*/
+@var_max_width: 1280px;
+@var_blocks_height: 5em;
+@var_blocks_margin: 1em;
+@var_color_red: #ff0000;
+@var_color_yellow: #ffff00;
+@var_color_orange: #ffa500;
+@var_color_green: #008000;
+@var_color_pink: #ffc0cb;
+@var_color_blue: #0000ff;
+
+/*### COMMONS ###*/
+.wrapper {
+	position: relative;
+	max-width: @var_max_width;
+	margin: 0 auto;
+}
+
+header {
+	background-color: @var_color_red;
+	height: (@var_blocks_height / 2) !important;
+}
+
+.main {	
+	li {
+		position: relative;
+		background-color: @var_color_yellow;		
+
+		span {
+		 	position: absolute;
+		 	top: 50%;
+		 	left: 50%;
+		}
+	}
+}
+
+.outstanding {
+	background-color: @var_color_orange;
+}
+
+aside {
+	background-color: @var_color_green;	
+}
+
+.secondary {
+	background-color: @var_color_pink;
+}
+
+footer {
+	background-color: @var_color_blue;
+}
+
+/*blocks*/
+header, aside, footer, 
+.main, .outstanding, .secondary {
+	.mx_blocks;
+}
+
+/*clearfix*/
+.clearfix {
+    *zoom: 1;
+	
+	&:before,
+	&:after {
+	    content: " "; 
+	    display: table; 
+	}
+
+	&:after {
+	    clear: both;
+	}
+
+}
+
+/*### BREAKPOINTS ###*/
+
+/*mobile*/
+@media only screen and (max-width: 480px) {
+
+}
+
+/*mobile & tablet*/
+@media only screen and (max-width: 1023px) {
+
+    li {
+    	display: none;
+
+		&:first-child {
+			.mx_blocks;	
+			display: block;
+    	};    	
+    }
+}    	
+
+/*tablet*/
+@media only screen and (min-width:481px) and (max-width:1023px) {
+
+	.wrapper {
+		/* OLD - iOS 6-, Safari 3.1-6 */
+		display: -webkit-box;      
+		/* OLD - Firefox 19 (buggy but mostly works) */
+		display: -moz-box; 			
+		/* TWEENER - IE 10 */		
+		display: -ms-flexbox;      
+		/* NEW - Chrome */
+		display: -webkit-flex;
+		display: flex;
+
+    	-webkit-flex-direction: column;
+    	-ms-flex-direction: column;
+    	flex-direction: column;
+	}
+
+	.wrapper-outstanding { 
+		float: left;
+		width: 100%;
+		order: 1;
+
+		.outstanding {
+			width: 69%;
+			float: left;
+		}
+
+		aside {
+			width: 29%;
+			float: right;
+		}		
+	}
+
+	.main {
+		float: right;
+		order: 2;
+	}
+
+	.secondary {
+		height: (@var_blocks_height * 3);
+		order: 3;		
+	}    
+
+	footer {
+		order: 4;
+	}
+}
+
+/*desktop*/
+@media only screen and (min-width: 1024px) {
+
+	.main {
+	    li {
+			width: 50%;
+			float: left;
+			height: (@var_blocks_height * 2);
+			border-bottom: solid 10px #fff;
+			list-style-type: none;
+
+		&:nth-child(2n+1) {
+		 		border-right: solid 10px #fff;
+			}			
+	    }
+	}
+
+    .outstanding {
+    	position: absolute;
+    	top: (@var_blocks_margin * 3);
+    }
+
+    .main, aside {
+    	position: absolute;    	
+    	top: (@var_blocks_margin * 9);
+    }
+
+    .main, .secondary {
+		float: left;
+		width: 79%;
+    }
+
+    .secondary {	
+    	height: (@var_blocks_height * 4);    	
+    	margin-top: (@var_blocks_margin * 25);
+    }    
+
+    aside, footer {
+		position: absolute;    	
+		float: right;
+    	right: 0;
+    	width: 19%;
+    	height: (@var_blocks_height * 3)
+    }
+
+    footer {
+    	position: absolute;
+    	top: (@var_blocks_margin * 25);
+    }
+    
+}
+

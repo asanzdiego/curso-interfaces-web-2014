@@ -1,0 +1,1700 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="generator" content="pandoc" />
+  <meta name="description" content="Less, un preprocesador CSS" />
+  <meta name="author" content="Adolfo Sanz De Diego" />
+  <title>Less, un preprocesador CSS</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/reveal.min.css">
+	<!-- For syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/default.css" id="theme">
+  <!--
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/default.css" id="theme">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/beige.css" id="theme">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/blood.css" id="theme">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/default.css" id="theme">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/moon.css" id="theme">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/night.css" id="theme">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/serif.css" id="theme">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/simple.css" id="theme">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/sky.css" id="theme">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/solarized.css" id="theme">
+  -->
+
+
+	<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+	<link rel="stylesheet" href="../lib/reveal.js-master/css/print/pdf.css" type="text/css" media="print">
+
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/default.css" type="text/css" media="print">
+  <!--
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/default.css" type="text/css" media="print">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/beige.css" type="text/css" media="print">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/blood.css" type="text/css" media="print">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/default.css" type="text/css" media="print">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/moon.css" type="text/css" media="print">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/night.css" type="text/css" media="print">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/serif.css" type="text/css" media="print">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/simple.css" type="text/css" media="print">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/sky.css" type="text/css" media="print">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/solarized.css" type="text/css" media="print">
+  -->
+
+  <!-- Overwrite images -->
+  <style type="text/css">
+    pre {
+      background: rgba(255, 255, 255, 0.9);
+      color: #222;
+    }
+    code {
+      white-space: pre;
+    }
+    .reveal section img {
+      margin: 15px 0px;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.9);
+    }
+    strong {
+      color: #777
+    }
+    a:hover {
+      text-decoration: underline !important;
+    }
+    h1.title {
+      font-size: 350% !important;
+    }
+    h1 {
+      font-size: 250% !important;
+    }
+    h2 {
+      font-size: 150% !important;
+    }
+    h3 {
+      font-size: 100% !important;
+    }
+    @media print { 
+      #only-print-parent { display: table !important; } 
+      #only-print-child { display: table-cell !important; vertical-align: middle;}
+      h1.title { font-size: 400% !important;}
+      h1 { font-size: 300% !important; }
+      h2 { font-size: 200% !important; }
+      h3 { font-size: 150% !important; }
+    }
+  </style>
+
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="only-print-parent">
+    <div id="only-print-child">
+      <h1 class="title">Less, un preprocesador CSS</h2>
+      <h2 class="author">Adolfo Sanz De Diego</h2>
+      <h3 class="date">Septiembre 2014</h3>
+    </div>
+</section>
+
+<section><section id="el-autor" class="titleslide slide level1"><h1><span class="header-section-number">1</span> El autor</h1></section><section id="adolfo-sanz-de-diego" class="slide level2">
+<h2><span class="header-section-number">1.1</span> Adolfo Sanz De Diego</h2>
+<ul>
+<li><p><strong>Antiguo programador web JEE (6 años)</strong></p></li>
+<li><p>Hoy en día:</p>
+<ul>
+<li><strong>Profesor de FP (6 años)</strong>:
+<ul>
+<li>Hardware, Sistemas Operativos</li>
+<li>Redes, Programación</li>
+</ul></li>
+<li><strong>Formador Freelance (3 años)</strong>:
+<ul>
+<li>Java, Android</li>
+<li>JavaScript, jQuery</li>
+<li>JSF, Spring, Hibernate</li>
+<li>Groovy &amp; Grails</li>
+</ul></li>
+</ul></li>
+</ul>
+</section><section id="algunos-proyectos" class="slide level2">
+<h2><span class="header-section-number">1.2</span> Algunos proyectos</h2>
+<ul>
+<li><p>Fundador y/o creador:</p>
+<ul>
+<li><strong>Hackathon Lovers</strong>: <a href="http://hackathonlovers.com">http://hackathonlovers.com</a></li>
+<li><strong>Tweets Sentiment</strong>: <a href="http://tweetssentiment.com">http://tweetssentiment.com</a></li>
+<li><strong>MarkdownSlides</strong>: <a href="https://github.com/asanzdiego/markdownslides">https://github.com/asanzdiego/markdownslides</a></li>
+</ul></li>
+<li><p>Co-fundador y/o co-creador:</p>
+<ul>
+<li><strong>PeliTweets</strong>: <a href="http://pelitweets.com">http://pelitweets.com</a></li>
+<li><strong>Password Manager Generator</strong>: <a href="http://pasmangen.github.io">http://pasmangen.github.io</a></li>
+</ul></li>
+</ul>
+</section><section id="donde-encontrarme" class="slide level2">
+<h2><span class="header-section-number">1.3</span> ¿Donde encontrarme?</h2>
+<ul>
+<li><p>Mi nick: <strong>asanzdiego</strong></p>
+<ul>
+<li>AboutMe: <a href="http://about.me/asanzdiego">http://about.me/asanzdiego</a></li>
+<li>GitHub: <a href="http://github.com/asanzdiego">http://github.com/asanzdiego</a></li>
+<li>Twitter: <a href="http://twitter.com/asanzdiego">http://twitter.com/asanzdiego</a></li>
+<li>Blog: <a href="http://asanzdiego.blogspot.com.es">http://asanzdiego.blogspot.com.es</a></li>
+<li>LinkedIn: <a href="http://www.linkedin.com/in/asanzdiego">http://www.linkedin.com/in/asanzdiego</a></li>
+<li>Google+: <a href="http://plus.google.com/+AdolfoSanzDeDiego">http://plus.google.com/+AdolfoSanzDeDiego</a></li>
+</ul></li>
+</ul>
+</section></section>
+<section><section id="introducción" class="titleslide slide level1"><h1><span class="header-section-number">2</span> Introducción</h1></section><section id="qué-es" class="slide level2">
+<h2><span class="header-section-number">2.1</span> ¿Qué es?</h2>
+<ul>
+<li><p>Less es un <strong>pre-procesador de CSS</strong>.</p></li>
+<li><p>Añade características como <strong>variables, mixins, funciones, etc</strong>.</p></li>
+</ul>
+</section><section id="ventajas" class="slide level2">
+<h2><span class="header-section-number">2.2</span> Ventajas</h2>
+<ul>
+<li><p>El CSS es así <strong>más fácil de mantener, personalizable y extensible</strong>.</p></li>
+<li><p>Less (con respecto a otros pre-procesadores CSS) tiene una <strong>sintaxis parecida a CSS</strong>.</p></li>
+</ul>
+</section><section id="características" class="slide level2">
+<h2><span class="header-section-number">2.3</span> Características</h2>
+<ul>
+<li><p>Less se puede ejecutar <strong>desde NodeJS, desde un navegador, o desde Rhino</strong>.</p></li>
+<li><p>Además <strong>existen muchas herramientas</strong> que permiten compilar los archivos y ver los cambios en caliente.</p></li>
+</ul>
+</section></section>
+<section><section id="usando-less" class="titleslide slide level1"><h1><span class="header-section-number">3</span> Usando Less</h1></section><section id="instalación" class="slide level2">
+<h2><span class="header-section-number">3.1</span> Instalación</h2>
+<ul>
+<li>La forma más sencilla de instalar Less, es <strong>a través de la npm</strong>, el gestor de paquetes de NodeJS:</li>
+</ul>
+<pre><code>$ npm install -g less</code></pre>
+</section><section id="línea-de-comandos" class="slide level2">
+<h2><span class="header-section-number">3.2</span> Línea de comandos</h2>
+<ul>
+<li>Una vez instalado, se puede compilar desde la línea de comandos:</li>
+</ul>
+<pre><code>$ lessc styles.less &gt; styles.css</code></pre>
+</section><section id="desde-nodejs-i" class="slide level2">
+<h2><span class="header-section-number">3.3</span> Desde NodeJS (I)</h2>
+<ul>
+<li>El siguiente código:</li>
+</ul>
+<pre><code>var less = require(&#39;less&#39;);
+
+less.render(
+  &#39;.class { width: (1 + 1) }&#39;,
+  function (e, css) {
+    console.log(css);
+  }
+);</code></pre>
+</section><section id="desde-nodejs-ii" class="slide level2">
+<h2><span class="header-section-number">3.4</span> Desde NodeJS (II)</h2>
+<ul>
+<li>Sacará por pantalla:</li>
+</ul>
+<pre><code>.class {
+  width: 2;
+}</code></pre>
+</section><section id="con-rhino" class="slide level2">
+<h2><span class="header-section-number">3.5</span> Con Rhino</h2>
+<ul>
+<li><strong>Rhino te permite usar JavaScript desde una Máquina Virtual de Java</strong></li>
+</ul>
+<pre><code>java -jar js.jar 
+     -f less-rhino-&lt;version&gt;.js
+     lessc-rhino-&lt;version&gt;.js
+     styles.less styles.css</code></pre>
+</section><section id="desde-el-navegador-i" class="slide level2">
+<h2><span class="header-section-number">3.6</span> Desde el navegador (I)</h2>
+<ul>
+<li><p>Es la forma más fácil para empezar, pero <strong>no es recomendable usarlo así en producción</strong>.</p></li>
+<li><p><strong>Se recomienda pre-compilar</strong> usando NodeJS, Rhino, o una de las muchas herramientas de terceros disponibles.</p></li>
+</ul>
+</section><section id="desde-el-navegador-ii" class="slide level2">
+<h2><span class="header-section-number">3.7</span> Desde el navegador (II)</h2>
+<ul>
+<li>Enlazar tu archivo less que quieras precompilar:</li>
+</ul>
+<pre><code>&lt;link rel=&quot;stylesheet/less&quot;
+     type=&quot;text/css&quot;
+     href=&quot;styles.less&quot; /&gt;</code></pre>
+</section><section id="desde-el-navegador-ii-1" class="slide level2">
+<h2><span class="header-section-number">3.8</span> Desde el navegador (II)</h2>
+<ul>
+<li><p>Descargar: <a href="https://github.com/less/less.js/archive/master.zip">https://github.com/less/less.js/archive/master.zip</a></p></li>
+<li><p>Enlazar el js de less:</p></li>
+</ul>
+<pre><code>&lt;script src=&quot;less.js&quot;
+       type=&quot;text/javascript&quot;&gt;
+&lt;/script&gt;</code></pre>
+</section><section id="desde-el-navegador-iii" class="slide level2">
+<h2><span class="header-section-number">3.9</span> Desde el navegador (III)</h2>
+<ul>
+<li><strong>Consejos</strong>;
+<ul>
+<li>Enlaza tus archivos a precompilar antes que la librería de less.</li>
+<li>Si hay más de un archivo a precompilar, estos se compilan de forma independiente.</li>
+</ul></li>
+</ul>
+</section></section>
+<section><section id="características-1" class="titleslide slide level1"><h1><span class="header-section-number">4</span> Características</h1></section><section id="variables-i" class="slide level2">
+<h2><span class="header-section-number">4.1</span> Variables (I)</h2>
+<ul>
+<li>El siguiente código:</li>
+</ul>
+<pre><code>@nice-blue: #5B83AD;
+@light-blue: @nice-blue + #111;
+
+#header {
+  color: @light-blue;
+}</code></pre>
+</section><section id="variables-ii" class="slide level2">
+<h2><span class="header-section-number">4.2</span> Variables (II)</h2>
+<ul>
+<li>Les compila a:</li>
+</ul>
+<pre><code>#header {
+  color: #6c94be;
+}</code></pre>
+<ul>
+<li>Nota: las variables <strong>son en realidad &quot;constantes&quot; ya que sólo pueden ser definidas una vez</strong>.</li>
+</ul>
+</section><section id="extend" class="slide level2">
+<h2><span class="header-section-number">4.3</span> Extend</h2>
+<ul>
+<li>Son una forma de <strong>herencia</strong>:</li>
+</ul>
+<pre><code>.animal {
+  background-color: black;
+  color: white;
+}
+.bear {
+  &amp;:extend(.animal);
+  background-color: brown;
+}</code></pre>
+</section><section id="mixins-i" class="slide level2">
+<h2><span class="header-section-number">4.4</span> Mixins (I)</h2>
+<ul>
+<li><p>Los Mixins son una forma de <strong>reutilizar propiedades ya definidas</strong>:</p></li>
+<li><p>Imaginemos la clase .bordered:</p></li>
+</ul>
+<pre><code>.bordered {
+  border-top: dotted 1px black;
+  border-bottom: solid 2px black;
+}</code></pre>
+</section><section id="mixins-ii" class="slide level2">
+<h2><span class="header-section-number">4.5</span> Mixins (II)</h2>
+<ul>
+<li>Lo podemos usar así:</li>
+</ul>
+<pre><code>#menu a {
+  color: #111;
+  .bordered;
+}
+
+.post a {
+  color: red;
+  .bordered;
+}</code></pre>
+<ul>
+<li>Nota: <strong>Además de clases, también se pueden utilizar #ids como mixins</strong>.</li>
+</ul>
+</section><section id="reglas-anidadas-i" class="slide level2">
+<h2><span class="header-section-number">4.6</span> Reglas anidadas (I)</h2>
+<ul>
+<li>Supongamos que tenemos el siguiente CSS:</li>
+</ul>
+<pre><code>#header {
+  color: black;
+}
+#header a {
+  color: blue;
+}
+#header a:hover {
+  color: red;
+}</code></pre>
+</section><section id="reglas-anidadas-ii" class="slide level2">
+<h2><span class="header-section-number">4.7</span> Reglas anidadas (II)</h2>
+<ul>
+<li>Pues con Less se puede escribir así:</li>
+</ul>
+<pre><code>#header {
+  color: black;
+  a {
+    color: blue;
+    &amp;:hover {
+      color: red;
+    }
+  }
+}</code></pre>
+<ul>
+<li><strong>Se pueden usar pseudo-elementos, y llamar al selector padre actual, con &amp;</strong>:</li>
+</ul>
+</section><section id="medias-queries-anidadas-i" class="slide level2">
+<h2><span class="header-section-number">4.8</span> Medias Queries anidadas (I)</h2>
+<ul>
+<li>El siguiente código:</li>
+</ul>
+<pre><code>@media screen {
+ .screencolor { color: green; }
+}
+@media screen and (min-width: 768px) {
+ .screencolor { color: red; }
+}
+@media tv {
+ .screencolor { color: black; }
+}</code></pre>
+</section><section id="medias-queries-anidadas-ii" class="slide level2">
+<h2><span class="header-section-number">4.9</span> Medias Queries anidadas (II)</h2>
+<ul>
+<li>Se podría escribir:</li>
+</ul>
+<pre><code>.screencolor{
+  @media screen {
+    color: green;
+    @media (min-width:768px) {
+      color: red;
+    }
+  }
+  @media tv {
+    color: black;
+  }
+}</code></pre>
+</section><section id="operaciones-i" class="slide level2">
+<h2><span class="header-section-number">4.10</span> Operaciones (I)</h2>
+<ul>
+<li><p>Less puede hacer operaciones con números, colores o variables.</p></li>
+<li><p>Además <strong>sabe diferenciar cuando es un número o un color</strong>.</p></li>
+</ul>
+</section><section id="operaciones-ii" class="slide level2">
+<h2><span class="header-section-number">4.11</span> Operaciones (II)</h2>
+<pre><code>@base: 5%;
+@filler: @base * 2;
+@other: @base + @filler;
+@base-color: #888 / 4;
+
+background-color: @base-color + #111;
+height: 100% / 2 + @other;</code></pre>
+</section><section id="funciones" class="slide level2">
+<h2><span class="header-section-number">4.12</span> Funciones</h2>
+<ul>
+<li>Less dispone de una variedad de <strong>funciones matemáticas, que manipulan cadenas, y que transforman los colores</strong>:</li>
+</ul>
+<pre><code>@base: #f04615;
+@list: 200, 500, 1200;
+
+.class {
+  width: extract(@list, 3);
+  color: saturate(@base, 5%);
+  background-color:
+    lighten(@base, 25%);
+}</code></pre>
+</section><section id="namespaces-i" class="slide level2">
+<h2><span class="header-section-number">4.13</span> Namespaces (I)</h2>
+<ul>
+<li>A veces, podemos querer <strong>agrupar mixins</strong>, por motivos de organización, o simplemente para encapsularlos.</li>
+</ul>
+</section><section id="namespaces-ii" class="slide level2">
+<h2><span class="header-section-number">4.14</span> Namespaces (II)</h2>
+<ul>
+<li>Veamos como podemos agrupar varios mixins:</li>
+</ul>
+<pre><code>#bundle {
+  .button {
+    border: 1px solid black;
+    background-color: grey;
+  }
+  .tab { ... }
+  .citation { ... }
+}</code></pre>
+</section><section id="namespaces-iii" class="slide level2">
+<h2><span class="header-section-number">4.15</span> Namespaces (III)</h2>
+<ul>
+<li>Ahora podemos utilizar el mixin .button que está en el namespace #bundle de esta forma:</li>
+</ul>
+<pre><code>#header a {
+  color: orange;
+  #bundle &gt; .button;
+}</code></pre>
+</section><section id="scope" class="slide level2">
+<h2><span class="header-section-number">4.16</span> Scope</h2>
+<ul>
+<li>Los <strong>ámbitos de las variables</strong> en Less es muy similar a otros lenguajes:</li>
+</ul>
+<pre><code>@var: red;
+
+#page {
+  @var: white;
+  #header {
+    color: @var; // white
+  }
+}</code></pre>
+</section><section id="comentarios" class="slide level2">
+<h2><span class="header-section-number">4.17</span> Comentarios</h2>
+<ul>
+<li>Con //... y con /* ... */</li>
+</ul>
+<pre><code>/* One hell of a block
+style comment! */
+@var: red;
+
+// Get in line!
+@var: white;</code></pre>
+</section><section id="imports" class="slide level2">
+<h2><span class="header-section-number">4.18</span> Imports</h2>
+<pre><code>// foo.less is imported
+@import &quot;foo&quot;;
+
+// foo.less is imported
+@import &quot;foo.less&quot;;
+
+// foo.php imported as a less file
+@import &quot;foo.php&quot;;
+
+// foo.css imported as a css file
+@import &quot;foo.css&quot;;</code></pre>
+</section></section>
+<section><section id="variables" class="titleslide slide level1"><h1><span class="header-section-number">5</span> Variables</h1></section><section id="por-qué-i" class="slide level2">
+<h2><span class="header-section-number">5.1</span> ¿Por qué? (I)</h2>
+<ul>
+<li>Las variables se usan <strong>para no tener que repetir constantemente los mismos valores</strong>, con lo que se consigue además un código más fácil de mantener:</li>
+</ul>
+<pre><code>a,
+.link {
+  color: #428bca;
+}
+.widget {
+  color: #fff;
+  background: #428bca;
+}</code></pre>
+</section><section id="por-qué-ii" class="slide level2">
+<h2><span class="header-section-number">5.2</span> ¿Por qué? (II)</h2>
+<ul>
+<li>Con Less quedaría:</li>
+</ul>
+<pre><code>@color: #428bca
+
+a,
+.link {
+  color: @color;
+}
+.widget {
+  color: #fff;
+  background: @color;
+}</code></pre>
+</section><section id="selectores-i" class="slide level2">
+<h2><span class="header-section-number">5.3</span> Selectores (I)</h2>
+<ul>
+<li>También se pueden usar <strong>como selectores</strong>:</li>
+</ul>
+<pre><code>@mySelector: banner;
+
+.@{mySelector} {
+  font-weight: bold;
+  line-height: 40px;
+  margin: 0 auto;
+}</code></pre>
+</section><section id="selectores-ii" class="slide level2">
+<h2><span class="header-section-number">5.4</span> Selectores (II)</h2>
+<ul>
+<li>Compilado con Less quedaría:</li>
+</ul>
+<pre><code>.banner {
+  font-weight: bold;
+  line-height: 40px;
+  margin: 0 auto;
+}</code></pre>
+</section><section id="urls" class="slide level2">
+<h2><span class="header-section-number">5.5</span> URLs</h2>
+<ul>
+<li>También se pueden <strong>usar URLs</strong>:</li>
+</ul>
+<pre><code>@images: &quot;../img&quot;;
+
+body {
+  color: #444;
+  background: url(&quot;@{images}/white-sand.png&quot;);
+}</code></pre>
+</section><section id="propiedades-i" class="slide level2">
+<h2><span class="header-section-number">5.6</span> Propiedades (I)</h2>
+<ul>
+<li>También se pueden usar <strong>como propiedades</strong>:</li>
+</ul>
+<pre><code>@property: color;
+
+.widget {
+  @{property}: #0ee;
+  background-@{property}: #999;
+}</code></pre>
+</section><section id="propiedades-ii" class="slide level2">
+<h2><span class="header-section-number">5.7</span> Propiedades (II)</h2>
+<ul>
+<li>Compilado con Less quedaría:</li>
+</ul>
+<pre><code>.widget {
+  color: #0ee;
+  background-color: #999;
+}</code></pre>
+</section><section id="nombres-de-las-variables-i" class="slide level2">
+<h2><span class="header-section-number">5.8</span> Nombres de las variables (I)</h2>
+<ul>
+<li>También se pueden usar variables <strong>como nombres de otras variables</strong>:</li>
+</ul>
+<pre><code>@fnord:  &quot;I am fnord.&quot;;
+@var:    &quot;fnord&quot;;
+content: @@var;</code></pre>
+</section><section id="nombres-de-las-variables-ii" class="slide level2">
+<h2><span class="header-section-number">5.9</span> Nombres de las variables (II)</h2>
+<ul>
+<li>Compilado con Less quedaría:</li>
+</ul>
+<pre><code>content: &quot;I am fnord.&quot;;</code></pre>
+</section><section id="carga-perezosa-i" class="slide level2">
+<h2><span class="header-section-number">5.10</span> Carga perezosa (I)</h2>
+<ul>
+<li><p>Las variables <strong>no tienen que ser declaradas antes de ser utilizados</strong>.</p></li>
+<li><p>Eso es válido:</p></li>
+</ul>
+<pre><code>.lazy-eval {
+  width: @var;
+}
+
+@var: @a;
+@a: 9%;</code></pre>
+</section><section id="carga-perezosa-ii" class="slide level2">
+<h2><span class="header-section-number">5.11</span> Carga perezosa (II)</h2>
+<ul>
+<li>Compilado con Less quedaría:</li>
+</ul>
+<pre><code>.lazy-eval {
+  width: 9%;
+}</code></pre>
+</section><section id="ámbitos-i" class="slide level2">
+<h2><span class="header-section-number">5.12</span> Ámbitos (I)</h2>
+<ul>
+<li>Al definir una variable dos veces, <strong>se utiliza la última definición de la variable</strong>:</li>
+</ul>
+<pre><code>@var: 0;
+.class {
+  @var: 1;
+  .brass {
+    @var: 2;
+    three: @var;
+    @var: 3;
+  }
+  one: @var;
+}</code></pre>
+</section><section id="ámbitos-ii" class="slide level2">
+<h2><span class="header-section-number">5.13</span> Ámbitos (II)</h2>
+<ul>
+<li>Compilado con Less quedaría:</li>
+</ul>
+<pre><code>.class {
+  one: 1;
+}
+.class .brass {
+  three: 3;
+}</code></pre>
+</section></section>
+<section><section id="extend-1" class="titleslide slide level1"><h1><span class="header-section-number">6</span> Extend</h1></section><section id="caso-de-uso-i" class="slide level2">
+<h2><span class="header-section-number">6.1</span> Caso de uso (I)</h2>
+<ul>
+<li>Imagino que tenemos lo siguiente:</li>
+</ul>
+<pre><code>.animal {
+  background-color: black;
+  color: white;
+}</code></pre>
+<ul>
+<li>Y queremos tener un subtipo de animal que sobrescriba la propiedad background-color.</li>
+</ul>
+</section><section id="caso-de-uso-ii" class="slide level2">
+<h2><span class="header-section-number">6.2</span> Caso de uso (II)</h2>
+<ul>
+<li>Podemos hacer lo siguiente:</li>
+</ul>
+<pre><code>&lt;a class=&quot;animal bear&quot;&gt;Bear&lt;/a&gt;</code></pre>
+<pre><code>.animal {
+  background-color: black;
+  color: white;
+}
+.bear {
+  background-color: brown;
+}</code></pre>
+</section><section id="caso-de-uso-iii" class="slide level2">
+<h2><span class="header-section-number">6.3</span> Caso de uso (III)</h2>
+<ul>
+<li>O podemos simplificar el html y usar extend:</li>
+</ul>
+<pre><code>&lt;a class=&quot;bear&quot;&gt;Bear&lt;/a&gt;</code></pre>
+<pre><code>.animal {
+  background-color: black;
+  color: white;
+}
+.bear {
+  &amp;:extend(.animal);
+  background-color: brown;
+}</code></pre>
+</section><section id="reduce-el-tamaño-del-css-i" class="slide level2">
+<h2><span class="header-section-number">6.4</span> Reduce el tamaño del CSS (I)</h2>
+<ul>
+<li>Ejemplo de mixin:</li>
+</ul>
+<pre><code>.my-inline-block() {
+    display: inline-block;
+  font-size: 0;
+}
+.thing1 {
+  .my-inline-block;
+}
+.thing2 {
+  .my-inline-block;
+}</code></pre>
+</section><section id="reduce-el-tamaño-del-css-ii" class="slide level2">
+<h2><span class="header-section-number">6.5</span> Reduce el tamaño del CSS (II)</h2>
+<ul>
+<li>Less lo compila a:</li>
+</ul>
+<pre><code>.thing1 {
+  display: inline-block;
+  font-size: 0;
+}
+.thing2 {
+  display: inline-block;
+  font-size: 0;
+}</code></pre>
+</section><section id="reduce-el-tamaño-del-css-iii" class="slide level2">
+<h2><span class="header-section-number">6.6</span> Reduce el tamaño del CSS (III)</h2>
+<ul>
+<li>Con extends:</li>
+</ul>
+<pre><code>.my-inline-block {
+  display: inline-block;
+  font-size: 0;
+}
+.thing1 {
+  &amp;:extend(.my-inline-block);
+}
+.thing2 {
+  &amp;:extend(.my-inline-block);
+}</code></pre>
+</section><section id="reduce-el-tamaño-del-css-iv" class="slide level2">
+<h2><span class="header-section-number">6.7</span> Reduce el tamaño del CSS (IV)</h2>
+<ul>
+<li>Less lo compila a:</li>
+</ul>
+<pre><code>.my-inline-block,
+.thing1,
+.thing2 {
+  display: inline-block;
+  font-size: 0;
+}</code></pre>
+</section></section>
+<section><section id="mixins" class="titleslide slide level1"><h1><span class="header-section-number">7</span> Mixins</h1></section><section id="selectores" class="slide level2">
+<h2><span class="header-section-number">7.1</span> Selectores</h2>
+<ul>
+<li>Se pueden hacer Mixins <strong>tanto con selectores de clase como con selectores de identificación</strong>:</li>
+</ul>
+<pre><code>.a, #b {
+  color: red;
+}
+.mixin-class {
+  .a();
+}
+.mixin-id {
+  #b();
+}</code></pre>
+</section><section id="no-exportar-mixins-i" class="slide level2">
+<h2><span class="header-section-number">7.2</span> No exportar Mixins (I)</h2>
+<ul>
+<li>Si no quieres que el Mixin sea exportado al CSS, <strong>utiliza los paréntesis</strong>:</li>
+</ul>
+<pre><code>.my-mixin {
+  color: black;
+}
+.my-other-mixin() {
+  background: white;
+}
+.class {
+  .my-mixin;
+  .my-other-mixin;
+}</code></pre>
+</section><section id="no-exportar-mixins-ii" class="slide level2">
+<h2><span class="header-section-number">7.3</span> No exportar Mixins (II)</h2>
+<ul>
+<li>Less lo compila a:</li>
+</ul>
+<pre><code>.my-mixin {
+  color: black;
+}
+.class {
+  color: black;
+  background: white;
+}</code></pre>
+</section><section id="pseudo-clases-i" class="slide level2">
+<h2><span class="header-section-number">7.4</span> Pseudo-clases (I)</h2>
+<ul>
+<li>Los Mixins también soportan <strong>pseudo-clases</strong>:</li>
+</ul>
+<pre><code>.my-hover-mixin() {
+  &amp;:hover {
+    border: 1px solid red;
+  }
+}
+button {
+  .my-hover-mixin();
+}</code></pre>
+</section><section id="pseudo-clases-ii" class="slide level2">
+<h2><span class="header-section-number">7.5</span> Pseudo-clases (II)</h2>
+<ul>
+<li>Less lo compila a:</li>
+</ul>
+<pre><code>button:hover {
+  border: 1px solid red;
+}</code></pre>
+</section><section id="namespaces-i-1" class="slide level2">
+<h2><span class="header-section-number">7.6</span> Namespaces (I)</h2>
+<ul>
+<li>Podemos crear un namespace con varios mixins:</li>
+</ul>
+<pre><code>#outer {
+  .inner {
+    color: red;
+  }
+}</code></pre>
+</section><section id="namespaces-ii-1" class="slide level2">
+<h2><span class="header-section-number">7.7</span> Namespaces (II)</h2>
+<ul>
+<li>Para llamar al Mixin, los parentesis, el espacio y el &gt; es opcional, así que se puede hacer de todas estas formas:</li>
+</ul>
+<pre><code>#outer &gt; .inner;
+#outer &gt; .inner();
+#outer .inner;
+#outer .inner();
+#outer.inner;
+#outer.inner();</code></pre>
+</section><section id="important-keyword-i" class="slide level2">
+<h2><span class="header-section-number">7.8</span> !Important keyword (I)</h2>
+<ul>
+<li>Detrás de un Mixin, al compilar pone <strong>todo como importante</strong>:</li>
+</ul>
+<pre><code>.foo () {
+  background: #f5f5f5;
+  color: #fff;
+}
+.unimportant {
+  .foo();
+}
+.important {
+  .foo() !important;
+}</code></pre>
+</section><section id="important-keyword-ii" class="slide level2">
+<h2><span class="header-section-number">7.9</span> !Important keyword (II)</h2>
+<ul>
+<li>Less lo compila a:</li>
+</ul>
+<pre><code>.unimportant {
+  background: #f5f5f5;
+  color: #fff;
+}
+.important {
+  background: #f5f5f5 !important;
+  color: #fff !important;
+}</code></pre>
+</section></section>
+<section><section id="mixins-paramétricos" class="titleslide slide level1"><h1><span class="header-section-number">8</span> Mixins paramétricos</h1></section><section id="parámetros-i" class="slide level2">
+<h2><span class="header-section-number">8.1</span> Parámetros (I)</h2>
+<p>Los Mixins también puede tomar <strong>parámetros</strong>:</p>
+<pre><code>.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
+
+#header {
+  .border-radius(4px);
+}</code></pre>
+</section><section id="parámetros-ii" class="slide level2">
+<h2><span class="header-section-number">8.2</span> Parámetros (II)</h2>
+<ul>
+<li>Less lo compila a:</li>
+</ul>
+<pre><code>#header {
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+}</code></pre>
+</section><section id="valor-por-defecto-i" class="slide level2">
+<h2><span class="header-section-number">8.3</span> Valor por defecto (I)</h2>
+<ul>
+<li>Los Mixins también puede tomar <strong>parámetros con un valor por defecto</strong>:</li>
+</ul>
+<pre><code>.border-radius(@radius: 5px) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
+
+#header {
+  .border-radius;
+}</code></pre>
+</section><section id="valor-por-defecto-ii" class="slide level2">
+<h2><span class="header-section-number">8.4</span> Valor por defecto (II)</h2>
+<ul>
+<li>Less lo compila a:</li>
+</ul>
+<pre><code>#header {
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+}</code></pre>
+</section><section id="parámetros-múltiples-i" class="slide level2">
+<h2><span class="header-section-number">8.5</span> Parámetros múltiples (I)</h2>
+<ul>
+<li><p>Los parámetros <strong>se pueden separar por coma (,) o por punto y coma (;)</strong>.</p></li>
+<li><p>Se recomienda el punto y coma (;).</p></li>
+</ul>
+</section><section id="parámetros-múltiples-ii" class="slide level2">
+<h2><span class="header-section-number">8.6</span> Parámetros múltiples (II)</h2>
+<ul>
+<li><p>La <strong>coma (,) tiene doble sentido: se puede interpretar como un separador de parámetros Mixin o como separador de los elementos de una lista</strong>.</p></li>
+<li><p>Si el compilador encuentra <strong>al menos un punto y coma (;) asume que los argumentos se separan por punto y coma</strong> y los comas pertenecen a listas.</p></li>
+</ul>
+</section><section id="parámetros-múltiples-iii" class="slide level2">
+<h2><span class="header-section-number">8.7</span> Parámetros múltiples (III)</h2>
+<ul>
+<li><strong>.name(1, 2, 3; something, else)</strong>
+<ul>
+<li>2 parámetros, cada uno es una lista</li>
+</ul></li>
+<li><strong>.name(1, 2, 3)</strong>
+<ul>
+<li>3 parámetros, cada uno contiene un número</li>
+</ul></li>
+<li><strong>.name(1, 2, 3;)</strong>
+<ul>
+<li>1 parámetro, que es una lista</li>
+</ul></li>
+<li><strong>.name(<span class="citation" data-cites="param1">@param1</span>: red, blue;)</strong>
+<ul>
+<li>1 parámetro, con una lista como valor predeterminado</li>
+</ul></li>
+</ul>
+</section><section id="parámetros-múltiples-iv" class="slide level2">
+<h2><span class="header-section-number">8.8</span> Parámetros múltiples (IV)</h2>
+<ul>
+<li>Se puede tener varios mixins con <strong>el mismo nombre y el mismo número de parámetros</strong>, pues Less utilizará todos los posibles:</li>
+</ul>
+<pre><code>.mixin(@color) {
+  color: @color;
+}
+.mixin(@color; @padding:2) {
+  padding: @padding;
+}
+.mixin(@color; @padding; @margin: 2) {
+  margin: @margin;
+}
+.some .selector div {
+  .mixin(#008000);
+}</code></pre>
+</section><section id="parámetros-múltiples-v" class="slide level2">
+<h2><span class="header-section-number">8.9</span> Parámetros múltiples (V)</h2>
+<ul>
+<li>Less lo compila a:</li>
+</ul>
+<pre><code>.some .selector div {
+  color-1: #008000;
+  padding-2: 2;
+}</code></pre>
+</section><section id="parámetros-con-nombres-i" class="slide level2">
+<h2><span class="header-section-number">8.10</span> Parámetros con nombres (I)</h2>
+<ul>
+<li>Se pueden usar <strong>parámetros con nombre</strong>:</li>
+</ul>
+<pre><code>.mixin(  @color: black; 
+        @margin: 10px;
+       @padding: 20px) {
+  ...
+}
+.class1 {
+  .mixin( @margin: 20px;
+           @color: #33acfe);
+}
+.class2 {
+  .mixin( #efca44;
+         @padding: 40px);
+}</code></pre>
+</section><section id="parámetros-con-nombres-ii" class="slide level2">
+<h2><span class="header-section-number">8.11</span> Parámetros con nombres (II)</h2>
+<ul>
+<li>Less lo compila a:</li>
+</ul>
+<pre><code>.class1 {
+  color: #33acfe;
+  margin: 20px;
+  padding: 20px;
+}
+.class2 {
+  color: #efca44;
+  margin: 10px;
+  padding: 40px;
+}</code></pre>
+</section><section id="arguments-i" class="slide level2">
+<h2><span class="header-section-number">8.12</span> <span class="citation" data-cites="arguments">@arguments</span> (I)</h2>
+<ul>
+<li>Podemos coger <strong>todos los parámetros de entrada juntos</strong>:</li>
+</ul>
+<pre><code>.box-shadow(
+  @x: 0;
+  @y: 0;
+  @blur: 1px;
+  @color: #000) {
+
+  -webkit-box-shadow: @arguments;
+     -moz-box-shadow: @arguments;
+          box-shadow: @arguments;
+}
+.big-block {
+  .box-shadow(2px; 5px);
+}</code></pre>
+</section><section id="arguments-ii" class="slide level2">
+<h2><span class="header-section-number">8.13</span> <span class="citation" data-cites="arguments">@arguments</span> (II)</h2>
+<ul>
+<li>Less lo compila a:</li>
+</ul>
+<pre><code>.big-block {
+  -webkit-box-shadow:
+     2px 5px 1px #000;
+  -moz-box-shadow:
+     2px 5px 1px #000;
+  box-shadow:
+     2px 5px 1px #000;
+}</code></pre>
+</section><section id="section" class="slide level2">
+<h2><span class="header-section-number">8.14</span> ...</h2>
+<ul>
+<li>Podemos permitir que el Mixin admita <strong>varios parámetros</strong>:</li>
+</ul>
+<pre><code>// matches 0-N arguments
+.mixin(...) {
+
+// matches exactly 0 arguments
+.mixin() {
+
+// matches 0-1 arguments
+.mixin(@a: 1) {
+
+// matches 0-N arguments
+.mixin(@a: 1; ...) {
+
+// matches 1-N arguments
+.mixin(@a; ...) {</code></pre>
+</section><section id="rest" class="slide level2">
+<h2><span class="header-section-number">8.15</span> <span class="citation" data-cites="rest">@rest</span></h2>
+<ul>
+<li>Coge todos los parámetros de ...:</li>
+</ul>
+<pre><code>.mixin(@a; @rest...) {
+
+   /* @rest recoge todos
+   los parámetros
+   después de @a */
+
+   /* @arguments recoge todos
+   los parámetros
+   (incluido @a) */
+}</code></pre>
+</section><section id="pattern-matching-i" class="slide level2">
+<h2><span class="header-section-number">8.16</span> Pattern matching (I)</h2>
+<ul>
+<li>Si queremos que se ejecute un mixin <strong>dependiendo del valor de una variable</strong>:</li>
+</ul>
+<pre><code>.mixin(dark; @color) {
+  color: darken(@color, 10%);
+}
+.mixin(light; @color) {
+  color: lighten(@color, 10%);
+}
+.mixin(@_; @color) { /* all */
+  display: block;
+}
+
+@switch: light;
+
+.class {
+  .mixin(@switch; #888);
+}</code></pre>
+</section><section id="pattern-matching-ii" class="slide level2">
+<h2><span class="header-section-number">8.17</span> Pattern matching (II)</h2>
+<ul>
+<li>Less lo compila a:</li>
+</ul>
+<pre><code>.class {
+  color: #a2a2a2;
+  display: block;
+}</code></pre>
+</section><section id="mixins-como-funciones-i" class="slide level2">
+<h2><span class="header-section-number">8.18</span> Mixins como Funciones (I)</h2>
+<ul>
+<li>Todas las variables definidas en un mixin son visibles y <strong>pueden ser utilizados en el ámbito de donde es llamado</strong>:</li>
+</ul>
+<pre><code>.mixin() {
+  @width:  100%;
+  @height: 200px;
+}
+
+.caller {
+  .mixin();
+  width:  @width;
+  height: @height;
+}</code></pre>
+</section><section id="mixins-como-funciones-ii" class="slide level2">
+<h2><span class="header-section-number">8.19</span> Mixins como Funciones (II)</h2>
+<ul>
+<li>Less lo compila a:</li>
+</ul>
+<pre><code>.caller {
+  width:  100%;
+  height: 200px;
+}</code></pre>
+</section><section id="mixins-como-funciones-iii" class="slide level2">
+<h2><span class="header-section-number">8.20</span> Mixins como Funciones (III)</h2>
+<ul>
+<li>Otro ejemplo:</li>
+</ul>
+<pre><code>.average(@x, @y) {
+  @average: ((@x + @y) / 2);
+}
+
+div {
+
+  // &quot;call&quot; the mixin
+  .average(16px, 50px);
+
+  // use its &quot;return&quot; value
+  padding: @average;
+}</code></pre>
+</section><section id="mixins-como-funciones-iv" class="slide level2">
+<h2><span class="header-section-number">8.21</span> Mixins como Funciones (IV)</h2>
+<ul>
+<li>Less lo compila a:</li>
+</ul>
+<pre><code>div {
+  padding: 33px;
+}</code></pre>
+</section></section>
+<section><section id="mixins-condicionales" class="titleslide slide level1"><h1><span class="header-section-number">9</span> Mixins Condicionales</h1></section><section id="sintaxis-i" class="slide level2">
+<h2><span class="header-section-number">9.1</span> Sintaxis (I)</h2>
+<ul>
+<li>Muy <strong>parecida a las Media Queries</strong>:</li>
+</ul>
+<pre><code>.mixin (@a)
+  when (lightness(@a) &gt;= 50%) {
+    background-color: black;
+}
+.mixin (@a)
+  when (lightness(@a) &lt; 50%) {
+    background-color: white;
+}
+.mixin (@a) {
+  color: @a;
+}
+.class1 { .mixin(#ddd) }
+.class2 { .mixin(#555) }</code></pre>
+</section><section id="sintaxis-ii" class="slide level2">
+<h2><span class="header-section-number">9.2</span> Sintaxis (II)</h2>
+<ul>
+<li>Less lo compila a:</li>
+</ul>
+<pre><code>.class1 {
+  background-color: black;
+  color: #ddd;
+}
+.class2 {
+  background-color: white;
+  color: #555;
+}</code></pre>
+</section><section id="operadores" class="slide level2">
+<h2><span class="header-section-number">9.3</span> Operadores</h2>
+<ul>
+<li>Se pueden usar los operadores <strong>&gt;, &gt;=, =, =&lt;, &lt;</strong></li>
+</ul>
+<pre><code>@media: mobile;
+
+.mixin (@a)
+  when (@media = mobile) { ... }
+
+.mixin (@a)
+  when (@media = desktop) { ... }
+
+.max (@a; @b)
+  when (@a &gt; @b) { width: @a }
+
+.max (@a; @b)
+  when (@a &lt; @b) { width: @b }</code></pre>
+</section><section id="and" class="slide level2">
+<h2><span class="header-section-number">9.4</span> AND</h2>
+<ul>
+<li>Como en las Media Queries, usando <strong>AND</strong> todas las sentencias se tienen que cumplir:</li>
+</ul>
+<pre><code>.mixin (@a)
+  when (isnumber(@a))
+   and (@a &gt; 0) { ... }</code></pre>
+</section><section id="coma" class="slide level2">
+<h2><span class="header-section-number">9.5</span> COMA (,)</h2>
+<ul>
+<li>Como en las Media Queries, separar sentencias con <strong>comas (,) equivale a un OR</strong>, por lo que se entrará en el Mixin en cuanto se cumpla una de las sentencias:</li>
+</ul>
+<pre><code>.mixin (@a)
+  when (@a &gt; 10), 
+       (@a &lt; -10) { ... }</code></pre>
+</section><section id="not" class="slide level2">
+<h2><span class="header-section-number">9.6</span> NOT</h2>
+<ul>
+<li>Como en las Media Queries, usando <strong>NOT</strong> se niega una sentencia:</li>
+</ul>
+<pre><code>.mixin (@b)
+  when not (@b &gt; 0) { ... }</code></pre>
+</section><section id="comprobar-tipos" class="slide level2">
+<h2><span class="header-section-number">9.7</span> Comprobar tipos</h2>
+<ul>
+<li><p>Tenemos las siguientes funciones para <strong>comprobar tipos</strong>:</p>
+<ul>
+<li>isnumber</li>
+<li>isstring</li>
+<li>iscolor</li>
+<li>iskeyword</li>
+<li>isurl</li>
+</ul></li>
+</ul>
+</section><section id="comprobar-unidades" class="slide level2">
+<h2><span class="header-section-number">9.8</span> Comprobar unidades</h2>
+<ul>
+<li><p>Tenemos las siguientes funciones para <strong>comprobar unidades</strong>:</p>
+<ul>
+<li>ispixel</li>
+<li>isem</li>
+<li>ispercentage</li>
+<li>isunit</li>
+</ul></li>
+</ul>
+</section><section id="loops-i" class="slide level2">
+<h2><span class="header-section-number">9.9</span> Loops (I)</h2>
+<ul>
+<li>Los Mixins se pueden llamar así mismos. Con esta <strong>recursividad</strong> se pueden crear loops:</li>
+</ul>
+<pre><code>.loop(@counter)
+  when (@counter &gt; 0) {
+
+    // next iteration
+    .loop((@counter - 1));
+
+    // code for each iteration
+    width: (10px * @counter);
+}
+
+div {
+  .loop(5); // launch the loop
+}</code></pre>
+</section><section id="loops-ii" class="slide level2">
+<h2><span class="header-section-number">9.10</span> Loops (II)</h2>
+<ul>
+<li>Less lo compila a:</li>
+</ul>
+<pre><code>div {
+  width: 10px;
+  width: 20px;
+  width: 30px;
+  width: 40px;
+  width: 50px;
+}</code></pre>
+</section><section id="loops-iii" class="slide level2">
+<h2><span class="header-section-number">9.11</span> Loops (III)</h2>
+<ul>
+<li>Podríamos hacer un <strong>grid de CSS</strong>:</li>
+</ul>
+<pre><code>.generate-columns(4);
+
+.generate-columns(@n, @i: 1)
+  when (@i =&lt; @n) {
+
+  .column-@{i} {
+    width: (@i * 100% / @n);
+  }
+  .generate-columns(@n, (@i + 1));
+}</code></pre>
+</section><section id="loops-iv" class="slide level2">
+<h2><span class="header-section-number">9.12</span> Loops (IV)</h2>
+<ul>
+<li>Less lo compila a:</li>
+</ul>
+<pre><code>.column-1 {
+  width: 25%;
+}
+.column-2 {
+  width: 50%;
+}
+.column-3 {
+  width: 75%;
+}
+.column-4 {
+  width: 100%;
+}</code></pre>
+</section></section>
+<section><section id="merge" class="titleslide slide level1"><h1><span class="header-section-number">10</span> Merge</h1></section><section id="qué-es-1" class="slide level2">
+<h2><span class="header-section-number">10.1</span> ¿Qué es?</h2>
+<ul>
+<li>Permite <strong>combinar propiedades</strong> con coma (,) o con espacio ( ), en una sola propiedad.</li>
+</ul>
+</section><section id="coma-i" class="slide level2">
+<h2><span class="header-section-number">10.2</span> Coma (I)</h2>
+<ul>
+<li>Ejemplo con coma (,):</li>
+</ul>
+<pre><code>.mixin() {
+  box-shadow+: inset 0 0 10px #555;
+}
+.myclass {
+  .mixin();
+  box-shadow+: 0 0 20px black;
+}</code></pre>
+</section><section id="coma-ii" class="slide level2">
+<h2><span class="header-section-number">10.3</span> Coma (II)</h2>
+<ul>
+<li>Less lo compila a:</li>
+</ul>
+<pre><code>.myclass {
+  box-shadow:
+    inset 0 0 10px #555,
+    0 0 20px black;
+}</code></pre>
+</section><section id="espacio-i" class="slide level2">
+<h2><span class="header-section-number">10.4</span> Espacio (I)</h2>
+<ul>
+<li>Ejemplo con espacio ( ):</li>
+</ul>
+<pre><code>.mixin() {
+  transform+_: scale(2);
+}
+.myclass {
+  .mixin();
+  transform+_: rotate(15deg);
+}</code></pre>
+</section><section id="espacio-ii" class="slide level2">
+<h2><span class="header-section-number">10.5</span> Espacio (II)</h2>
+<ul>
+<li>Less lo compila a:</li>
+</ul>
+<pre><code>.myclass {
+  transform: scale(2) rotate(15deg);
+}</code></pre>
+</section><section id="explicito" class="slide level2">
+<h2><span class="header-section-number">10.6</span> Explicito</h2>
+<ul>
+<li>Para prevenir cualquier join involuntario, merge <strong>requiere que pongas + o +_ de forma explícita</strong> en la declaración de cada uno de los jois.</li>
+</ul>
+</section></section>
+<section><section id="selector-padre" class="titleslide slide level1"><h1><span class="header-section-number">11</span> Selector Padre</h1></section><section id="el-operador-i" class="slide level2">
+<h2><span class="header-section-number">11.1</span> El operador &amp; (I)</h2>
+<ul>
+<li>El <strong>operador &amp; representa el selector padre</strong>, y suele ser usado para modificar clases o usar pseudoclases:</li>
+</ul>
+<pre><code>a {
+  color: blue;
+  &amp;:hover {
+    color: green;
+  }
+}</code></pre>
+</section><section id="el-operador-ii" class="slide level2">
+<h2><span class="header-section-number">11.2</span> El operador &amp; (II)</h2>
+<ul>
+<li>Less locompila a:</li>
+</ul>
+<pre><code>a {
+  color: blue;
+}
+
+a:hover {
+  color: green;
+}</code></pre>
+</section><section id="clases-repetitivas-i" class="slide level2">
+<h2><span class="header-section-number">11.3</span> Clases repetitivas (I)</h2>
+<ul>
+<li>Otro uso, a parte de las pseudoclases, es el de producir nombres de clases repetitivos:</li>
+</ul>
+<pre><code>.button {
+  &amp;-ok {
+    background-image:
+      url(&quot;ok.png&quot;);
+  }
+  &amp;-cancel {
+    background-image:
+      url(&quot;cancel.png&quot;);
+  }
+  &amp;-custom {
+    background-image:
+      url(&quot;custom.png&quot;);
+  }
+}</code></pre>
+</section><section id="clases-repetitivas-ii" class="slide level2">
+<h2><span class="header-section-number">11.4</span> Clases repetitivas (II)</h2>
+<ul>
+<li>Less lo compila a:</li>
+</ul>
+<pre><code>.button-ok {
+  background-image: url(&quot;ok.png&quot;);
+}
+.button-cancel {
+  background-image: url(&quot;cancel.png&quot;);
+}
+.button-custom {
+  background-image: url(&quot;custom.png&quot;);
+}</code></pre>
+</section><section id="multiples-i" class="slide level2">
+<h2><span class="header-section-number">11.5</span> Multiples &amp; (I)</h2>
+<ul>
+<li>Se puede repetir el padre:</li>
+</ul>
+<pre><code>.link {
+  &amp; + &amp; {
+    color: red;
+  }
+  &amp; &amp; {
+    color: green;
+  }
+  &amp;&amp; {
+    color: blue;
+  }
+  &amp;, &amp;ish {
+    color: cyan;
+  }
+}</code></pre>
+</section><section id="multiples-ii" class="slide level2">
+<h2><span class="header-section-number">11.6</span> Multiples &amp; (II)</h2>
+<ul>
+<li>Less lo compila a :</li>
+</ul>
+<pre><code>.link + .link {
+  color: red;
+}
+.link .link {
+  color: green;
+}
+.link.link {
+  color: blue;
+}
+.link, .linkish {
+  color: cyan;
+}</code></pre>
+</section><section id="multiples-iii" class="slide level2">
+<h2><span class="header-section-number">11.7</span> Multiples &amp; (III)</h2>
+<ul>
+<li>Otro ejemplo:</li>
+</ul>
+<pre><code>.grand {
+  .parent {
+    &amp; &gt; &amp; {
+      color: red;
+    }
+    &amp; &amp; {
+      color: green;
+    }
+    &amp;&amp; {
+      color: blue;
+    }
+    &amp;, &amp;ish {
+      color: cyan;
+    }
+  }
+}</code></pre>
+</section><section id="multiples-iv" class="slide level2">
+<h2><span class="header-section-number">11.8</span> Multiples &amp; (IV)</h2>
+<ul>
+<li>Less lo compila a :</li>
+</ul>
+<pre><code>.grand .parent &gt; .grand .parent {
+  color: red;
+}
+.grand .parent .grand .parent {
+  color: green;
+}
+.grand .parent.grand .parent {
+  color: blue;
+}
+.grand .parent, .grand .parentish {
+  color: cyan;
+}</code></pre>
+</section><section id="cambiar-el-orden-i" class="slide level2">
+<h2><span class="header-section-number">11.9</span> Cambiar el orden (I)</h2>
+<ul>
+<li>En algunos caso puede ser util cambiar el orden del hijo con respecto al padre:</li>
+</ul>
+<pre><code>.header {
+  .menu {
+    border-radius: 5px;
+    .no-borderradius &amp; {
+      background-image:
+        url(&#39;img.png&#39;);
+    }
+  }
+}</code></pre>
+</section><section id="cambiar-el-orden-ii" class="slide level2">
+<h2><span class="header-section-number">11.10</span> Cambiar el orden (II)</h2>
+<ul>
+<li>Less lo compila a:</li>
+</ul>
+<pre><code>.header .menu {
+  border-radius: 5px;
+}
+.no-borderradius .header .menu {
+  background-image:
+    url(&#39;img.png&#39;);
+}</code></pre>
+</section><section id="explosión-combinatoria-i" class="slide level2">
+<h2><span class="header-section-number">11.11</span> Explosión combinatoria (I)</h2>
+<ul>
+<li>El operador &amp; puede ser usado para generar todas las posibles permutaciones de los selectores padre:</li>
+</ul>
+<pre><code>a, ul, li {
+  border-top: 2px dotted #366;
+  &amp; + &amp; {
+    border-top: 0;
+  }
+}</code></pre>
+</section><section id="explosión-combinatoria-ii" class="slide level2">
+<h2><span class="header-section-number">11.12</span> Explosión combinatoria (II)</h2>
+<ul>
+<li>Less lo compila a:</li>
+</ul>
+<pre><code>a, ul, li {
+  border-top: 2px dotted #366;
+}
+
+a + a, a + ul, a + li,
+ul + a, ul + ul, ul + li,
+li + a, li + ul, li + li {
+  border-top: 0;
+}</code></pre>
+</section></section>
+<section><section id="funciones-1" class="titleslide slide level1"><h1><span class="header-section-number">12</span> Funciones</h1></section><section id="resumen" class="slide level2">
+<h2><span class="header-section-number">12.1</span> Resumen</h2>
+<ul>
+<li><p><a href="http://lesscss.org/functions/">http://lesscss.org/functions/</a></p>
+<ul>
+<li>Misc Functions</li>
+<li>String Functions</li>
+<li>List Functions</li>
+<li>Math Functions</li>
+<li>Type Functions</li>
+<li>Color Functions</li>
+</ul></li>
+</ul>
+</section><section id="misc-functions" class="slide level2">
+<h2><span class="header-section-number">12.2</span> Misc Functions</h2>
+<ul>
+<li><p><a href="http://lesscss.org/functions/#misc-functions">http://lesscss.org/functions/#misc-functions</a></p>
+<ul>
+<li>color</li>
+<li>convert</li>
+<li>data-uri</li>
+<li>default</li>
+<li>unit</li>
+<li>get-unit</li>
+<li>svg-gradient</li>
+</ul></li>
+</ul>
+</section><section id="string-functions" class="slide level2">
+<h2><span class="header-section-number">12.3</span> String Functions</h2>
+<ul>
+<li><p><a href="http://lesscss.org/functions/#string-functions">http://lesscss.org/functions/#string-functions</a>:</p>
+<ul>
+<li>escape</li>
+<li>e</li>
+<li>% format</li>
+<li>replace</li>
+</ul></li>
+</ul>
+</section><section id="list-functions" class="slide level2">
+<h2><span class="header-section-number">12.4</span> List Functions</h2>
+<ul>
+<li><p><a href="http://lesscss.org/functions/#list-functions">http://lesscss.org/functions/#list-functions</a></p>
+<ul>
+<li>length</li>
+<li>extract</li>
+</ul></li>
+</ul>
+</section><section id="math-functions-i" class="slide level2">
+<h2><span class="header-section-number">12.5</span> Math Functions (I)</h2>
+<ul>
+<li><p><a href="http://lesscss.org/functions/#math-functions">http://lesscss.org/functions/#math-functions</a></p>
+<ul>
+<li>ceil</li>
+<li>floor</li>
+<li>percentage</li>
+<li>round</li>
+<li>sqrt</li>
+<li>abs</li>
+<li>pow</li>
+<li>mod</li>
+<li>min</li>
+<li>max</li>
+</ul></li>
+</ul>
+</section><section id="math-functions-ii" class="slide level2">
+<h2><span class="header-section-number">12.6</span> Math Functions (II)</h2>
+<ul>
+<li><p><a href="http://lesscss.org/functions/#math-functions">http://lesscss.org/functions/#math-functions</a></p>
+<ul>
+<li>sin</li>
+<li>asin</li>
+<li>cos</li>
+<li>acos</li>
+<li>tan</li>
+<li>atan</li>
+<li>pi</li>
+</ul></li>
+</ul>
+</section><section id="type-functions" class="slide level2">
+<h2><span class="header-section-number">12.7</span> Type Functions</h2>
+<ul>
+<li><p><a href="http://lesscss.org/functions/#type-functions">http://lesscss.org/functions/#type-functions</a></p>
+<ul>
+<li>isnumber</li>
+<li>isstring</li>
+<li>iscolor</li>
+<li>iskeyword</li>
+<li>isurl</li>
+<li>ispixel</li>
+<li>isem</li>
+<li>ispercentage</li>
+<li>isunit</li>
+</ul></li>
+</ul>
+</section><section id="color-definition-functions" class="slide level2">
+<h2><span class="header-section-number">12.8</span> Color Definition Functions</h2>
+<ul>
+<li><p><a href="http://lesscss.org/functions/#color-definitions">http://lesscss.org/functions/#color-definitions</a></p>
+<ul>
+<li>rgb</li>
+<li>rgba</li>
+<li>argb</li>
+<li>hsl</li>
+<li>hsla</li>
+<li>hsv</li>
+<li>hsva</li>
+</ul></li>
+</ul>
+</section><section id="color-channel-functions" class="slide level2">
+<h2><span class="header-section-number">12.9</span> Color Channel Functions</h2>
+<ul>
+<li><p><a href="http://lesscss.org/functions/#color-channel">http://lesscss.org/functions/#color-channel</a></p>
+<ul>
+<li>hue</li>
+<li>saturation</li>
+<li>lightness</li>
+<li>hsvhue</li>
+<li>hsvsaturation</li>
+<li>hsvvalue</li>
+<li>red</li>
+<li>green</li>
+<li>blue</li>
+<li>alpha</li>
+<li>luma</li>
+<li>luminance</li>
+</ul></li>
+</ul>
+</section><section id="color-operation-functions" class="slide level2">
+<h2><span class="header-section-number">12.10</span> Color Operation Functions</h2>
+<ul>
+<li><p><a href="http://lesscss.org/functions/#color-operations">http://lesscss.org/functions/#color-operations</a></p>
+<ul>
+<li>saturate</li>
+<li>desaturate</li>
+<li>lighten</li>
+<li>darken</li>
+<li>fadein</li>
+<li>fadeout</li>
+<li>fade</li>
+<li>spin</li>
+<li>mix</li>
+<li>greyscale</li>
+<li>contrast</li>
+</ul></li>
+</ul>
+</section><section id="color-blending-functions" class="slide level2">
+<h2><span class="header-section-number">12.11</span> Color Blending Functions</h2>
+<ul>
+<li><p><a href="http://lesscss.org/functions/#color-blending">http://lesscss.org/functions/#color-blending</a></p>
+<ul>
+<li>multiply</li>
+<li>screen</li>
+<li>overlay</li>
+<li>softlight</li>
+<li>hardlight</li>
+<li>difference</li>
+<li>exclusion</li>
+<li>average</li>
+<li>negation</li>
+</ul></li>
+</ul>
+</section></section>
+<section><section id="acerca-de" class="titleslide slide level1"><h1><span class="header-section-number">13</span> Acerca de</h1></section><section id="licencia" class="slide level2">
+<h2><span class="header-section-number">13.1</span> Licencia</h2>
+<ul>
+<li>Estas <strong>transparencias</strong> están hechas con:
+<ul>
+<li>MarkdownSlides: <a href="https://github.com/asanzdiego/markdownslides">https://github.com/asanzdiego/markdownslides</a></li>
+</ul></li>
+<li>Estas <strong>transparencias</strong> están bajo una licencia Creative Commons Reconocimiento-CompartirIgual 3.0:
+<ul>
+<li><a href="http://creativecommons.org/licenses/by-sa/3.0/es">http://creativecommons.org/licenses/by-sa/3.0/es</a></li>
+</ul></li>
+</ul>
+</section><section id="fuentes" class="slide level2">
+<h2><span class="header-section-number">13.2</span> Fuentes</h2>
+<ul>
+<li>Transparencias:
+<ul>
+<li><a href="https://github.com/asanzdiego/curso-interfaces-web-2014/04-less/slides">https://github.com/asanzdiego/curso-interfaces-web-2014/04-less/slides</a></li>
+</ul></li>
+<li>Código:
+<ul>
+<li><a href="https://github.com/asanzdiego/curso-interfaces-web-2014/01-less/src">https://github.com/asanzdiego/curso-interfaces-web-2014/01-less/src</a></li>
+</ul></li>
+</ul>
+</section><section id="bibliografía" class="slide level2">
+<h2><span class="header-section-number">13.3</span> Bibliografía</h2>
+<ul>
+<li>Documentación oficial de Less
+<ul>
+<li><a href="http://lesscss.org">http://lesscss.org</a></li>
+</ul></li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="../lib/reveal.js-master/lib/js/head.min.js"></script>
+  <script src="../lib/reveal.js-master/js/reveal.min.js"></script>
+
+  <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+      });
+    </script>
+  </body>
+</html>

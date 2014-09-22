@@ -1,0 +1,23 @@
+body {
+  margin: 0 auto;
+  font-size: 16px;
+  max-width: 1024px;
+}
+
+article {
+  width: 70%;
+  background-color: blue;
+  float: left;
+  padding: 1em;
+  font-size: 1.2em;
+  box-sizing: border-box; /* tiene en cuenta el pading y el borde, pero no el margin */
+}
+
+aside {
+  width: 30%;
+  background-color: red;
+  float: right;
+  padding: 1em;
+  font-size: 1em;
+  box-sizing: border-box; /* tiene en cuenta el pading y el borde, pero no el margin */
+}

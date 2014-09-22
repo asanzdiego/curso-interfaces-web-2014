@@ -1,0 +1,6 @@
+span {
+  position: absolute;
+  left: -9999em;
+  width: 1px;
+  overflow: hidden;
+}

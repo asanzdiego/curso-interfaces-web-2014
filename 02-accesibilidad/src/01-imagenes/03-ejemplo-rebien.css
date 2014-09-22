@@ -1,0 +1,8 @@
+ul {
+  list-style-image: url(./img/logo.png);
+  padding-left: 25px;
+}
+
+strong {
+  font-size: 2em
+}

@@ -1,0 +1,181 @@
+@import url('http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300');
+
+body {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+}
+
+h1 {
+    font-weight: 200;
+    padding-bottom: 0.5em;   
+}
+
+h2 {
+    font-weight: 100;
+    color: #cc0000;
+}
+
+h3 {
+    color: #cc0000;
+}
+
+.jumbotron {
+    background: none;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 0 30px;
+}
+
+.jumbotron p.lead {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.jumbotron img {
+    max-width: 100%;
+}
+
+.btn.btn-start {
+    background: rgba(202, 0, 0, 0.6);
+    border: 4px solid #ca0000;
+    color: #fff;
+    padding: 0.3em;
+    font-size: 2em;
+    font-weight: bold;
+    z-index: 2;
+    text-transform: uppercase;
+}
+
+.btn.btn-start:hover {
+    background: rgba(202, 0, 0, 0.6);
+    color: #333;
+}
+
+section {
+    padding-top: 3em;
+    padding-bottom: 3em;
+    width: 100%;
+    min-width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+}
+
+section h1{
+    color: #333;
+}
+
+img {
+    max-width: 100%;
+}
+
+.color-white {
+    color: #fff;
+    text-shadow: 3px 3px 10px #cc0000, -3px 3px 10px #cc0000, 3px -3px 10px #cc0000, -3px -3px 10px #cc0000;
+}
+
+.color-grey {
+    color: #333;
+    text-shadow: 3px 3px 10px #cc0000, -3px 3px 10px #cc0000, 3px -3px 10px #cc0000, -3px -3px 10px #cc0000;
+}
+
+.color-red   {
+    color: #cc0000;
+    text-shadow: 3px 3px 10px #333, -3px 3px 10px #333, 3px -3px 10px #333, -3px -3px 10px #333;
+}
+
+.bg-grey {
+    background-color: rgba(230, 230, 230, 0.5);
+}
+
+.container a {
+    color: #cc0000;
+}
+
+.container a:hover {
+    color: #333;
+}
+
+.center {
+    text-align: center;
+}
+
+.panel {
+    background: rgba(250, 250, 250, 0.65);
+    margin-bottom: 30px;
+    -webkit-box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.5);
+    box-shadow:  1px 1px 12px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(250, 250, 250, 0.5);
+}	    
+
+.panel-heading, .panel-footer {
+    background: rgba(250, 250, 250, 0.4);
+    -webkit-box-shadow: 1px 1px 12px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow: 1px 1px 12px rgba(50, 50, 50, 0.5);
+    box-shadow: 1px 1px 12px rgba(50, 50, 50, 0.5);
+}
+
+.panel h2 {
+    color: #777;
+    font-size: 150%;
+    font-weight: 400;
+    text-shadow: none;
+}
+
+.panel-body img {
+    max-width: 80%;
+}
+
+/****************** NAVIGATION STYLES *************************/
+.navbar {
+    background-color: rgba(230, 230, 230, 1);
+    border: 0px;
+    box-shadow: 0px -3px 0px rgba(50, 50, 50, 0.2) inset;
+}
+
+navbar-fixed-top {
+    z-index: 1030;
+}
+
+.navbar .nav > li > a {
+    float: none;
+    padding: 15px 20px 15px;
+    color: #ca0000;
+    text-decoration: none;
+    text-shadow: none;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.navbar .nav > .active > a, 
+.navbar .nav > .active > a:hover, 
+.navbar .nav > .active > a:focus {
+    text-decoration: none;
+    background-color: rgba(50, 50, 50, 0.2);
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    color: #333;
+    font-weight: 400;
+    box-shadow: 0px -3px 0px rgba(50, 50, 50, 0.2) inset;
+    font-weight: bold;
+}
+
+.fixed{
+    position: fixed;
+    bottom: -25px;
+    height: 45px
+}
+
+footer{
+    color: #cc0000;
+    position: static;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #7090A0;
+    border: 0px;
+    box-shadow: 0px 3px 0px rgba(50, 50, 50, 0.2) inset;
+}
