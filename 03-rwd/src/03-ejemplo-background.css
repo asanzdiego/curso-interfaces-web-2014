@@ -1,0 +1,39 @@
+#ejemplo1 {
+  width: 250px;
+  height: 250px;
+  background-color: red;
+  background-image: url(img/content-is-like-water.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 5%;
+}
+#ejemplo2 {
+  width: 250px;
+  height: 250px;
+  background-color: red;
+  background-image: url(img/content-is-like-water.jpg);
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  margin: 5%;
+}
+#ejemplo3 {
+  width: 250px;
+  height: 250px;
+  background-color: red;
+  background-image: url(img/content-is-like-water.jpg);
+  background-size: 100%;
+  background-position: top;
+  background-repeat: no-repeat;
+  margin: 5%;
+}
+#ejemplo4 {
+  width: 250px;
+  height: 250px;
+  background-color: red;
+  background-image: url(img/content-is-like-water.jpg);
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 5%;
+}

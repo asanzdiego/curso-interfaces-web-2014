@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="description" content="Responsive Web Design" />
+  <meta name="author" content="Adolfo Sanz De Diego" />
+  <title>Responsive Web Design</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+<h1 class="title">Responsive Web Design</h1>
+<h2 class="author">Adolfo Sanz De Diego</h2>
+<h3 class="date">Septiembre 2014</h3>
+</header>
+<nav id="TOC">
+<ul>
+<li><a href="#el-autor"><span class="toc-section-number">1</span> El autor</a><ul>
+<li><a href="#adolfo-sanz-de-diego"><span class="toc-section-number">1.1</span> Adolfo Sanz De Diego</a></li>
+<li><a href="#algunos-proyectos"><span class="toc-section-number">1.2</span> Algunos proyectos</a></li>
+<li><a href="#donde-encontrarme"><span class="toc-section-number">1.3</span> ¿Donde encontrarme?</a></li>
+</ul></li>
+<li><a href="#introducción"><span class="toc-section-number">2</span> Introducción</a><ul>
+<li><a href="#esto-no-es-la-web"><span class="toc-section-number">2.1</span> Esto no es la web</a></li>
+<li><a href="#esto-es-la-web"><span class="toc-section-number">2.2</span> Esto es la web</a></li>
+<li><a href="#será-esto-la-web"><span class="toc-section-number">2.3</span> ¿Será esto la web?</a></li>
+<li><a href="#estadísticas"><span class="toc-section-number">2.4</span> Estadísticas</a></li>
+<li><a href="#el-desarrollador"><span class="toc-section-number">2.5</span> El desarrollador</a></li>
+<li><a href="#responsive-web-design"><span class="toc-section-number">2.6</span> Responsive Web Design</a></li>
+<li><a href="#content-is-like-water"><span class="toc-section-number">2.7</span> Content is like water</a></li>
+<li><a href="#graceful-degradation"><span class="toc-section-number">2.8</span> Graceful degradation</a></li>
+<li><a href="#progessive-enhancement"><span class="toc-section-number">2.9</span> Progessive enhancement</a></li>
+<li><a href="#beneficios"><span class="toc-section-number">2.10</span> Beneficios</a></li>
+</ul></li>
+<li><a href="#ejemplos"><span class="toc-section-number">3</span> Ejemplos</a><ul>
+<li><a href="#matt-kersley"><span class="toc-section-number">3.1</span> Matt Kersley</a></li>
+<li><a href="#dconstruct-2011"><span class="toc-section-number">3.2</span> dConstruct 2011</a></li>
+<li><a href="#boston-globe"><span class="toc-section-number">3.3</span> Boston Globe</a></li>
+<li><a href="#food-sense"><span class="toc-section-number">3.4</span> Food Sense</a></li>
+<li><a href="#deren-keskin"><span class="toc-section-number">3.5</span> Deren Keskin</a></li>
+</ul></li>
+<li><a href="#diseño-fluido"><span class="toc-section-number">4</span> Diseño fluido</a><ul>
+<li><a href="#de-px-a-em"><span class="toc-section-number">4.1</span> De PX a EM</a></li>
+<li><a href="#on-line"><span class="toc-section-number">4.2</span> On Line</a></li>
+<li><a href="#ejemplo"><span class="toc-section-number">4.3</span> Ejemplo</a></li>
+<li><a href="#em-se-hereda"><span class="toc-section-number">4.4</span> EM se hereda</a></li>
+<li><a href="#de-px-a"><span class="toc-section-number">4.5</span> De PX a %</a></li>
+</ul></li>
+<li><a href="#sistema-de-rejilla"><span class="toc-section-number">5</span> Sistema de rejilla</a><ul>
+<li><a href="#ejemplo-1"><span class="toc-section-number">5.1</span> Ejemplo</a></li>
+<li><a href="#uso-de-clases"><span class="toc-section-number">5.2</span> Uso de clases</a></li>
+<li><a href="#ejemplo-bootstrap"><span class="toc-section-number">5.3</span> Ejemplo Bootstrap</a></li>
+<li><a href="#semántico"><span class="toc-section-number">5.4</span> Semántico</a></li>
+<li><a href="#ejemplo-semantic.gs-html"><span class="toc-section-number">5.5</span> Ejemplo semantic.gs (HTML)</a></li>
+<li><a href="#ejemplo-semantic.gs-css"><span class="toc-section-number">5.6</span> Ejemplo semantic.gs (CSS)</a></li>
+</ul></li>
+<li><a href="#imágenes-fluidas"><span class="toc-section-number">6</span> Imágenes fluidas</a><ul>
+<li><a href="#tamaño-máximo"><span class="toc-section-number">6.1</span> Tamaño máximo</a></li>
+<li><a href="#ancho-del-contenedor"><span class="toc-section-number">6.2</span> Ancho del contenedor</a></li>
+<li><a href="#backgrounds"><span class="toc-section-number">6.3</span> Backgrounds</a></li>
+</ul></li>
+<li><a href="#viewport"><span class="toc-section-number">7</span> Viewport</a><ul>
+<li><a href="#orígenes"><span class="toc-section-number">7.1</span> Orígenes</a></li>
+<li><a href="#qué-nos-permite"><span class="toc-section-number">7.2</span> ¿Qué nos permite?</a></li>
+<li><a href="#tamaño"><span class="toc-section-number">7.3</span> Tamaño</a></li>
+<li><a href="#escala"><span class="toc-section-number">7.4</span> Escala</a></li>
+<li><a href="#accesibilidad"><span class="toc-section-number">7.5</span> Accesibilidad</a></li>
+<li><a href="#ejemplo-2"><span class="toc-section-number">7.6</span> Ejemplo</a></li>
+</ul></li>
+<li><a href="#media-queries"><span class="toc-section-number">8</span> Media Queries</a><ul>
+<li><a href="#qué-son"><span class="toc-section-number">8.1</span> ¿Qué son?</a></li>
+<li><a href="#ejemplo-3"><span class="toc-section-number">8.2</span> Ejemplo</a></li>
+<li><a href="#distintos-css"><span class="toc-section-number">8.3</span> Distintos CSS</a></li>
+<li><a href="#mismo-css"><span class="toc-section-number">8.4</span> Mismo CSS</a></li>
+<li><a href="#importar-css"><span class="toc-section-number">8.5</span> Importar CSS</a></li>
+<li><a href="#operador-and"><span class="toc-section-number">8.6</span> Operador and</a></li>
+<li><a href="#ejemplo-and"><span class="toc-section-number">8.7</span> Ejemplo and</a></li>
+<li><a href="#operador-or"><span class="toc-section-number">8.8</span> Operador 'or'</a></li>
+<li><a href="#ejemplo-or"><span class="toc-section-number">8.9</span> Ejemplo 'or'</a></li>
+<li><a href="#operador-not"><span class="toc-section-number">8.10</span> Operador not</a></li>
+<li><a href="#ejemplo-not"><span class="toc-section-number">8.11</span> Ejemplo not</a></li>
+<li><a href="#características"><span class="toc-section-number">8.12</span> Características</a></li>
+<li><a href="#min--y-max-"><span class="toc-section-number">8.13</span> Min- y Max-</a></li>
+</ul></li>
+<li><a href="#metodologías"><span class="toc-section-number">9</span> Metodologías</a><ul>
+<li><a href="#desktop-vs-mobile"><span class="toc-section-number">9.1</span> Desktop VS Mobile</a></li>
+<li><a href="#desktop-first"><span class="toc-section-number">9.2</span> Desktop First</a></li>
+<li><a href="#df-utiliza-max-width"><span class="toc-section-number">9.3</span> DF: utiliza max-width</a></li>
+<li><a href="#df-problemas"><span class="toc-section-number">9.4</span> DF: problemas</a></li>
+<li><a href="#mobile-first"><span class="toc-section-number">9.5</span> Mobile first</a></li>
+<li><a href="#mf-utiliza-min-width"><span class="toc-section-number">9.6</span> MF: utiliza min-width</a></li>
+<li><a href="#mf-ventajas"><span class="toc-section-number">9.7</span> MF: ventajas</a></li>
+<li><a href="#puntos-de-rotura"><span class="toc-section-number">9.8</span> Puntos de rotura</a></li>
+</ul></li>
+<li><a href="#acerca-de"><span class="toc-section-number">10</span> Acerca de</a><ul>
+<li><a href="#licencia"><span class="toc-section-number">10.1</span> Licencia</a></li>
+<li><a href="#fuentes"><span class="toc-section-number">10.2</span> Fuentes</a></li>
+<li><a href="#bibliografía"><span class="toc-section-number">10.3</span> Bibliografía</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="el-autor"><a href="#el-autor"><span class="header-section-number">1</span> El autor</a></h1>
+<h2 id="adolfo-sanz-de-diego"><a href="#adolfo-sanz-de-diego"><span class="header-section-number">1.1</span> Adolfo Sanz De Diego</a></h2>
+<p><strong>Antiguo programador web JEE (6 años)</strong></p>
+<p>Hoy en día:</p>
+<ul>
+<li><strong>Profesor de FP (6 años)</strong>:
+<ul>
+<li>Hardware, Sistemas Operativos</li>
+<li>Redes, Programación</li>
+</ul></li>
+<li><strong>Formador Freelance (3 años)</strong>:
+<ul>
+<li>Java, Android</li>
+<li>JavaScript, jQuery</li>
+<li>JSF, Spring, Hibernate</li>
+<li>Groovy &amp; Grails</li>
+</ul></li>
+</ul>
+<h2 id="algunos-proyectos"><a href="#algunos-proyectos"><span class="header-section-number">1.2</span> Algunos proyectos</a></h2>
+<p>Fundador y/o creador:</p>
+<ul>
+<li><p><strong>Hackathon Lovers</strong>: <a href="http://hackathonlovers.com">http://hackathonlovers.com</a></p></li>
+<li><p><strong>Tweets Sentiment</strong>: <a href="http://tweetssentiment.com">http://tweetssentiment.com</a></p></li>
+<li><p><strong>MarkdownSlides</strong>: <a href="https://github.com/asanzdiego/markdownslides">https://github.com/asanzdiego/markdownslides</a></p></li>
+</ul>
+<p>Co-fundador y/o co-creador:</p>
+<ul>
+<li><p><strong>PeliTweets</strong>: <a href="http://pelitweets.com">http://pelitweets.com</a></p></li>
+<li><p><strong>Password Manager Generator</strong>: <a href="http://pasmangen.github.io">http://pasmangen.github.io</a></p></li>
+</ul>
+<h2 id="donde-encontrarme"><a href="#donde-encontrarme"><span class="header-section-number">1.3</span> ¿Donde encontrarme?</a></h2>
+<p>Mi nick: <strong>asanzdiego</strong></p>
+<ul>
+<li><p>AboutMe: <a href="http://about.me/asanzdiego">http://about.me/asanzdiego</a></p></li>
+<li><p>GitHub: <a href="http://github.com/asanzdiego">http://github.com/asanzdiego</a></p></li>
+<li><p>Twitter: <a href="http://twitter.com/asanzdiego">http://twitter.com/asanzdiego</a></p></li>
+<li><p>Blog: <a href="http://asanzdiego.blogspot.com.es">http://asanzdiego.blogspot.com.es</a></p></li>
+<li><p>LinkedIn: <a href="http://www.linkedin.com/in/asanzdiego">http://www.linkedin.com/in/asanzdiego</a></p></li>
+<li><p>Google+: <a href="http://plus.google.com/+AdolfoSanzDeDiego">http://plus.google.com/+AdolfoSanzDeDiego</a></p></li>
+</ul>
+<h1 id="introducción"><a href="#introducción"><span class="header-section-number">2</span> Introducción</a></h1>
+<h2 id="esto-no-es-la-web"><a href="#esto-no-es-la-web"><span class="header-section-number">2.1</span> Esto no es la web</a></h2>
+<div style="text-align:center">
+<img src="../img/brad_frost_1.png" alt="Esto no es la web. Fuente: bradfostweb.com" />
+</div>
+<h2 id="esto-es-la-web"><a href="#esto-es-la-web"><span class="header-section-number">2.2</span> Esto es la web</a></h2>
+<div style="text-align:center">
+<img src="../img/brad_frost_2.png" alt="Esto es la web. Fuente: bradfostweb.com" />
+</div>
+<h2 id="será-esto-la-web"><a href="#será-esto-la-web"><span class="header-section-number">2.3</span> ¿Será esto la web?</a></h2>
+<div style="text-align:center">
+<img src="../img/brad_frost_3.png" alt="¿Será esto la web?. Fuente: bradfostweb.com" />
+</div>
+<h2 id="estadísticas"><a href="#estadísticas"><span class="header-section-number">2.4</span> Estadísticas</a></h2>
+<div style="text-align:center">
+<figure>
+<img src="../img/StatCounter-resolution-ww-monthly-200903-201408.jpeg" alt="Estadísticas. Fuente: gs.statcounter.com" /><figcaption>Estadísticas. Fuente: gs.statcounter.com</figcaption>
+</figure>
+<h2 id="el-desarrollador"><a href="#el-desarrollador"><span class="header-section-number">2.5</span> El desarrollador</a></h2>
+<div style="text-align:center">
+<img src="../img/globalmoxie.png" alt="El desarrollador atual. Fuente: globalmoxie.com" />
+</div>
+<h2 id="responsive-web-design"><a href="#responsive-web-design"><span class="header-section-number">2.6</span> Responsive Web Design</a></h2>
+<div style="text-align:center">
+<img src="../img/rwd.png" alt="Responsive Web Design. Fuente: flickr.com/photos/zergev/" />
+</div>
+<h2 id="content-is-like-water"><a href="#content-is-like-water"><span class="header-section-number">2.7</span> Content is like water</a></h2>
+<div style="text-align:center">
+<img src="../img/content-is-like-water.jpg" alt="Content is like water. Fuente: fr.wikipedia.org/wiki/Site_web_adaptatif" />
+</div>
+<h2 id="graceful-degradation"><a href="#graceful-degradation"><span class="header-section-number">2.8</span> Graceful degradation</a></h2>
+<p>Se <strong>desarrolla para los últimos navegadores</strong>, con la posibilidad de que funcione en navegadores antiguos.</p>
+<div style="text-align:center">
+<img src="../img/responsive-design-graceful-degradation.png" alt="Graceful degradation. Fuente: bradfostweb.com" />
+</div>
+<h2 id="progessive-enhancement"><a href="#progessive-enhancement"><span class="header-section-number">2.9</span> Progessive enhancement</a></h2>
+<p>Se <strong>desarrolla una versión básica</strong> completamente operativa, con la posibilidad de ir añadiendo mejoras para los últimos navegadores.</p>
+<div style="text-align:center">
+<img src="../img/responsive-design-progressive-enhancement.png" alt="Progressive enhancement. Fuente: bradfostweb.com" />
+</div>
+<h2 id="beneficios"><a href="#beneficios"><span class="header-section-number">2.10</span> Beneficios</a></h2>
+<p><strong>Reducción de costos</strong>. Pues no hay que hacer varias versiones de una misma página.</p>
+<p><strong>Eficiencia en la actualización</strong>. El sitio solo se debe actualizar una vez y se ve reflejada en todas las plataformas.</p>
+<p><strong>Mejora la usabilidad</strong>. El usuario va a tener experiencias de usuario parecidas independientemente del dispositivo que esté usando en cada momento</p>
+<p><strong>Mejora el SEO</strong>. Según las Guidelines de Google el tener una web que se vea correctamente en móviles es un factor que tienen en cuenta a la hora de elaborar los rankings.</p>
+<p><strong>Impacto en el visitante</strong>. Esta tecnología por ser nueva genera impacto en las personas que la vean en acción, lo que permitirá asociar a la marca con creatividad e innovación.</p>
+<h1 id="ejemplos"><a href="#ejemplos"><span class="header-section-number">3</span> Ejemplos</a></h1>
+<h2 id="matt-kersley"><a href="#matt-kersley"><span class="header-section-number">3.1</span> Matt Kersley</a></h2>
+<p>Página de testeo de Matt Kersley</p>
+<ul>
+<li><a href="http://mattkersley.com/responsive">http://mattkersley.com/responsive</a></li>
+</ul>
+<h2 id="dconstruct-2011"><a href="#dconstruct-2011"><span class="header-section-number">3.2</span> dConstruct 2011</a></h2>
+<p><a href="http://2011.dconstruct.org">http://2011.dconstruct.org</a></p>
+<div style="text-align:center">
+<img src="../img/dConstruct-2011-ejemplo-de-Responsive-Web-Design.jpg" alt="Ejemplo RWD: dConstruct 2011. Fuente:ecbloguer.com" />
+</div>
+<h2 id="boston-globe"><a href="#boston-globe"><span class="header-section-number">3.3</span> Boston Globe</a></h2>
+<p><a href="http://www.bostonglobe.com">http://www.bostonglobe.com</a></p>
+<div style="text-align:center">
+<img src="../img/Boston-Globe-ejemplo-de-Responsive-Web-Design.jpg" alt="Ejemplo RWD: Boston Globe. Fuente:ecbloguer.com" />
+</div>
+<h2 id="food-sense"><a href="#food-sense"><span class="header-section-number">3.4</span> Food Sense</a></h2>
+<p><a href="http://foodsense.is">http://foodsense.is</a></p>
+<div style="text-align:center">
+<img src="../img/Food-Sense-ejemplo-de-Responsive-Web-Design.jpg" alt="Ejemplo RWD: Food Sense. Fuente:ecbloguer.com" />
+</div>
+<h2 id="deren-keskin"><a href="#deren-keskin"><span class="header-section-number">3.5</span> Deren Keskin</a></h2>
+<p><a href="http://www.deren.me">http://www.deren.me</a></p>
+<div style="text-align:center">
+<img src="../img/Deren-Keskin-ejemplo-de-Responsive-Web-Design.jpg" alt="Ejemplo RWD: Deren Keskin. Fuente:ecbloguer.com" />
+</div>
+<h1 id="diseño-fluido"><a href="#diseño-fluido"><span class="header-section-number">4</span> Diseño fluido</a></h1>
+<h2 id="de-px-a-em"><a href="#de-px-a-em"><span class="header-section-number">4.1</span> De PX a EM</a></h2>
+<p>Formula: <strong>target ÷ context = result</strong></p>
+<ul>
+<li><p>target - font-size que tenemos en píxeles</p></li>
+<li><p>context - font-size base (por defecto 16px en la mayoría de los navegadores)</p></li>
+<li><p>result - resultado que obtenemos en em</p></li>
+</ul>
+<p>Es recomendable indicar el cálculo realizado junto a la regla de CSS.</p>
+<h2 id="on-line"><a href="#on-line"><span class="header-section-number">4.2</span> On Line</a></h2>
+<p><a href="http://pxtoem.com">http://pxtoem.com</a></p>
+<div style="text-align:center">
+<img src="../img/pxtoem.png" alt="px to em. Fuente:pxtoem.com" />
+</div>
+<h2 id="ejemplo"><a href="#ejemplo"><span class="header-section-number">4.3</span> Ejemplo</a></h2>
+<p>Ejemplo para poner 13px por defecto y luego 18px para h1 en em:</p>
+<pre><code>body {
+  font: 13px;
+}
+
+h1 {
+  font-size: 1.3846 em;
+  /* 18px/13px = 1.3846em */
+}</code></pre>
+<h2 id="em-se-hereda"><a href="#em-se-hereda"><span class="header-section-number">4.4</span> EM se hereda</a></h2>
+<p>Importante: <strong>las medidas em se heredan</strong>, es decir, un elemento dentro de un elemento tomará como referencia el superior para calcular cuánto es un em.</p>
+<p>Por ejemplo, si tenemos una caja donde hemos definido una fuente como 0.5em y dentro de esa caja otra con una fuente 0.25em, esta última fuente tendrá 1/4 de tamaño respecto a la 1/2 de tamaño de la fuente general.</p>
+<h2 id="de-px-a"><a href="#de-px-a"><span class="header-section-number">4.5</span> De PX a %</a></h2>
+<div style="text-align:center">
+<img src="../img/porcentajes.jpg" alt="Cálculo porcentajes. Fuente:aloud.es" />
+</div>
+<h1 id="sistema-de-rejilla"><a href="#sistema-de-rejilla"><span class="header-section-number">5</span> Sistema de rejilla</a></h1>
+<h2 id="ejemplo-1"><a href="#ejemplo-1"><span class="header-section-number">5.1</span> Ejemplo</a></h2>
+<p>1 columna para xs (&lt;768px)</p>
+<p>2 columnas para sm (≥768px)</p>
+<p>3 columnas para md (≥992px)</p>
+<p>4 columnas para lg (≥1200px)</p>
+<h2 id="uso-de-clases"><a href="#uso-de-clases"><span class="header-section-number">5.2</span> Uso de clases</a></h2>
+<p>Uso de clases en el HTML como <strong>Bootstrap</strong></p>
+<ul>
+<li><a href="http://getbootstrap.com/css">http://getbootstrap.com/css</a></li>
+</ul>
+<h2 id="ejemplo-bootstrap"><a href="#ejemplo-bootstrap"><span class="header-section-number">5.3</span> Ejemplo Bootstrap</a></h2>
+<pre><code>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-xs-12 col-sm-6 col-md-4 col-lg-3&quot;&gt;1&lt;/div&gt;
+  &lt;div class=&quot;col-xs-12 col-sm-6 col-md-4 col-lg-3&quot;&gt;2&lt;/div&gt;
+  &lt;div class=&quot;col-xs-12 col-sm-6 col-md-4 col-lg-3&quot;&gt;3&lt;/div&gt;
+  &lt;div class=&quot;col-xs-12 col-sm-6 col-md-4 col-lg-3&quot;&gt;4&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<h2 id="semántico"><a href="#semántico"><span class="header-section-number">5.4</span> Semántico</a></h2>
+<p><strong>The Semantic Grid System</strong>: Mediante layouts, y sin necesidad de usar clases en HTML.</p>
+<ul>
+<li><a href="http://semantic.gs">http://semantic.gs</a></li>
+</ul>
+<h2 id="ejemplo-semantic.gs-html"><a href="#ejemplo-semantic.gs-html"><span class="header-section-number">5.5</span> Ejemplo semantic.gs (HTML)</a></h2>
+<pre><code>&lt;header&gt;...&lt;/header&gt;
+&lt;article&gt;...&lt;/article&gt;
+&lt;aside&gt;...&lt;/aside&gt;</code></pre>
+<h2 id="ejemplo-semantic.gs-css"><a href="#ejemplo-semantic.gs-css"><span class="header-section-number">5.6</span> Ejemplo semantic.gs (CSS)</a></h2>
+<pre><code>@column-width: 60;
+@gutter-width: 20;
+@columns: 12;
+
+header { .column(12); }
+article { .column(9); }
+aside { .column(3); }
+
+@media (max-device-width: 960px) {
+  article { .column(12); }
+  aside { .column(12); }
+}</code></pre>
+<h1 id="imágenes-fluidas"><a href="#imágenes-fluidas"><span class="header-section-number">6</span> Imágenes fluidas</a></h1>
+<h2 id="tamaño-máximo"><a href="#tamaño-máximo"><span class="header-section-number">6.1</span> Tamaño máximo</a></h2>
+<p>Fijar un <strong>tamaño máximo</strong> (si la imagen no llega, se queda con su tamaño):</p>
+<pre><code>img {
+  max-width:400px;
+}</code></pre>
+<h2 id="ancho-del-contenedor"><a href="#ancho-del-contenedor"><span class="header-section-number">6.2</span> Ancho del contenedor</a></h2>
+<p>Ocupar el <strong>ancho del contenedor</strong> (si la imagen no llega, se deforma):</p>
+<pre><code>img {
+  width:100%;
+}</code></pre>
+<p>Ocupar el <strong>ancho del contenedor</strong> (si la imagen no llega, se queda con su tamaño):</p>
+<pre><code>img {
+  max-width:100%;
+}</code></pre>
+<p>Ocupar el <strong>ancho del contenedor hasta un máximo</strong> (si la imagen no llega, se deforma):</p>
+<pre><code>img {
+  width:100%;
+  max-width:400px;
+}</code></pre>
+<h2 id="backgrounds"><a href="#backgrounds"><span class="header-section-number">6.3</span> Backgrounds</a></h2>
+<p>Para los background usar <strong>cover</strong></p>
+<pre><code>.background-fluid {
+  width: 100%;
+  background-image:
+    url(img/water.jpg);
+  background-size: cover;
+}</code></pre>
+<h1 id="viewport"><a href="#viewport"><span class="header-section-number">7</span> Viewport</a></h1>
+<h2 id="orígenes"><a href="#orígenes"><span class="header-section-number">7.1</span> Orígenes</a></h2>
+<p>La etiqueta meta para el viewport fue <strong>introducida por Apple</strong> en Safari para móviles en el año 2007, para ayudar a los desarrolladores a mejorar la presentación de sus aplicaciones web en un iPhone.</p>
+<p>Hoy en día ha sido <strong>ampliamente adoptada por el resto de navegadores móviles</strong>, convirtiéndose en un estándar de facto.</p>
+<h2 id="qué-nos-permite"><a href="#qué-nos-permite"><span class="header-section-number">7.2</span> ¿Qué nos permite?</a></h2>
+<p>La etiqueta viewport nos permite definir el <strong>ancho, alto y escala del área</strong> usada por el navegador para mostrar contenido.</p>
+<h2 id="tamaño"><a href="#tamaño"><span class="header-section-number">7.3</span> Tamaño</a></h2>
+<p>Al fijar el ancho (width) o alto (height) del viewport, <strong>podemos usar un número fijo de pixeles</strong> (ej: 320px, 480px, etc) <strong>o usar dos constantes, device-width y device-height</strong> respectivamente.</p>
+<p>Se considera una <strong>buena práctica configurar el viewport con device-width y device-height</strong>, en lugar de utilizar un ancho o alto fijo.</p>
+<h2 id="escala"><a href="#escala"><span class="header-section-number">7.4</span> Escala</a></h2>
+<p>La propiedad <strong>initial-scale</strong> controla el nivel de zoom inicial al cargarse la página.</p>
+<p>Las propiedades <strong>maximum-scale, minimum-scale</strong> controlan el nivel máximo y mínimo de zoom que se le va a permitir usar al usuario.</p>
+<p>La propiedad <strong>user-scalable [yes|no]</strong> controlan si el usuario puede o no hacer zoom sobre la página.</p>
+<h2 id="accesibilidad"><a href="#accesibilidad"><span class="header-section-number">7.5</span> Accesibilidad</a></h2>
+<p>Es una <strong>buena práctica de accesibilidad no bloquear las opciones de zoom</strong> al usuario.</p>
+<h2 id="ejemplo-2"><a href="#ejemplo-2"><span class="header-section-number">7.6</span> Ejemplo</a></h2>
+<p>Un ejemplo adaptable y accesible sería:</p>
+<pre><code>&lt;meta name=&quot;viewport&quot;
+  content=&quot;width=device-width,
+    initial-scale=1,
+    user-scalable=yes&quot;&gt;</code></pre>
+<h1 id="media-queries"><a href="#media-queries"><span class="header-section-number">8</span> Media Queries</a></h1>
+<h2 id="qué-son"><a href="#qué-son"><span class="header-section-number">8.1</span> ¿Qué son?</a></h2>
+<p>Un Media Query <strong>no sólo nos permite seleccionar el tipo de medio</strong> (all, braille, print, proyection, screen, tty, tv, etc.), <strong>sino además consultar otras características</strong> sobre el dispositivo que esta mostrando la página.</p>
+<h2 id="ejemplo-3"><a href="#ejemplo-3"><span class="header-section-number">8.2</span> Ejemplo</a></h2>
+<p><strong>Ejemplo</strong>: aplicar distintas reglas CSS cuando el área de visualización sea mayor que 480px.</p>
+<h2 id="distintos-css"><a href="#distintos-css"><span class="header-section-number">8.3</span> Distintos CSS</a></h2>
+<p>Solución 1: <strong>cargar distintas CSS</strong>:</p>
+<pre><code>&lt;link rel=&quot;stylesheet&quot;
+  type=&quot;text/css&quot;
+  media=&quot;all and (min-width: 480px)&quot;
+  href=&quot;tablet.css&quot; /&gt;
+
+&lt;!-- tablet.css es un CSS con reglas para cuando el área de visualización sea mayor que 480px --&gt;</code></pre>
+<h2 id="mismo-css"><a href="#mismo-css"><span class="header-section-number">8.4</span> Mismo CSS</a></h2>
+<p>Solución 2: <strong>definir distintas propiedades dentro del mismo CSS</strong>:</p>
+<pre><code>@media all and (min-width: 480px) {
+
+  /* aquí poner las reglas CSS
+  para cuando el área de visualización
+  sea mayor que 480px*/
+}</code></pre>
+<h2 id="importar-css"><a href="#importar-css"><span class="header-section-number">8.5</span> Importar CSS</a></h2>
+<p>Solución 3: <strong>importar distintas hojas de estilo dentro del mismo CSS</strong>:</p>
+<pre><code>@import url(&quot;tablet.css&quot;)
+  all and (min-width: 480px);
+
+  /* tablet.css es un CSS con reglas
+  para cuando el área de visualización
+  sea mayor que 480px */
+}</code></pre>
+<h2 id="operador-and"><a href="#operador-and"><span class="header-section-number">8.6</span> Operador and</a></h2>
+<p>Es usado para combinar múltiples media features en un sólo Media Query, <strong>requiriendo que cada función devuelve true</strong> para que el Query también lo sea.</p>
+<h2 id="ejemplo-and"><a href="#ejemplo-and"><span class="header-section-number">8.7</span> Ejemplo and</a></h2>
+<pre><code>@media tv
+  and (min-width: 700px)
+  and (orientation: landscape) {
+
+  /* reglas que queremos que
+  se apliquen para televisiones
+  con áreas de visualización
+  mayores de 700px siempre que
+  la pantalla esté en
+  modo landscape */
+}</code></pre>
+<h2 id="operador-or"><a href="#operador-or"><span class="header-section-number">8.8</span> Operador 'or'</a></h2>
+<p>Se pueden combinar múltiples Media Queries <strong>separados por comas</strong> en una lista, de tal forma que si alguna de las Media Queries devuelve true, todo la sentencia devolverá true.</p>
+<p>Esto es <strong>equivalente a un operador or</strong>.</p>
+<p>Cada Media Query separado por comas en la lista se trata individualmente.</p>
+<h2 id="ejemplo-or"><a href="#ejemplo-or"><span class="header-section-number">8.9</span> Ejemplo 'or'</a></h2>
+<pre><code>@media tv,
+  (min-width: 700px),
+  (orientation: landscape) {
+
+  /* reglas que queremos que
+  se apliquen para televisiones,
+  o para dispositivos con áreas
+  de visualización mayores
+  de 700px, o cuando la pantalla
+  está en modo landscape */
+}</code></pre>
+<h2 id="operador-not"><a href="#operador-not"><span class="header-section-number">8.10</span> Operador not</a></h2>
+<p>Se utiliza para <strong>negar un Media Query completo</strong>.</p>
+<p>No se puede negar una característica individualmente, si no solamente el Media Query completo.</p>
+<h2 id="ejemplo-not"><a href="#ejemplo-not"><span class="header-section-number">8.11</span> Ejemplo not</a></h2>
+<pre><code>@media not tv and max-width(800px), 
+  not screen and max-width(400px) {
+
+  /* reglas que queremos que
+  se apliquen para dispositivos
+  que no sean ni televisiones
+  con áreas de visualización
+  menores de 800px, ni pantallas
+  con áreas de visualización
+  menores de 400px */
+}</code></pre>
+<p>El anterior ejemplo sería equivalente a:</p>
+<pre><code>@media not (tv and max-width(800px)),
+  not (screen and max-width(400px)) {
+
+  ...
+}</code></pre>
+<h2 id="características"><a href="#características"><span class="header-section-number">8.12</span> Características</a></h2>
+<p>Características que hacen referencia al <strong>área de visualización</strong>:</p>
+<ul>
+<li><p><strong>width</strong></p></li>
+<li><p><strong>height</strong></p></li>
+<li><p><strong>aspect-ratio</strong> [4/3 | 16/9 | ...]</p></li>
+<li><p><strong>orientation</strong> [portrait | landscape]</p></li>
+</ul>
+<p>Características que hacen referencia a la <strong>pantalla del dispositivo</strong>:</p>
+<ul>
+<li><p><strong>device-width</strong></p></li>
+<li><p><strong>device-height</strong></p></li>
+<li><p><strong>device-aspect-ratio</strong> [4/3 | 16/9 | ...]</p></li>
+</ul>
+<p><strong>Otras</strong> características:</p>
+<ul>
+<li><p><strong>color</strong>: El número de bits de profundidad de color</p></li>
+<li><p><strong>monocrome</strong>: El número de bits de profundidad de color, en dispotivos monocromáticos</p></li>
+<li><p><strong>resolution</strong>: Densidad de pixels en el dispositivo, medido en dpi</p></li>
+</ul>
+<h2 id="min--y-max-"><a href="#min--y-max-"><span class="header-section-number">8.13</span> Min- y Max-</a></h2>
+<p>A casi todas las características se les puede adjuntar los <strong>prefijos min- y max-</strong></p>
+<p>De hecho lo habitual es usar dichos prefijos.</p>
+<h1 id="metodologías"><a href="#metodologías"><span class="header-section-number">9</span> Metodologías</a></h1>
+<h2 id="desktop-vs-mobile"><a href="#desktop-vs-mobile"><span class="header-section-number">9.1</span> Desktop VS Mobile</a></h2>
+<div style="text-align:center">
+<img src="../img/desktop-first-vs-mobile-first.png" alt="Desktop first VS Mobile first. Fuente: brettjankord.com" />
+</div>
+<h2 id="desktop-first"><a href="#desktop-first"><span class="header-section-number">9.2</span> Desktop First</a></h2>
+<p>Consiste en <strong>desarrollar para pantallas grandes</strong> y posteriormente adaptar el diseño a pantallas pequeñas.</p>
+<h2 id="df-utiliza-max-width"><a href="#df-utiliza-max-width"><span class="header-section-number">9.3</span> DF: utiliza max-width</a></h2>
+<p>Normalmente los Media Queries utilizan <strong>max-width</strong>, simplificando y ajustando para las pantallas más pequeñas.</p>
+<pre><code>@media all and (max-width: 320px) {
+   /* Estilos para anchos
+   menores a 320px */
+}
+@media all and (max-width: 768px) {
+  /* Estilos para anchos
+  menores a 768px */
+}</code></pre>
+<h2 id="df-problemas"><a href="#df-problemas"><span class="header-section-number">9.4</span> DF: problemas</a></h2>
+<p>Los Media Query <strong>no están soportados por todos los móviles</strong>.</p>
+<p>La <strong>versión móvil termina siendo una versión descafeinada</strong> de la web original.</p>
+<h2 id="mobile-first"><a href="#mobile-first"><span class="header-section-number">9.5</span> Mobile first</a></h2>
+<p>Consiste en <strong>desarrollar para pantallas pequeñas</strong> y posteriormente adaptar el diseño a pantallas grandes.</p>
+<h2 id="mf-utiliza-min-width"><a href="#mf-utiliza-min-width"><span class="header-section-number">9.6</span> MF: utiliza min-width</a></h2>
+<p>Ahora los Media Queries utilizan <strong>min-width</strong>, para ajustar el diseño a medida que aumenta el tamaño de pantalla.</p>
+<pre><code>@media all and (min-width: 320px) {
+  /* Estilos para anchos
+  superiores a 320px */
+}
+@media all and (min-width: 768px) {
+  /* Estilos para anchos
+  superiores a 768px */
+}</code></pre>
+<h2 id="mf-ventajas"><a href="#mf-ventajas"><span class="header-section-number">9.7</span> MF: ventajas</a></h2>
+<p>Funciona en <strong>móviles y/o navegadores antiguos</strong> que no soportan los Media Queries.</p>
+<p>Normalmente la <strong>hoja de estilos resultante suele ser más sencilla</strong> que usando la otra vía.</p>
+<p>Empezar por el móvil nos servirá para <strong>determinar de una manera más clara cual es el contenido realmente importante</strong> de nuestra web.</p>
+<h2 id="puntos-de-rotura"><a href="#puntos-de-rotura"><span class="header-section-number">9.8</span> Puntos de rotura</a></h2>
+<p>Normalmente:</p>
+<ul>
+<li><p>320px para el móvil,</p></li>
+<li><p>768px para el tablet,</p></li>
+<li><p>1024px para el portatil,</p></li>
+<li><p>1200px para el sobremesa.</p></li>
+</ul>
+<p>Lo mejor sería que los puntos de rotura que aplicamos en los Media Query, fueran <strong>en función de nuestro contenido</strong>, en vez de en función del tamaño del dispositivo más vendido.</p>
+<p>La manera de hacerlo: <strong>ir cambiando poco a poco el ancho del navegador y donde la web se rompa</strong>, aplicar un Media Query.</p>
+<h1 id="acerca-de"><a href="#acerca-de"><span class="header-section-number">10</span> Acerca de</a></h1>
+<h2 id="licencia"><a href="#licencia"><span class="header-section-number">10.1</span> Licencia</a></h2>
+<p>Estas <strong>transparencias</strong> están hechas con:</p>
+<ul>
+<li>MarkdownSlides: <a href="https://github.com/asanzdiego/markdownslides">https://github.com/asanzdiego/markdownslides</a></li>
+</ul>
+<p>Estas <strong>transparencias</strong> están bajo una licencia Creative Commons Reconocimiento-CompartirIgual 3.0:</p>
+<ul>
+<li><a href="http://creativecommons.org/licenses/by-sa/3.0/es">http://creativecommons.org/licenses/by-sa/3.0/es</a></li>
+</ul>
+<h2 id="fuentes"><a href="#fuentes"><span class="header-section-number">10.2</span> Fuentes</a></h2>
+<p>Transparencias:</p>
+<ul>
+<li><a href="https://github.com/asanzdiego/curso-interfaces-web-2014/03-rwd/slides">https://github.com/asanzdiego/curso-interfaces-web-2014/03-rwd/slides</a></li>
+</ul>
+<p>Código:</p>
+<ul>
+<li><a href="https://github.com/asanzdiego/curso-interfaces-web-2014/03-rwd/src">https://github.com/asanzdiego/curso-interfaces-web-2014/03-rwd/src</a></li>
+</ul>
+<h2 id="bibliografía"><a href="#bibliografía"><span class="header-section-number">10.3</span> Bibliografía</a></h2>
+<p>Responsive Web Design</p>
+<ul>
+<li><a href="http://www.arkaitzgarro.com/responsive-web-design/index.html">http://www.arkaitzgarro.com/responsive-web-design/index.html</a></li>
+</ul>
+<p>Introducción al Diseño Web Adaptable o Responsive Web Design</p>
+<ul>
+<li><a href="http://www.emenia.es/diseno-web-adaptable-o-responsive-web-design">http://www.emenia.es/diseno-web-adaptable-o-responsive-web-design</a></li>
+</ul>
+<p>Tutorial: Responsive Web Design</p>
+<ul>
+<li><a href="http://www.mmfilesi.com/blog/tutorial-responsive-web-design-i">http://www.mmfilesi.com/blog/tutorial-responsive-web-design-i</a></li>
+</ul>
+<p>Tutorial: Transforma tu web en Responsive Design</p>
+<ul>
+<li><a href="http://blog.ikhuerta.com/transforma-tu-web-en-responsive-design">http://blog.ikhuerta.com/transforma-tu-web-en-responsive-design</a></li>
+</ul>
+<p>Curso responsive web design - Redradix School</p>
+<ul>
+<li><a href="http://www.slideshare.net/Redradix/curso-responsive-web-design-redradix-school">http://www.slideshare.net/Redradix/curso-responsive-web-design-redradix-school</a></li>
+</ul>
+<p>Todo lo que necesita saber sobre Responsive Web Design</p>
+<ul>
+<li><a href="http://www.ecbloguer.com/marketingdigital/?p=2635">http://www.ecbloguer.com/marketingdigital/?p=2635</a></li>
+</ul>
+<p>Diseño web fluido y plantilla fluida con HTML5 y CSS3</p>
+<ul>
+<li><a href="http://www.aloud.es/diseno-web-fluido-y-plantilla-fluida">http://www.aloud.es/diseno-web-fluido-y-plantilla-fluida</a></li>
+</ul>
+<p>Beneficios del Responsive Web Design en SEO</p>
+<ul>
+<li><a href="http://madridnyc.com/blog/2013/01/29/beneficios-del-responsive-web-design-en-seo">http://madridnyc.com/blog/2013/01/29/beneficios-del-responsive-web-design-en-seo</a></li>
+</ul>
+<p>Responsive Web Design Testing Tool</p>
+<ul>
+<li><a href="http://mattkersley.com/responsive">http://mattkersley.com/responsive</a></li>
+</ul>
+<p>Responsive Web Design</p>
+<ul>
+<li><a href="http://www.ricardocastillo.com/rwd.pdf">http://www.ricardocastillo.com/rwd.pdf</a></li>
+</ul>
+<p>Responsive Design y accesibilidad. Buenas y malas prácticas. Errores comunes.</p>
+<ul>
+<li><a href="http://olgacarreras.blogspot.com.es/2014/01/responsive-design-y-accesibilidad.html">http://olgacarreras.blogspot.com.es/2014/01/responsive-design-y-accesibilidad.html</a></li>
+</ul>
+<p>Diseño web adaptativo: mejores prácticas</p>
+<ul>
+<li><a href="http://www.emenia.es/diseno-web-adaptativo-mejores-practicas">http://www.emenia.es/diseno-web-adaptativo-mejores-practicas</a></li>
+</ul>
+<p>Traducción de &quot;Responsive Web Design&quot; de &quot;A List Apart&quot;</p>
+<ul>
+<li><a href="http://diseñowebresponsivo.com.ar">http://diseñowebresponsivo.com.ar</a></li>
+</ul>
+<p>Responsive Design Exercise</p>
+<ul>
+<li><a href="http://blog.garciaechegaray.com/2013/11/29/responsive-design-exercise.html">http://blog.garciaechegaray.com/2013/11/29/responsive-design-exercise.html</a></li>
+</ul>
+<p>Estadísticas de StatCounter</p>
+<ul>
+<li><a href="http://gs.statcounter.com">http://gs.statcounter.com</a></li>
+</ul>
+<p>Página de testeo de Matt Kersley</p>
+<ul>
+<li><a href="http://mattkersley.com/responsive">http://mattkersley.com/responsive</a></li>
+</ul>
+</body>
+</html>

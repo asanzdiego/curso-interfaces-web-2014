@@ -1,0 +1,16 @@
+.bordes-redondeados (@color: red; @height: 150px){
+    @radio: @height*0.1;
+    height: @height;
+	background: @color;
+	border-radius: @radio;
+	-webkit-border-radius: @radio;
+	-moz-border-radius: @radio;
+}
+
+h1 {
+	.bordes-redondeados(@height: 600px);
+}
+
+p {
+	.bordes-redondeados(@color: green;);
+}

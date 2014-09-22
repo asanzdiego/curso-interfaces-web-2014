@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Formularios - Ejemplo bien</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<h1>Formularios - Ejemplo bien</h1>
+
+<form name="contacto" method="post" action="#">
+  <fieldset>
+    <legend>Información personal</legend>
+
+    <label for="nombre" tabindex="1">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" autofocus required  /><br/>    
+
+    <label for="correo" tabindex="2">Correo ELectrónico:</label>
+    <input type="email" id="correo" name="correo" required /><br/>
+
+    <label for="web" tabindex="3">Página personal:</label>
+    <input type="url" id="web" name="web" placeholder="URL de tu página web personal"  /><br/>
+
+  </fieldset>
+  <fieldset>
+    <legend>Otra información</legend>
+     
+      <label for="fecha" tabindex="4">Fecha:</label>
+      <input type="date" id="fecha" name="fecha" /><br/>
+
+      <label for="mes" tabindex="5">Mes:</label>
+      <input type="month" id="mes" name="mes" /><br/>
+
+      <label for="semana" tabindex="6">Semana:</label>
+      <input type="week" id="semana" name="semana" /><br/>
+
+      <label for="tiempo" tabindex="7">Tiempo:</label>
+      <input type="time" id="tiempo" name="tiempo" /><br/>
+
+      <label for="fechatiempo" tabindex="8">Fecha y tiempo:</label>
+      <input type="time" id="fechatiempo" name="fechatiempo" /><br/>
+
+      <label for="numero" tabindex="9">Número (min -10, max 10):</label>
+      <input type="number" id="numero" name="numero" min="-10" max="10" value="0" /><br/>
+
+      <label for="intervalo" tabindex="10">Intervalo (min 0, max 10):</label>
+      <input type="range" id="intervalo" name="intervalo" />
+      <output for="intervalo" name="intervalo" >0</output><br/>
+
+      <label for="telefono" tabindex="11">Teléfono:</label>
+      <input type="tel" id="telefono" name="telefono" /><br/>
+
+      <label for="busqueda" tabindex="12">Búsqueda:</label>
+      <input type="search" id="busqueda" name="busqueda" /><br/>
+
+      <label for="color_favorito" tabindex="13">Color Favorito:</label>
+      <input type="color" id="color_favorito" name="color_favorito" /><br/>
+
+  </fieldset>
+  <fieldset>
+    <legend>Controles</legend>
+
+      <input type="reset" name="borrar" value="Borrar" />
+      <input type="submit" name="enviar" value="Enviar" />
+ 
+  </fieldset>
+</form>
+
+</body>
+</html>

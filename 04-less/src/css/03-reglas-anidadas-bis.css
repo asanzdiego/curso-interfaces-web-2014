@@ -1,0 +1,19 @@
+#header {
+    font-size: 30px;
+}
+
+#header h1 {
+    color: grey;
+}
+
+#header p {
+    color: red;
+}
+
+#header p a { 
+    text-decoration: none;
+}
+
+#header p a:hover { 
+    color: green;
+}

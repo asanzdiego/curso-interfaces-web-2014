@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="description" content="Usabilidad Web" />
+  <meta name="author" content="Adolfo Sanz De Diego" />
+  <title>Usabilidad Web</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+<h1 class="title">Usabilidad Web</h1>
+<h2 class="author">Adolfo Sanz De Diego</h2>
+<h3 class="date">Agosto 2014</h3>
+</header>
+<nav id="TOC">
+<ul>
+<li><a href="#el-autor"><span class="toc-section-number">1</span> El autor</a><ul>
+<li><a href="#adolfo-sanz-de-diego"><span class="toc-section-number">1.1</span> Adolfo Sanz De Diego</a></li>
+<li><a href="#algunos-proyectos"><span class="toc-section-number">1.2</span> Algunos proyectos</a></li>
+<li><a href="#donde-encontrarme"><span class="toc-section-number">1.3</span> ¿Donde encontrarme?</a></li>
+</ul></li>
+<li><a href="#introducción"><span class="toc-section-number">2</span> Introducción</a><ul>
+<li><a href="#qué"><span class="toc-section-number">2.1</span> ¿Qué?</a></li>
+<li><a href="#por-qué"><span class="toc-section-number">2.2</span> ¿Por qué?</a></li>
+<li><a href="#cómo"><span class="toc-section-number">2.3</span> ¿Cómo?</a></li>
+</ul></li>
+<li><a href="#glosario-de-términos"><span class="toc-section-number">3</span> Glosario de términos</a><ul>
+<li><a href="#usabilidad"><span class="toc-section-number">3.1</span> Usabilidad</a></li>
+<li><a href="#accesibilidad"><span class="toc-section-number">3.2</span> Accesibilidad</a></li>
+<li><a href="#arquitectura-información"><span class="toc-section-number">3.3</span> Arquitectura Información</a></li>
+<li><a href="#experiencia-usuario"><span class="toc-section-number">3.4</span> Experiencia Usuario</a></li>
+<li><a href="#diseño-centrado-usuario"><span class="toc-section-number">3.5</span> Diseño Centrado Usuario</a></li>
+</ul></li>
+<li><a href="#conocer-al-usuario"><span class="toc-section-number">4</span> Conocer al usuario</a><ul>
+<li><a href="#cómo-ve"><span class="toc-section-number">4.1</span> ¿Cómo ve?</a></li>
+<li><a href="#cómo-piensa"><span class="toc-section-number">4.2</span> ¿Cómo piensa?</a></li>
+<li><a href="#cómo-actúa"><span class="toc-section-number">4.3</span> ¿Cómo actúa?</a></li>
+</ul></li>
+<li><a href="#evitar-errores"><span class="toc-section-number">5</span> Evitar errores</a><ul>
+<li><a href="#limitar-posibilidades"><span class="toc-section-number">5.1</span> Limitar posibilidades</a></li>
+<li><a href="#orientar-al-usuario"><span class="toc-section-number">5.2</span> Orientar al usuario</a></li>
+<li><a href="#solicitar-confirmación"><span class="toc-section-number">5.3</span> Solicitar confirmación</a></li>
+<li><a href="#evitar-la-pérdida-de-información"><span class="toc-section-number">5.4</span> Evitar la pérdida de información</a></li>
+<li><a href="#permitir-deshacer"><span class="toc-section-number">5.5</span> Permitir deshacer</a></li>
+<li><a href="#ofrecer-solución-automática-a-los-errores"><span class="toc-section-number">5.6</span> Ofrecer solución automática a los errores</a></li>
+<li><a href="#mensajes-de-error-para-humanos"><span class="toc-section-number">5.7</span> Mensajes de error para humanos</a></li>
+</ul></li>
+<li><a href="#simplicidad"><span class="toc-section-number">6</span> Simplicidad</a><ul>
+<li><a href="#reducción"><span class="toc-section-number">6.1</span> Reducción</a></li>
+<li><a href="#espacios-vacíos"><span class="toc-section-number">6.2</span> Espacios vacíos</a></li>
+<li><a href="#equilibrio-de-características"><span class="toc-section-number">6.3</span> Equilibrio de características</a></li>
+<li><a href="#gráfico-de-rob-tanenn"><span class="toc-section-number">6.4</span> Gráfico de Rob Tanenn</a></li>
+<li><a href="#organizar-clasificar-y-ordenar"><span class="toc-section-number">6.5</span> Organizar, clasificar y ordenar</a></li>
+</ul></li>
+<li><a href="#metodología-dcu"><span class="toc-section-number">7</span> Metodología DCU</a><ul>
+<li><a href="#fases"><span class="toc-section-number">7.1</span> Fases</a></li>
+<li><a href="#planificación"><span class="toc-section-number">7.2</span> Planificación</a></li>
+<li><a href="#diseño"><span class="toc-section-number">7.3</span> Diseño</a><ul>
+<li><a href="#modelado-usuario"><span class="toc-section-number">7.3.1</span> Modelado usuario</a></li>
+<li><a href="#diseño-conceptual"><span class="toc-section-number">7.3.2</span> Diseño conceptual</a></li>
+<li><a href="#diseño-de-interacción"><span class="toc-section-number">7.3.3</span> Diseño de interacción</a></li>
+<li><a href="#diseño-visual"><span class="toc-section-number">7.3.4</span> Diseño visual</a></li>
+<li><a href="#definición-de-estilo"><span class="toc-section-number">7.3.5</span> Definición de estilo</a></li>
+<li><a href="#diseño-contenidos"><span class="toc-section-number">7.3.6</span> Diseño contenidos</a></li>
+</ul></li>
+<li><a href="#prototipado"><span class="toc-section-number">7.4</span> Prototipado</a></li>
+<li><a href="#evaluación"><span class="toc-section-number">7.5</span> Evaluación</a><ul>
+<li><a href="#aprendizaje"><span class="toc-section-number">7.5.1</span> Aprendizaje</a></li>
+<li><a href="#efectividad"><span class="toc-section-number">7.5.2</span> Efectividad</a></li>
+<li><a href="#reconocimiento"><span class="toc-section-number">7.5.3</span> Reconocimiento</a></li>
+<li><a href="#eficiencia"><span class="toc-section-number">7.5.4</span> Eficiencia</a></li>
+<li><a href="#satisfacción"><span class="toc-section-number">7.5.5</span> Satisfacción</a></li>
+</ul></li>
+<li><a href="#implementación-y-lanzamiento"><span class="toc-section-number">7.6</span> Implementación y lanzamiento</a></li>
+<li><a href="#mantenimiento-y-seguimiento"><span class="toc-section-number">7.7</span> Mantenimiento y seguimiento</a></li>
+</ul></li>
+<li><a href="#principios-usabilidad"><span class="toc-section-number">8</span> Principios usabilidad</a><ul>
+<li><a href="#visibilidad-estado"><span class="toc-section-number">8.1</span> Visibilidad estado</a></li>
+<li><a href="#adecuación-al-mundo-real"><span class="toc-section-number">8.2</span> Adecuación al mundo real</a></li>
+<li><a href="#libertad-y-control"><span class="toc-section-number">8.3</span> Libertad y control</a></li>
+<li><a href="#consistencia-y-estándares"><span class="toc-section-number">8.4</span> Consistencia y estándares</a></li>
+<li><a href="#prevención-de-errores"><span class="toc-section-number">8.5</span> Prevención de errores</a></li>
+<li><a href="#reconocimiento-antes-que-recuerdo"><span class="toc-section-number">8.6</span> Reconocimiento antes que recuerdo</a></li>
+<li><a href="#flexibilidad-y-eficiencia"><span class="toc-section-number">8.7</span> Flexibilidad y eficiencia</a></li>
+<li><a href="#diseño-estético-y-minimalista"><span class="toc-section-number">8.8</span> Diseño estético y minimalista</a></li>
+<li><a href="#manejo-de-errores"><span class="toc-section-number">8.9</span> Manejo de errores</a></li>
+<li><a href="#ayuda-y-documentación"><span class="toc-section-number">8.10</span> Ayuda y documentación</a></li>
+</ul></li>
+<li><a href="#técnicas-de-evaluación"><span class="toc-section-number">9</span> Técnicas de evaluación</a><ul>
+<li><a href="#card-sorting"><span class="toc-section-number">9.1</span> Card-sorting</a></li>
+<li><a href="#evaluación-heurística"><span class="toc-section-number">9.2</span> Evaluación heurística</a></li>
+<li><a href="#test-de-usuarios"><span class="toc-section-number">9.3</span> Test de usuarios</a></li>
+<li><a href="#eye-tracking"><span class="toc-section-number">9.4</span> Eye-tracking</a></li>
+<li><a href="#feedback"><span class="toc-section-number">9.5</span> Feedback</a></li>
+<li><a href="#analítica-web"><span class="toc-section-number">9.6</span> Analítica Web</a></li>
+<li><a href="#test-ab"><span class="toc-section-number">9.7</span> Test A/B</a></li>
+</ul></li>
+<li><a href="#ejercicios"><span class="toc-section-number">10</span> Ejercicios</a><ul>
+<li><a href="#normas-generales"><span class="toc-section-number">10.1</span> Normas generales</a></li>
+<li><a href="#card-sorting-abierto"><span class="toc-section-number">10.2</span> Card-sorting abierto</a></li>
+<li><a href="#card-sorting-cerrado"><span class="toc-section-number">10.3</span> Card-sorting cerrado</a></li>
+<li><a href="#checklist-de-usabilidad"><span class="toc-section-number">10.4</span> Checklist de usabilidad</a></li>
+<li><a href="#evaluación-heurística-1"><span class="toc-section-number">10.5</span> Evaluación heurística</a></li>
+<li><a href="#test-de-usuarios-1"><span class="toc-section-number">10.6</span> Test de usuarios</a></li>
+<li><a href="#test-ab-1"><span class="toc-section-number">10.7</span> Test A/B</a></li>
+</ul></li>
+<li><a href="#acerca-de"><span class="toc-section-number">11</span> Acerca de</a><ul>
+<li><a href="#licencia"><span class="toc-section-number">11.1</span> Licencia</a></li>
+<li><a href="#fuentes"><span class="toc-section-number">11.2</span> Fuentes</a></li>
+<li><a href="#bibliografía"><span class="toc-section-number">11.3</span> Bibliografía</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="el-autor"><a href="#el-autor"><span class="header-section-number">1</span> El autor</a></h1>
+<h2 id="adolfo-sanz-de-diego"><a href="#adolfo-sanz-de-diego"><span class="header-section-number">1.1</span> Adolfo Sanz De Diego</a></h2>
+<p><strong>Antiguo programador web JEE (6 años)</strong></p>
+<p>Hoy en día:</p>
+<ul>
+<li><strong>Profesor de FP (6 años)</strong>:
+<ul>
+<li>Hardware, Sistemas Operativos</li>
+<li>Redes, Programación</li>
+</ul></li>
+<li><strong>Formador Freelance (3 años)</strong>:
+<ul>
+<li>Java, Android</li>
+<li>JavaScript, jQuery</li>
+<li>JSF, Spring, Hibernate</li>
+<li>Groovy &amp; Grails</li>
+</ul></li>
+</ul>
+<h2 id="algunos-proyectos"><a href="#algunos-proyectos"><span class="header-section-number">1.2</span> Algunos proyectos</a></h2>
+<p>Fundador y/o creador:</p>
+<ul>
+<li><p><strong>Hackathon Lovers</strong>: <a href="http://hackathonlovers.com">http://hackathonlovers.com</a></p></li>
+<li><p><strong>Tweets Sentiment</strong>: <a href="http://tweetssentiment.com">http://tweetssentiment.com</a></p></li>
+<li><p><strong>MarkdownSlides</strong>: <a href="https://github.com/asanzdiego/markdownslides">https://github.com/asanzdiego/markdownslides</a></p></li>
+</ul>
+<p>Co-fundador y/o co-creador:</p>
+<ul>
+<li><p><strong>PeliTweets</strong>: <a href="http://pelitweets.com">http://pelitweets.com</a></p></li>
+<li><p><strong>Password Manager Generator</strong>: <a href="http://pasmangen.github.io">http://pasmangen.github.io</a></p></li>
+</ul>
+<h2 id="donde-encontrarme"><a href="#donde-encontrarme"><span class="header-section-number">1.3</span> ¿Donde encontrarme?</a></h2>
+<p>Mi nick: <strong>asanzdiego</strong></p>
+<ul>
+<li><p>AboutMe: <a href="http://about.me/asanzdiego">http://about.me/asanzdiego</a></p></li>
+<li><p>GitHub: <a href="http://github.com/asanzdiego">http://github.com/asanzdiego</a></p></li>
+<li><p>Twitter: <a href="http://twitter.com/asanzdiego">http://twitter.com/asanzdiego</a></p></li>
+<li><p>Blog: <a href="http://asanzdiego.blogspot.com.es">http://asanzdiego.blogspot.com.es</a></p></li>
+<li><p>LinkedIn: <a href="http://www.linkedin.com/in/asanzdiego">http://www.linkedin.com/in/asanzdiego</a></p></li>
+<li><p>Google+: <a href="http://plus.google.com/+AdolfoSanzDeDiego">http://plus.google.com/+AdolfoSanzDeDiego</a></p></li>
+</ul>
+<h1 id="introducción"><a href="#introducción"><span class="header-section-number">2</span> Introducción</a></h1>
+<h2 id="qué"><a href="#qué"><span class="header-section-number">2.1</span> ¿Qué?</a></h2>
+<p>Vamos a ver que es la <strong>usabilidad de un sitio web y como mejorarla</strong>.</p>
+<h2 id="por-qué"><a href="#por-qué"><span class="header-section-number">2.2</span> ¿Por qué?</a></h2>
+<p><strong>Mejora en la calidad del producto</strong>: los sistemas que mejor se ajustan a las necesidades del usuario mejoran la productividad y la calidad de las acciones y las decisiones.</p>
+<p><strong>Reducción de los costes de mantenimiento</strong>: los sistemas que son fáciles de usar requieren menos entrenamiento, menos soporte para el usuario y menos mantenimiento.</p>
+<p><strong>Reducción de los costes de producción</strong>: los costes y tiempos de desarrollo totales pueden ser reducidos evitando el sobrediseño y reduciendo el número de cambios posteriores requeridos en el producto.</p>
+<p><strong>Un caso real</strong>, después de ser rediseñado prestándose especial atención a la usabilidad, el sitio web de IBM incrementó sus ventas en un 400%</p>
+<h2 id="cómo"><a href="#cómo"><span class="header-section-number">2.3</span> ¿Cómo?</a></h2>
+<p>Primero <strong>definiremos varios términos importantes</strong>: usabilidad, accesibilidad, arquitectura de la información, experiencia de usuario y diseño centrado en el usuario.</p>
+<p>Luego intentaremos <strong>conocer al usuario</strong>, saber como ve, como piensa y como actúa.</p>
+<p>Después veremos como <strong>evitando que el usuario cometa errores, y simplificando el diseño</strong>, podemos mejorar la usabilidad.</p>
+<p>También veremos la metodología del <strong>diseño centrado en el usuario</strong>, que se compone de varias fases: planificación, diseño, prototipado, evaluación, implementación y lanzamiento, y mantenimiento y seguimiento.</p>
+<p>Seguidamente veremos <strong>los principios de usabilidad y las técnicas de evaluación</strong>: card-sorting, evaluación heurística, test de usuarios, eye-tracking, feedback, analítica web, tests A/B.</p>
+<p>Para terminar propondremos varios varios <strong>ejercicios</strong> para realizar en clase en gruposde 3-4.</p>
+<h1 id="glosario-de-términos"><a href="#glosario-de-términos"><span class="header-section-number">3</span> Glosario de términos</a></h1>
+<h2 id="usabilidad"><a href="#usabilidad"><span class="header-section-number">3.1</span> Usabilidad</a></h2>
+<p>Podemos observar que la usabilidad se compone de dos tipos de atributos:</p>
+<ul>
+<li><p><strong>Atributos cuantificables de forma objetiva</strong>: como son la eficacia o número de errores cometidos por el usuario durante la realización de una tarea, y eficiencia o tiempo empleado por el usuario para la consecución de una tarea.</p></li>
+<li><p><strong>Atributos cuantificables de forma subjetiva</strong>: como es la satisfacción de uso, medible a través de la interrogación al usuario.</p></li>
+</ul>
+<p>Los usuarios no buscan usabilidad, buscan utilidad, entendida como el <strong>provecho, beneficio e interés que produce su uso</strong>.</p>
+<p>Un producto será usable en la medida en que el <strong>beneficio que se obtenga de usarlo justifique el esfuerzo necesario para su uso</strong>.</p>
+<p>Pensemos por ejemplo en los <strong>automóviles</strong>: son herramientas que requieren de un gran esfuerzo de aprendizaje y adaptación por parte de sus usuarios, aunque no por ello son percibidos como artefactos poco usables.</p>
+<p>La usabilidad <strong>no sólo es relativa a sus usuarios, sino también a los usos</strong>. Por ejemplo, un <strong>microondas</strong> puede ser usado para guardar zapatos, pero no se pensó para eso, por lo tanto puede resultar no usable en ese contexto.</p>
+<p>Además, <strong>los objetivos y contextos previstos determinarán la importancia de su usabilidad</strong>. Por ejemplo, un <strong>teléfono móvil</strong> puede ser usado para realizar una llamada de emergencia, o para escuchar las diferentes melodías que incorpora, un objetivo este último para el que la usabilidad puede que no sea tan relevante como para el primero.</p>
+<h2 id="accesibilidad"><a href="#accesibilidad"><span class="header-section-number">3.2</span> Accesibilidad</a></h2>
+<p>La accesibilidad se refiere a la capacidad del sistema a para <strong>facilitar el acceso a todas las personas</strong> en igualdad de condiciones, independientemente de la tecnología o soporte que utilicen y de la discapacidad que puedan presentar.</p>
+<h2 id="arquitectura-información"><a href="#arquitectura-información"><span class="header-section-number">3.3</span> Arquitectura Información</a></h2>
+<p>Disciplina que busca <strong>organizar espacios de información</strong> con el fin de ayudar a los usuarios a satisfacer sus necesidades de información.</p>
+<p>La actividad de organizar <strong>comporta la estructuración, clasificación y rotulado</strong> de los contenidos.</p>
+<p>La AI es el elemento que sostiene estructuralmente el contenido, por tanto, debe <strong>definirse en las primeras etapas</strong>, ya que de ella dependerán otros elementos del diseño.</p>
+<p>El objetivo principal es <strong>facilitar al usuario la recuperación de información</strong>.</p>
+<p>La recuperación de información es <strong>una de las tareas de mayor importancia</strong> para los usuarios.</p>
+<p>Una <strong>mala AI dificulta la búsqueda, y a la larga realizar otras tareas</strong> (como comprar).</p>
+<h2 id="experiencia-usuario"><a href="#experiencia-usuario"><span class="header-section-number">3.4</span> Experiencia Usuario</a></h2>
+<p>Capacidad de una interfaz de <strong>generar sensaciones y emociones</strong>, en el usuario, durante el proceso de interacción.</p>
+<h2 id="diseño-centrado-usuario"><a href="#diseño-centrado-usuario"><span class="header-section-number">3.5</span> Diseño Centrado Usuario</a></h2>
+<p>Proceso de diseño y desarrollo (del sitio web) <strong>conducido por el usuario</strong>, sus necesidades, características e intereses.</p>
+<h1 id="conocer-al-usuario"><a href="#conocer-al-usuario"><span class="header-section-number">4</span> Conocer al usuario</a></h1>
+<h2 id="cómo-ve"><a href="#cómo-ve"><span class="header-section-number">4.1</span> ¿Cómo ve?</a></h2>
+<p>Decidimos qué queremos atender visualmente, pero <strong>nuestra atención se ve interferida involuntariamente y de forma automática por determinadas características visuales</strong>, aún cuando hagan presencia en zonas de visión periférica.</p>
+<p>En las interfaces web sucede igual: los usuarios escanearán visualmente la interfaz en busca de propiedades gráficas propias de los objetos deseados –enlaces, textos, imágenes, ...–, y esta <strong>exploración puede verse facilitada si el diseñador enfatiza aquellos elementos potencialmente más relevantes</strong>, o por el contrario entorpecida cuando nada parece visualmente más relevante que el resto.</p>
+<p>La capacidad que tiene un elemento visual de atraer la atención del usuario se encuentra en directa <strong>relación con sus diferencias gráficas</strong> respecto a los elementos colindantes.</p>
+<div style="text-align:center">
+<img src="../img/inusual.png" alt="Nos vemos involuntariamente atraídos por lo inusual. Fuente: nosolousabilidad.com" />
+</div>
+<p>Un elemento con <strong>mayor tamaño</strong> que el resto, con un <strong>color distinto</strong> a los demás, con una <strong>orientación diferente</strong>, o <strong>en movimiento</strong>, tendrá más probabilidad de atraer nuestra atención.</p>
+<p>Esto es algo que comprendieron los <strong>diseñadores de banners</strong>, pero los usuarios aprendieron a ignorar automáticamente todo aquello que, por sus propiedades gráficas (y ubicación), pareciera información publicitaria (lo fuera o no).</p>
+<p>La <strong>publicidad contextual</strong>, popularizada por Google, intenta atraer nuestra atención por el camino contrario: en vez de por medio de su diferenciación gráfica, mediante su similitud, de tal forma que el usuario tenga la impresión de que por su aspecto pueda tratarse de contenido de interés.</p>
+<p>Mejorar el <strong>diseño visual</strong>:</p>
+<div style="text-align:center">
+<img src="../img/principios-disenio-visual.png" alt="Mejorar el diseño visual. Fuente: nosolousabilidad.com" />
+</div>
+<p><strong>Enfatizar</strong>: implica hacer visible lo relevante, establecer una clara jerarquía visual entre elementos y zonas de la interfaz, de modo que la atención del usuario se vea guiada de forma lógica y secuencial de lo más relevante hacia lo secundario.</p>
+<p><strong>Organizar</strong>: significa establecer relaciones visuales lógicas, que faciliten de este modo al usuario relacionar o diferenciar elementos automáticamente. Por ejemplo, que los enlaces tengan todos una misma caracterización gráfica (color, tipografía, efectos), facilita al usuario que, una vez detectado un enlace, pueda diferenciarlos automáticamente.</p>
+<p><strong>Hacer reconocible</strong>: considerar con especial cuidado el uso de iconos, encabezados, enlaces... de tal forma que se requiera del usuario el menor de los esfuerzos para comprender y predecir el funcionamiento interactivo de la interfaz.</p>
+<h2 id="cómo-piensa"><a href="#cómo-piensa"><span class="header-section-number">4.2</span> ¿Cómo piensa?</a></h2>
+<p>Cada vez que aprendemos algo extraemos nuestro propio <strong>mapa mental</strong>.</p>
+<div style="text-align:center">
+<img src="../img/extraccion-mapa-mental-2.jpg" alt="Extracción de nuestro propio mapa mental. Fuente: nosolousabilidad.com" />
+</div>
+<p>¿Cómo <strong>clasificaríamos</strong> los colores?</p>
+<p>¿Primarios, secundarios y terciarios?</p>
+<p>¿O cálidos y fríos?</p>
+<div style="text-align:center">
+<img src="../img/colores.jpg" alt="Clasificación de los colores" />
+</div>
+<p>¿Cúal de las 2 clasificaciones es mejor para mi interfaz?</p>
+<p>Dependerá de nuestros usuarios.</p>
+<p>Hay que intentar <strong>adaptar nuestros contenidos a los mapas mentales</strong> de nuestros usuarios.</p>
+<p>Un usuario será capaz de identificar la función de cada elemento sólo <strong>si ha aprendido previamente su significado</strong>.</p>
+<p>Además <strong>el significado dependerá del contexto</strong>. Un mismo usuario asociará sentidos diferentes a un enlace con el rótulo “Archivos”, en función de si se encuentra visitando un sitio web de noticias, un repositorio de software o la página web de una asociación de Bibliotecas, Museos y Archivos.</p>
+<p>¿Cuales de estos formularios de búsqueda no utilizarías para tu interfaz web?</p>
+<div style="text-align:center">
+<img src="../img/busqueda.png" alt="Formularios de búsqueda. Fuente: nosolousabilidad.com" />
+</div>
+<p>¿Cuales de estos calendarios no utilizarías para tu interfaz web?</p>
+<div style="text-align:center">
+<img src="../img/calendarios.png" alt="Calendarios. Fuente: nosolousabilidad.com" />
+</div>
+<h2 id="cómo-actúa"><a href="#cómo-actúa"><span class="header-section-number">4.3</span> ¿Cómo actúa?</a></h2>
+<p>Mecanismo <strong>intuitivo</strong>:</p>
+<ul>
+<li><p>se caracteriza por ser muy rápido, susceptible a errores y fundamentalmente emocional</p></li>
+<li><p>se disparan reglas automáticas o heurísticas –adquiridas en base a nuestra experiencia– que nos ofrecen una solución rápida, y nos posibilitan un comportamiento eficiente.</p></li>
+</ul>
+<p>Mecanismo <strong>racional</strong>:</p>
+<ul>
+<li><p>es un proceso lineal, lógico, consciente y que requiere esfuerzo y tiempo</p></li>
+<li><p>es menos propenso a errores, además de que podemos –frente a un error– modificar el proceso, corrigiendo el resultado.</p></li>
+</ul>
+<p>Normalmente empleamos el <strong>sistema intuitivo pues nos permite economizar nuestro esfuerzo cognitivo</strong>, y sólo usamos <strong>sistema racional para las decisiones realmente importantes</strong>.</p>
+<p>Esto explica por qué, por ejemplo, ante una ventana de alerta en la que se nos pregunta algo y se nos ofrecen dos posibles respuestas (sí y no), <strong>es frecuente que automáticamente hagamos clic sin leer o procesar el contenido de la pregunta</strong>.</p>
+<p>El usuario explorará los ítems y <strong>elegirá el primero que crea se corresponde con el contenido deseado</strong>, aún cuando no todos hayan sido valorados.</p>
+<p>La <strong>ordenación alfabética sería una solución universal</strong>, si no fuera porque no siempre somos capaces de verbalizar nuestra necesidad informativa y, aún cuando lo somos, dicha representación sintáctica no tiene por qué coincidir con el término utilizado en la interfaz.</p>
+<p>La mejor solución es reducir el número de ítems, <strong>agrupando aquellos semánticamente similares bajo rótulos descriptivos</strong>, de tal forma que el usuario primero explorará los rótulos de cada grupo, y sólo cuando estime que se encuentran relacionados con su necesidad, explorará los ítems contenidos en el grupo.</p>
+<p>Los usuarios sean idiotas, sino que <strong>tienen mejores asuntos en los que emplear su esfuerzo cognitivo</strong> que en comprender nuestro diseño.</p>
+<p>No todo a lo que atendemos es procesado racionalmente, lo que <strong>nos lleva a cometer errores</strong> frecuentemente.</p>
+<h1 id="evitar-errores"><a href="#evitar-errores"><span class="header-section-number">5</span> Evitar errores</a></h1>
+<h2 id="limitar-posibilidades"><a href="#limitar-posibilidades"><span class="header-section-number">5.1</span> Limitar posibilidades</a></h2>
+<p>Siempre hay que tener en cuenta que cuantas menos opciones, menos posibilidades de error tendrá el usuario.</p>
+<div style="text-align:center">
+<img src="../img/limitar.png" alt="Limitar posibilidades. Fuente: nosolousabilidad.com" />
+</div>
+<h2 id="orientar-al-usuario"><a href="#orientar-al-usuario"><span class="header-section-number">5.2</span> Orientar al usuario</a></h2>
+<p>Ya sea mostrándole paulatinamente las distintas opciones, o mostrándoles pequeños mensajes informativos.</p>
+<div style="text-align:center">
+<img src="../img/orientar.png" alt="Orientar al usuario. Fuente: nosolousabilidad.com" />
+</div>
+<h2 id="solicitar-confirmación"><a href="#solicitar-confirmación"><span class="header-section-number">5.3</span> Solicitar confirmación</a></h2>
+<p>Antes de realizar una acción que no tiene vuelta atrás, hay que informar al usuario.</p>
+<div style="text-align:center">
+<img src="../img/confirmar.png" alt="Solicitar confirmación. Fuente: gmail.com" />
+</div>
+<h2 id="evitar-la-pérdida-de-información"><a href="#evitar-la-pérdida-de-información"><span class="header-section-number">5.4</span> Evitar la pérdida de información</a></h2>
+<p>En caso de error y vuelta atrás, el usuario no debería volver a introducir los datos.</p>
+<div style="text-align:center">
+<img src="../img/ajax.png" alt="Evitar la pérdida de información. Fuente: nosolousabilidad.com" />
+</div>
+<h2 id="permitir-deshacer"><a href="#permitir-deshacer"><span class="header-section-number">5.5</span> Permitir deshacer</a></h2>
+<p>Siempre que sea posible, hay que ofrecer al usuario la posibilidad de volver atrás.</p>
+<div style="text-align:center">
+<img src="../img/anterior-siguiente.png" alt="Permitir deshacer. Fuente: nosolousabilidad.com" />
+</div>
+<h2 id="ofrecer-solución-automática-a-los-errores"><a href="#ofrecer-solución-automática-a-los-errores"><span class="header-section-number">5.6</span> Ofrecer solución automática a los errores</a></h2>
+<p>No siempre es posible, pero si es deseable que el propio sistema sea capaz de ofrecer soluciones automáticas.</p>
+<div style="text-align:center">
+<img src="../img/did-you-mean.png" alt="Ofrecer solución automática a los errores. Fuente: nosolousabilidad.com" />
+</div>
+<h2 id="mensajes-de-error-para-humanos"><a href="#mensajes-de-error-para-humanos"><span class="header-section-number">5.7</span> Mensajes de error para humanos</a></h2>
+<p>Si aparece un mensaje de error este tiene que ser entendible por el usuario.</p>
+<div style="text-align:center">
+<img src="../img/mensaje-error.png" alt="Mensajes de error para humanos. Fuente: duckduckgo.com" />
+</div>
+<h1 id="simplicidad"><a href="#simplicidad"><span class="header-section-number">6</span> Simplicidad</a></h1>
+<h2 id="reducción"><a href="#reducción"><span class="header-section-number">6.1</span> Reducción</a></h2>
+<p>Si prescindimos de un elemento, y el cambio no afecta a la comprensión del usuario, entonces su presencia no era necesaria.</p>
+<div style="text-align:center">
+<img src="../img/reduccion-2.png" alt="Reducción. Fuente: nosolousabilidad.com" />
+</div>
+<h2 id="espacios-vacíos"><a href="#espacios-vacíos"><span class="header-section-number">6.2</span> Espacios vacíos</a></h2>
+<p>Cuando separamos elementos en pantalla con espacios vacíos, o cuando eliminamos información irrelevante de ciertas zonas, <strong>estamos guiando la atención del usuario hacia aquello que permanece y es relevante</strong>.</p>
+<p>Al contar <strong>con menos elementos valoramos y confiamos más en aquello que es visible</strong>, reforzando su percepción.</p>
+<h2 id="equilibrio-de-características"><a href="#equilibrio-de-características"><span class="header-section-number">6.3</span> Equilibrio de características</a></h2>
+<p>Al incrementar el número de características se observa <strong>un efecto positivo sobre las capacidades percibidas, pero un efecto negativo sobre la usabilidad percibida</strong>.</p>
+<h2 id="gráfico-de-rob-tanenn"><a href="#gráfico-de-rob-tanenn"><span class="header-section-number">6.4</span> Gráfico de Rob Tanenn</a></h2>
+<div style="text-align:center">
+<img src="../img/grafico-de-rob-tanenn-2.png" alt="Gráfico de Rob Tanenn. Fuente: nosolousabilidad.com" />
+</div>
+<h2 id="organizar-clasificar-y-ordenar"><a href="#organizar-clasificar-y-ordenar"><span class="header-section-number">6.5</span> Organizar, clasificar y ordenar</a></h2>
+<p>Organizar, clasificar y ordenar <strong>son también formas de simplificar</strong>.</p>
+<p>Por ejemplo, Google no simplifica los resultados de búsqueda por clasificación, sino por ordenación.</p>
+<h1 id="metodología-dcu"><a href="#metodología-dcu"><span class="header-section-number">7</span> Metodología DCU</a></h1>
+<h2 id="fases"><a href="#fases"><span class="header-section-number">7.1</span> Fases</a></h2>
+<div style="text-align:center">
+<img src="../img/disenio-centrado-usuario.png" alt="Fases del diseño centrado en el usuario. Fuente: upf.edu" />
+</div>
+<h2 id="planificación"><a href="#planificación"><span class="header-section-number">7.2</span> Planificación</a></h2>
+<p>Se basa en la <strong>recogida, análisis y ordenación de toda la información posible</strong>, con el objetivo de tener una base sólida sobre la que poder tomar decisiones de diseño en las siguientes etapas del proceso.</p>
+<h2 id="diseño"><a href="#diseño"><span class="header-section-number">7.3</span> Diseño</a></h2>
+<p>Diseñar o rediseñar, <strong>en base al conocimiento obtenido</strong> en la etapa de planificación, y en las etapas de prototipado y evaluación.</p>
+<p>Dividido en varias subfases:</p>
+<ul>
+<li><p>Modelado usuario</p></li>
+<li><p>Diseño conceptual</p></li>
+<li><p>Diseño de interacción</p></li>
+<li><p>Diseño visual</p></li>
+<li><p>Definición de estilo</p></li>
+<li><p>Diseño contenidos</p></li>
+</ul>
+<h3 id="modelado-usuario"><a href="#modelado-usuario"><span class="header-section-number">7.3.1</span> Modelado usuario</a></h3>
+<p>Definición de <strong>arquetipos de usuarios</strong> que representan patrones de conducta, objetivos y necesidades.</p>
+<p>Estos arquetipos, llamados &quot;<strong>personas</strong>&quot;, son descripciones de usuarios, a los que se les da una identidad inventada: fotografía, nombre,... pero con los atributos, características y necesidades del arquetipo basados en información real extraída de la audiencia objetiva del sitio web.</p>
+<p>Además se deben definir &quot;<strong>scenarios</strong>&quot; sobre los que poder contextualizar la interacción persona-aplicación web.</p>
+<div style="text-align:center">
+<img src="../img/persona.png" alt="Arquetipo &#39;persona&#39;. Fuente: upf.edu" />
+</div>
+<p>El diseñador <strong>suele imaginarse a sí mismo usando el sitio</strong> y por tanto suele ser incapaz de comprender por qué a alguien le puede resultar difícil, incomodo y hasta frustrante su uso.</p>
+<p>Estos arquetipos de usuarios conseguirán que el diseñador <strong>tenga en mente a un usuario 'real'</strong>, con limitaciones, habilidades y necesidades reales.</p>
+<h3 id="diseño-conceptual"><a href="#diseño-conceptual"><span class="header-section-number">7.3.2</span> Diseño conceptual</a></h3>
+<p>Definición del <strong>esquema de organización, funcionamiento y navegación del sitio</strong>.</p>
+<p>No se especifica qué apariencia va a tener el sitio, sino que se centra en su arquitectura de información.</p>
+<h3 id="diseño-de-interacción"><a href="#diseño-de-interacción"><span class="header-section-number">7.3.3</span> Diseño de interacción</a></h3>
+<p>Definir el comportamiento interactivo del sitio web, es decir, qué <strong>acciones se ofrecerán al usuario en cada momento, y cómo responderá la aplicación</strong> a las acciones que realice.</p>
+<div style="text-align:center">
+<img src="../img/disenio-interaccion.png" alt="Diagrama de diseño de interacción. Fuente: sopadepixels.com" />
+</div>
+<h3 id="diseño-visual"><a href="#diseño-visual"><span class="header-section-number">7.3.4</span> Diseño visual</a></h3>
+<p>Se especifica:</p>
+<ul>
+<li><p><strong>composición</strong> de cada tipo de página,</p></li>
+<li><p><strong>aspecto y comportamiento</strong> de los elementos de interacción y</p></li>
+<li><p><strong>presentación</strong> de elementos multimedia.</p></li>
+</ul>
+<p><strong>“lo bonito” es percibido por el usuario automáticamente como más fácil de usar</strong> (aunque desde un punto de vista objetivo realmente no sea tan fácil de usar).</p>
+<div style="text-align:center">
+<img src="../img/botones.png" alt="Botones. Fuente: nosolousabilidad.com" />
+</div>
+<p>Ahora bien, <strong>ofrecer un aspecto gráfico aparentemente tosco y poco cuidado puede aportar valor</strong> en determinados contextos.</p>
+<p>La estética, al igual que la usabilidad, es relativa a sus usuarios y contextos de uso.</p>
+<h3 id="definición-de-estilo"><a href="#definición-de-estilo"><span class="header-section-number">7.3.5</span> Definición de estilo</a></h3>
+<p>Es importante mantener una <strong>coherencia y estilo común</strong> entre todas las páginas.</p>
+<p>Es útil elaborar una <strong>guía de estilo</strong> que sirva de documento referencia para todo el equipo de desarrollo.</p>
+<h3 id="diseño-contenidos"><a href="#diseño-contenidos"><span class="header-section-number">7.3.6</span> Diseño contenidos</a></h3>
+<p><strong>Seguir una estructura piramidal</strong>: La parte más importante del mensaje debe ir al principio.</p>
+<p><strong>Evitar ser irrespetuoso</strong>: Intentar no dañar sensibilidades culturales, sociales, políticas, religiosas, o de cualquier otro tipo.</p>
+<p><strong>Permitir una fácil exploración del contenido</strong>: El lector en entornos Web, antes de empezar a leer, suele explorar visualmente el contenido para comprobar si le interesa. Usar los niveles de encabezado (h1, h2, h3, etc.), poner en relieve (negrita y/o distinto color) las partes fundamentales.</p>
+<p><strong>Un párrafo, una idea</strong>: Cada párrafo es un objeto informativo. Se deben trasmitir ideas, mensajes... evitando párrafos vacíos o varios mensajes en un mismo párrafo.</p>
+<p><strong>Ser conciso y preciso</strong>: Al lector no le gusta leer en pantalla. Hay que intentar eliminar los textos superfluos. Las páginas web no son novelas.</p>
+<p><strong>Usar el vocabulario del usuario</strong>: No se debe utilizar el vocabulario de la empresa o institución, sino el del usuario. Además debe ser sencillo y fácilmente comprensible.</p>
+<p><strong>Tono familiar y cercano</strong>: Así el lector prestará más atención. No hay que caer en la ordinariez.</p>
+<h2 id="prototipado"><a href="#prototipado"><span class="header-section-number">7.4</span> Prototipado</a></h2>
+<p>Algunas herramientas:</p>
+<ul>
+<li><p><a href="http://moqups.com">http://moqups.com</a></p></li>
+<li><p><a href="http://gomockingbird.com">http://gomockingbird.com</a></p></li>
+<li><p><a href="http://pencil.evolus.vn">http://pencil.evolus.vn</a></p></li>
+<li><p><a href="http://balsamiq.com">http://balsamiq.com</a></p></li>
+<li><p><a href="http://www.mockflow.com">http://www.mockflow.com</a></p></li>
+<li><p><a href="http://wireframe.cc">http://wireframe.cc</a></p></li>
+<li><p><a href="http://www.axure.com">http://www.axure.com</a></p></li>
+</ul>
+<h2 id="evaluación"><a href="#evaluación"><span class="header-section-number">7.5</span> Evaluación</a></h2>
+<p>La usabilidad la podemos mediante varias variables:</p>
+<ul>
+<li><p>facilidad de aprendizaje (Learnability)</p></li>
+<li><p>eficiencia</p></li>
+<li><p>facilidad de ser recordado (Memorability)</p></li>
+<li><p>eficacia</p></li>
+<li><p>satisfacción</p></li>
+</ul>
+<h3 id="aprendizaje"><a href="#aprendizaje"><span class="header-section-number">7.5.1</span> Aprendizaje</a></h3>
+<p>Dificultad para llevar a cabo tareas básicas <strong>la primera vez que se enfrentan al diseño</strong>.</p>
+<ul>
+<li><p>% tareas completadas en el primer intento</p></li>
+<li><p>% de usuarios que completan las tareas en el primer intento</p></li>
+<li><p>% de usuarios que necesitan ayuda en el primer intento</p></li>
+</ul>
+<h3 id="efectividad"><a href="#efectividad"><span class="header-section-number">7.5.2</span> Efectividad</a></h3>
+<p>Dificultad para llevar a cabo tareas concretas <strong>una vez que los usuarios han aprendido el funcionamiento básico</strong>.</p>
+<ul>
+<li><p>% tareas completadas</p></li>
+<li><p>% de usuarios que completan las tareas</p></li>
+<li><p>% de usuarios que necesitan ayuda</p></li>
+</ul>
+<h3 id="reconocimiento"><a href="#reconocimiento"><span class="header-section-number">7.5.3</span> Reconocimiento</a></h3>
+<p>Dificultad para llevar a cabo tareas concretas <strong>después de un periodo sin hacerlo</strong>.</p>
+<ul>
+<li><p>% tareas completadas pasado un cierto tiempo sin usar la interfaz</p></li>
+<li><p>% de usuarios que completan las tareas pasado un cierto tiempo sin usar la interfaz</p></li>
+<li><p>% de usuarios que necesitan ayuda pasado un cierto tiempo sin usar la interfaz</p></li>
+</ul>
+<h3 id="eficiencia"><a href="#eficiencia"><span class="header-section-number">7.5.4</span> Eficiencia</a></h3>
+<p><strong>Esfuerzo</strong> que un usuario tiene que hacer para conseguir un objetivo.</p>
+<ul>
+<li><p>tiempo en completar cada tarea</p></li>
+<li><p>número de errores cometidos</p></li>
+<li><p>nivel de gravedad de los errores</p></li>
+<li><p>tiempo en recuperarse de los errores</p></li>
+<li><p>clicks para completar la tarea</p></li>
+<li><p>páginas visitas para completar la tarea</p></li>
+<li><p>número de veces que solicita ayuda</p></li>
+</ul>
+<h3 id="satisfacción"><a href="#satisfacción"><span class="header-section-number">7.5.5</span> Satisfacción</a></h3>
+<p>Variables que tienen que ver más con lo <strong>emocional o subjetivo</strong>.</p>
+<ul>
+<li><p>% de usuarios que lo recomendaría a un amigo</p></li>
+<li><p>número de adjetivos positivos (o negativos) que cada usuario da al producto</p></li>
+<li><p>% de usuarios que lo califican más fácil de usar que el de la competencia</p></li>
+<li><p>% de usuarios que expresan satisfacción (o insatisfacción)</p></li>
+</ul>
+<h2 id="implementación-y-lanzamiento"><a href="#implementación-y-lanzamiento"><span class="header-section-number">7.6</span> Implementación y lanzamiento</a></h2>
+<p>Para controlar la calidad de la implementación se pueden <strong>utilizar validadores</strong> automáticos de código, así como validadores para testar de forma semi-automática el cumplimiento de directrices de accesibilidad en el código.</p>
+<h2 id="mantenimiento-y-seguimiento"><a href="#mantenimiento-y-seguimiento"><span class="header-section-number">7.7</span> Mantenimiento y seguimiento</a></h2>
+<p>Un sitio web <strong>no es una entidad estática</strong>, sus contenidos y su audiencia cambian, y por lo tanto requiere de continuos rediseños y mejoras.</p>
+<p>Estos <strong>rediseños deben ser muy sutiles</strong>, pues aunque estos cambios estén fundamentados en problemas de usabilidad descubiertos post-lanzamiento, los cambios pueden resultar dramáticos para los actuales usuarios que ya estaban acostumbrados y familiarizados con el actual diseño.</p>
+<h1 id="principios-usabilidad"><a href="#principios-usabilidad"><span class="header-section-number">8</span> Principios usabilidad</a></h1>
+<h2 id="visibilidad-estado"><a href="#visibilidad-estado"><span class="header-section-number">8.1</span> Visibilidad estado</a></h2>
+<p>El sistema (o sitio web) siempre debe <strong>informar al usuario acerca de lo que está sucediendo</strong>, como por ejemplo, cuando en una interfaz tipo webmail se adjuntan ficheros a un mensaje, el sistema debe informar del hecho mostrando un mensaje de espera.</p>
+<h2 id="adecuación-al-mundo-real"><a href="#adecuación-al-mundo-real"><span class="header-section-number">8.2</span> Adecuación al mundo real</a></h2>
+<p>El sistema debe hablar el <strong>lenguaje del usuario</strong>, huyendo de tecnicismos incomprensibles o mensajes crípticos.</p>
+<h2 id="libertad-y-control"><a href="#libertad-y-control"><span class="header-section-number">8.3</span> Libertad y control</a></h2>
+<p>El usuario debe tener el control del sistema, ser él el que decida.</p>
+<p>Se debe ofrecer siempre una forma de &quot;<strong>salida de emergencia</strong>&quot;, como por ejemplo la opción para &quot;saltar&quot; animaciones de introducción</p>
+<h2 id="consistencia-y-estándares"><a href="#consistencia-y-estándares"><span class="header-section-number">8.4</span> Consistencia y estándares</a></h2>
+<p>Consistencia en el <strong>estilo</strong> (enlaces iguales, pestañas iguales, etc.)</p>
+<p>Seguir <strong>estándares de diseño</strong> ampliamente aceptados:</p>
+<ul>
+<li><p>usar iconos conocidos y utilizados</p></li>
+<li><p>icono de la empresa con enlace a la home arriba a la izquierda</p></li>
+<li><p>menú en la parte superior</p></li>
+<li><p>opciones a la izquierda o a la derecha</p></li>
+<li><p>pie de página con un resumen del mapa de la web</p></li>
+</ul>
+<h2 id="prevención-de-errores"><a href="#prevención-de-errores"><span class="header-section-number">8.5</span> Prevención de errores</a></h2>
+<p>Mejor que un buen mensaje de error es un <strong>diseño que prevenga</strong> que ocurra el error.</p>
+<h2 id="reconocimiento-antes-que-recuerdo"><a href="#reconocimiento-antes-que-recuerdo"><span class="header-section-number">8.6</span> Reconocimiento antes que recuerdo</a></h2>
+<p>Hacer <strong>visibles objetos, acciones y opciones</strong> para que el usuario no tenga por qué recordar información entre distintas secciones o partes del sitio web o aplicación.</p>
+<p>El usuario <strong>no tiene por qué recordar</strong> dónde se encontraba cierta información, o cómo se llegaba a determinada página.</p>
+<h2 id="flexibilidad-y-eficiencia"><a href="#flexibilidad-y-eficiencia"><span class="header-section-number">8.7</span> Flexibilidad y eficiencia</a></h2>
+<p>El sitio debe ser <strong>fácil de usar para usuarios inexpertos</strong>.</p>
+<p>Pero también proporcionar <strong>atajos o aceleradores para usuarios avanzados</strong>.</p>
+<h2 id="diseño-estético-y-minimalista"><a href="#diseño-estético-y-minimalista"><span class="header-section-number">8.8</span> Diseño estético y minimalista</a></h2>
+<p>Las páginas <strong>no deben contener información irrelevante o innecesaria</strong>.</p>
+<p>Cada <strong>información extra compite con la información relevante</strong> y disminuye su visibilidad.</p>
+<h2 id="manejo-de-errores"><a href="#manejo-de-errores"><span class="header-section-number">8.9</span> Manejo de errores</a></h2>
+<p>Los mensajes de error deben <strong>expresar claramente cuál ha sido la causa</strong> del problema.</p>
+<p>También deben <strong>sugerir las posibles alternativas o soluciones</strong>, como por ejemplo mensajes del tipo &quot;Usted quiso decir...&quot;.</p>
+<p>Además se debe <strong>guardar el contenido</strong> introducido por el usuario para que no tenga que volver introducirlo y pueda subsanar el error.</p>
+<h2 id="ayuda-y-documentación"><a href="#ayuda-y-documentación"><span class="header-section-number">8.10</span> Ayuda y documentación</a></h2>
+<p>Aunque es mejor que un sitio web se pueda utilizar sin necesidad de ayuda o documentación, <strong>en sitios web extensos o en procesos de interacción complejos se debe proporcionar información de ayuda</strong> al usuario.</p>
+<h1 id="técnicas-de-evaluación"><a href="#técnicas-de-evaluación"><span class="header-section-number">9</span> Técnicas de evaluación</a></h1>
+<h2 id="card-sorting"><a href="#card-sorting"><span class="header-section-number">9.1</span> Card-sorting</a></h2>
+<p>Esta técnica consiste en solicitar a un grupo de participantes que <strong>agrupen los conceptos representados en tarjetas</strong> por su similitud semántica.</p>
+<div style="text-align:center">
+<img src="../img/card-sorting.png" alt="Card-sorting. Fuente: nosolousabilidad.com" />
+</div>
+<p>En el reclutamiento de participantes debemos asegurarnos de que:</p>
+<ul>
+<li><p>los elegidos tienen <strong>perfiles acordes con los usuarios reales</strong> o potenciales del sitio web,</p></li>
+<li><p><strong>muestran interés</strong> por el tipo de sitio web a evaluar y,</p></li>
+<li><p>a ser posible, <strong>tienen experiencia usando sitios web de naturaleza similar</strong>.</p></li>
+</ul>
+<p>El que los participantes estén motivados resulta crucial para el éxito de la prueba, por lo que será muy importante ofrecerles algún tipo de <strong>remuneración o recompensa</strong> por su colaboración en la prueba.</p>
+<p>El card-sorting <strong>abierto (sin categorias) tiene el objetivo de descubrir qué tipo de categorización o agrupación de los conceptos resultará más natural y acorde con el modelo mental</strong> compartido de la audiencia del sitio web.</p>
+<p>El card-sorting <strong>cerrado (con categorias) es recomendable para evaluar si una categorización resulta predecible</strong> para el usuario.</p>
+<p>Dado que el abierto ayuda en la toma de decisiones organizativas, y el cerrado evalúa esas decisiones, <strong>el abierto debe preceder al cerrado</strong>.</p>
+<p>Ambos tienen propósitos diferentes y complementarios y <strong>su utilización combinada puede ofrecernos una imagen más fiel</strong> el modelo mental del usuario.</p>
+<p>Existen <strong>aplicaciones que automatizan y facilitan la recogida de datos y su análisis estadístico</strong>, por lo que son recomendables cuando el propósito es el análisis cuantitativo.</p>
+<p>Como desventaja podemos señalar que <strong>los participantes suelen encontrar más divertido el card-sorting manual</strong>, y por tanto suelen estar más concentrados durante la tarea.</p>
+<p>Los &quot;conceptos&quot; suelen <strong>representar categorías u opciones de navegación</strong>, y por tanto lo que se pretende es extraer cuál sería la mejor forma de agruparlas o clasificarlas.</p>
+<p>Es una prueba destinada a adaptar la arquitectura de información al modelo mental del usuario, por tanto <strong>tiene lugar en etapas tempranas</strong> del proyecto.</p>
+<h2 id="evaluación-heurística"><a href="#evaluación-heurística"><span class="header-section-number">9.2</span> Evaluación heurística</a></h2>
+<p>Método de inspección de un sitio web que se basa en el <strong>recorrido y análisis del sitio identificando errores y problemas de diseño</strong>.</p>
+<p>Normalmente la lleva a cabo un grupo reducido de evaluadores que, en base a <strong>su propia experiencia</strong>, fundamentándose en reconocidos <strong>principios de usabilidad</strong>, y apoyándose en <strong>guías elaboradas para tal fin</strong>, evalúan de forma independiente el sitio web, contrastando finalmente los resultados con el resto de evaluadores.</p>
+<p>El número ideal de evaluadores debe ser entre 3 y 5: <strong>con menos de 3 muchos problemas quedarán sin detectar, y con más de 5 aumentaría el coste</strong> sin ofrecer resultados que los justificasen.</p>
+<p>Cada evaluados examinará el diseño de forma independiente, y una vez finalicen, hacenn una puesta en común de los problemas, y elaborarán un <strong>informe final consensuado</strong>.</p>
+<p>Cuanto más esperamos para su realización, más costoso resultará la reparación de los errores, por lo que <strong>no sólo debemos realizar este tipo de pruebas una vez implementado, sino también, sobre los prototipos</strong>.</p>
+<p>Tiene como ventaja la <strong>facilidad y rapidez</strong> con la que se puede llevar a cabo.</p>
+<p>Permite identificar <strong>más problemas de usabilidad menores</strong>, pero menos problemas de usabilidad mayores.</p>
+<p>No puede sustituir al test de usuarios, ya que resulta <strong>menos eficaz en la detección de problemas de usabilidad que mayor impacto</strong> tendrán en el usuario final.</p>
+<p>Puede reportar <strong>falsas alarmas</strong>, es decir, identificar como un problema de usabilidad aquello que realmente no lo es.</p>
+<h2 id="test-de-usuarios"><a href="#test-de-usuarios"><span class="header-section-number">9.3</span> Test de usuarios</a></h2>
+<p>Se basa en la <strong>observación y análisis de cómo un grupo de usuarios reales utiliza el sitio web</strong>, anotando los problemas de uso con los que se encuentran.</p>
+<p>El número de participantes que son necesarios para detectar los problemas más importantes de usabilidad de un diseño se encuentra <strong>en torno a 15</strong>.</p>
+<p>Es mejor llevar a cabo <strong>3 pruebas, con 5 participantes por cada una, repartidas en diferentes momentos</strong> del proceso de desarrollo.</p>
+<p>El <strong>reclutamiento de participantes, y su remuneración, es similar a la técnica de Card-Sorting</strong>, anteriormente mencionada.</p>
+<p>La <strong>primera impresión</strong> que se lleve el participante supone una información de gran relevancia para entender la capacidad comunicativa del diseño.</p>
+<p>&quot;<strong>Test de 5 segundos</strong>&quot;, con o sin objetivo concreto: mostrándole la página durante 5 segundos y preguntándole posteriormente cuál ha sido su primera impresión, qué contenidos cree que ofrece o puede encontrar en ese sitio web.</p>
+<p>A continuación solicitaremos al participante una serie de tareas a realizar, analizando los errores que cometa, el tiempo empleado y su satisfacción. Es decir, <strong>medimos tanto la usabilidad objetiva, como la usabilidad subjetiva</strong>.</p>
+<p>Requisitos de las tareas:</p>
+<ul>
+<li><p><strong>Ser razonables</strong>: Es decir, tareas típicas que un usuario real llevaría a cabo.</p></li>
+<li><p><strong>Ser específicas</strong>: La tarea no puede se demasiado genérica, sino que debe describir objetivos concretos.</p></li>
+<li><p><strong>Ser factibles</strong>: Encomendar al usuario tareas irrealizables no aporta información útil sobre los problemas reales.</p></li>
+</ul>
+<p>Requisitos de las tareas:</p>
+<ul>
+<li><p><strong>Estar descritas en términos de objetivos finales</strong>: La tarea debe contextualizarse bajo un objetivo o motivación mayor.</p></li>
+<li><p><strong>Duración razonable</strong>: Si la tarea requiere demasiado tiempo, sería recomendable descomponerla en sub-tareas.</p></li>
+</ul>
+<p>Una forma valiosa de obtener información consiste en <strong>solicitar al participante que exprese verbalmente</strong> durante la prueba qué está pensando, qué no entiende, por qué lleva a cabo una acción o duda.</p>
+<p>Este protocolo tiene tiene el inconveniente de que el hecho de contar lo que uno hace y por qué lo hace <strong>altera</strong> la forma en la que se hacen las cosas.</p>
+<p>Una alternativa consiste en que el participante <strong>primero realiza la tarea y, una vez finalizada, expresa verbalmente</strong> cómo recuerda que ha sido su proceso interactivo.</p>
+<p>Cuanto más esperamos para su realización, más costoso resultará la reparación de los errores, por lo que <strong>no sólo debemos realizar este tipo de pruebas una vez implementado, sino también, sobre los prototipos</strong>.</p>
+<p>Es una prueba complementaria a la evaluación heurística, pero <strong>es más costosa, por lo que es recomendable realizarla siempre después de una evaluación heurística</strong>.</p>
+<p>Sus <strong>resultados son más fiables, y posibilitan el descubrimiento de errores de diseño</strong> imposibles o difíciles de descubrir mediante la evaluación heurística.</p>
+<h2 id="eye-tracking"><a href="#eye-tracking"><span class="header-section-number">9.4</span> Eye-tracking</a></h2>
+<p>Conjunto de tecnologías (hardware y software) que permiten <strong>monitorizar y registrar la forma en la que una persona mira una determinada escena o imagen</strong>, en concreto en qué áreas fija su atención, durante cuánto tiempo y qué orden sigue en su exploración visuales.</p>
+<div style="text-align:center">
+<img src="../img/eye-tracking.png" alt="Eye-tracking. Fuente: nosolousabilidad.com" />
+</div>
+<p>Resultan <strong>muy similares a los test con usuarios</strong>, siendo diferente la tecnología usada para registrar el comportamiento del usuario, y siendo diferente lo que se pretende analizar con mayor detalle: la exploración visual del usuario.</p>
+<p>Pequeños cambios en estos diseños, pueden hacer que los patrones de exploración varíen, por lo que es una técnica <strong>recomendable sólo sobre diseños elaborados</strong>.</p>
+<p>Sigue siendo una <strong>tecnología cara</strong>.</p>
+<p>Hay que tener en cuenta que ofrecen <strong>datos cualitativos escondidos bajo la apariencia de datos cuantitativos</strong>: analizar una interfaz con 5 participantes generará una gran cantidad de datos, pero desde el punto de vista estadístico, sigue siendo una muestra de 5 sujetos.</p>
+<h2 id="feedback"><a href="#feedback"><span class="header-section-number">9.5</span> Feedback</a></h2>
+<p>La información más valiosa sobre la usabilidad de un diseño <strong>la obtenemos observando el comportamiento de los usuarios</strong>, no preguntándoles.</p>
+<p>Esto no quiere decir que el feedback de usuario no sea útil, sino todo lo contrario, pues nos ayuda a conocer la <strong>satisfacción subjetiva del usuario</strong>.</p>
+<p>Esta información puede ser obtenida:</p>
+<ul>
+<li><p><strong>de forma pasiva</strong>: a través de los mensajes enviados por los usuarios</p></li>
+<li><p><strong>de forma activa</strong>: por medio de entrevistas, cuestionarios y encuestas</p></li>
+</ul>
+<p>Las opiniones expresadas por los usuarios indican posibles problemas de usabilidad, pero <strong>no son en sí mismas la respuesta a los problemas</strong>.</p>
+<p>Si un usuario envía un email preguntando por qué desde la home no encuentra un enlace al recurso X, no significa que debamos implementar este enlace, sino que posiblemente el recurso X sea poco visible o de difícil localización.</p>
+<p>No se deben hacer preguntas del tipo &quot;¿Preferiría que el diseño fuera de tal forma?&quot;, sino del tipo <strong>&quot;¿Ha tenido algún problema para localizar el recurso X?&quot; ó &quot;¿Le ha resultado fácil el uso de la herramienta X?&quot;</strong>.</p>
+<h2 id="analítica-web"><a href="#analítica-web"><span class="header-section-number">9.6</span> Analítica Web</a></h2>
+<p>Es una técnica que sólo puede llevarse a cabo <strong>una vez que el sitio web ha sido lanzado</strong> y es usado diariamente.</p>
+<p>Se trata de una <strong>técnica fiable y muy económica</strong>, pues no hay sesgo ni necesidad de invertir en la identificación y reclutamiento de participantes.</p>
+<p>Se trata de una información muy valiosa que puede servirnos para la <strong>toma de decisiones sobre el rediseño</strong> en sitios web implementados.</p>
+<p>Existen muy diversas formas de aprovechar los datos a fin de mejorar la usabilidad:</p>
+<ul>
+<li><p><strong>identificar los usuarios</strong> de nuestra web (edad, sexo, estudios, etc.)</p></li>
+<li><p>analizar dónde <strong>hacen clic</strong>,</p></li>
+<li><p>comprobar <strong>las horas de mayor uso</strong> de nuestra web,</p></li>
+<li><p>analizar que páginas de nuestro site son las <strong>más visitadas</strong>,</p></li>
+<li><p>comparar dos páginas con la misma función pero diferente diseño (<strong>Test A/B</strong>),</p></li>
+</ul>
+<p>Existen muy diversas formas de aprovechar los datos a fin de mejorar la usabilidad:</p>
+<ul>
+<li><p>analizar las <strong>rutas de navegación</strong> que siguen los usuarios,</p></li>
+<li><p>detectar donde se producen mayor número de <strong>errores</strong>,</p></li>
+<li><p>analizar <strong>las consultas</strong> que hacen los usuarios en el buscador interno,</p></li>
+<li><p>conocer <strong>de donde llegan</strong> los usuarios a nuestra página,</p></li>
+<li><p>etc.</p></li>
+</ul>
+<h2 id="test-ab"><a href="#test-ab"><span class="header-section-number">9.7</span> Test A/B</a></h2>
+<p>Consiste en <strong>comparar dos versiones</strong> de una misma página y ver cuál funciona mejor.</p>
+<p>Se divide el tráfico de la página, de tal forma que <strong>el un porcentaje vea la versión A y el otro la versión B</strong>.</p>
+<p>La alternativa que consiga <strong>el objetivo buscado en más usuarios gana</strong>.</p>
+<div style="text-align:center">
+<img src="../img/test-a-b.jpg" alt="Test A/B. Fuente: elultimoblog.com" />
+</div>
+<p><strong>Cualquier elemento</strong> de una página web (versión A) es susceptible de ser cambiado para generar una alternativa (versión B).</p>
+<p>Puedes probar <strong>títulos, subtítulos, o entradillas</strong> alternativas para tus contenidos, puedes jugar con diferentes versiones de <strong>color</strong> y texto del botón de compra, puedes variar el <strong>tamaño</strong> de las ofertas, de los precios, del <strong>orden</strong> del menú...</p>
+<p><strong>Identifica un problema o un punto de mejora</strong>. “Muy pocos usuarios de los que vienen a mi web acaban visitando la página de precios de mi servicio, donde tengo el botón de comprar”.</p>
+<p><strong>Investiga qué hacen los demás y cómo lo hacen</strong>. Mira las páginas de inicio de tu competencia y aprende cómo otros incitan, desde su página de inicio, a visitar la página de precios.</p>
+<p><strong>Plantea una posible solución</strong>. “Si pongo un botón aquí haciendo hincapié en que las dos primeras semanas son gratis, creo que conseguiré aumentar las visitas a la página de precios.”</p>
+<p><strong>Define la métrica para determinar el éxito del test</strong>. Dependiendo del objetivo, podremos elegir: la tasa de conversión, la tasa de rebote, número de clicks, incluso si testamos una página de atención al cliente podemos poner como métrica el número de llamadas, o el número de mails.</p>
+<p><strong>Crea la alternativa e inicia el experimento</strong>. Crea la versión B con la solución que intuyes es mejor.</p>
+<p><strong>Analiza los resultados</strong>. Pasado un cierto tiempo, si la solución alternativa:</p>
+<ul>
+<li><p>es mejor, establece esa alternativa como la versión por defecto</p></li>
+<li><p>iguales, quédate con la que más te guste</p></li>
+<li><p>es peor, has evitado integrar en tu web un cambio que te perjudicaría</p></li>
+</ul>
+<p>Una herramienta gratuita y muy popular es <strong>Google Website Optimizer</strong>:</p>
+<ul>
+<li><a href="http://www.google.com/websiteoptimizer">http://www.google.com/websiteoptimizer</a></li>
+</ul>
+<p>Existen <strong>otras alternativas</strong> más completas, aunque de pago:</p>
+<ul>
+<li><a href="http://www.ricardotayar.com/2012/01/15/herramientas-software-ab-testing-multivariante/">http://www.ricardotayar.com/2012/01/15/herramientas-software-ab-testing-multivariante/</a></li>
+</ul>
+<h1 id="ejercicios"><a href="#ejercicios"><span class="header-section-number">10</span> Ejercicios</a></h1>
+<h2 id="normas-generales"><a href="#normas-generales"><span class="header-section-number">10.1</span> Normas generales</a></h2>
+<p>Dividir la clase en grupos de 3-4</p>
+<p>Dividir los grupos en 2: izquierda y derecha</p>
+<p>Cuando haya que puntuar:</p>
+<ul>
+<li><p>1 punto: muy mal</p></li>
+<li><p>2 puntos: mal</p></li>
+<li><p>3 puntos: bien</p></li>
+<li><p>4 puntos: muy bien</p></li>
+</ul>
+<p>Una vez terminado el ejercicio se harán públicos los resultados y se comentarán en clase</p>
+<h2 id="card-sorting-abierto"><a href="#card-sorting-abierto"><span class="header-section-number">10.2</span> Card-sorting abierto</a></h2>
+<p>Grupo izquierda: usuarios</p>
+<ul>
+<li>Hacen lo que les digan los diseñadores</li>
+</ul>
+<p>Grupo derecha: evaluadores</p>
+<ul>
+<li><p>Identificar items de una tienda de informática</p></li>
+<li><p>Poner items en Post-It</p></li>
+<li><p>Pasar Post-It a usuarios y que hagan agrupación libre</p></li>
+<li><p>Después de resultados escoger categorías principales</p></li>
+</ul>
+<h2 id="card-sorting-cerrado"><a href="#card-sorting-cerrado"><span class="header-section-number">10.3</span> Card-sorting cerrado</a></h2>
+<p>Grupo izquierda: evaluadores</p>
+<ul>
+<li><p>Pasar categorías y Post-It a usuarios y que hagan agrupación por categoría</p></li>
+<li><p>Después de resultados hacer mapa mental de items</p></li>
+</ul>
+<p>Grupo derecha: usuarios</p>
+<ul>
+<li>Hacen lo que les digan los diseñadores</li>
+</ul>
+<h2 id="checklist-de-usabilidad"><a href="#checklist-de-usabilidad"><span class="header-section-number">10.4</span> Checklist de usabilidad</a></h2>
+<p>Los 2 grupos utilizarán la hoja de cálculo proporcionada en:</p>
+<ul>
+<li><a href="http://olgacarreras.blogspot.com.es/2011/07/sirius-nueva-sistema-para-la-evaluacion.html">http://olgacarreras.blogspot.com.es/2011/07/sirius-nueva-sistema-para-la-evaluacion.html</a></li>
+</ul>
+<p>Grupo izquierda: evaluará</p>
+<ul>
+<li><p><a href="http://www.pccomponentes.com">http://www.pccomponentes.com</a></p></li>
+<li><p>Poner los datos de varios evaluadores en común</p></li>
+</ul>
+<p>Grupo derecha: evaluará</p>
+<ul>
+<li><p><a href="http://www.latiendadeinformaticaonline.com">http://www.latiendadeinformaticaonline.com</a></p></li>
+<li><p>Poner los datos de varios evaluadores en común</p></li>
+</ul>
+<h2 id="evaluación-heurística-1"><a href="#evaluación-heurística-1"><span class="header-section-number">10.5</span> Evaluación heurística</a></h2>
+<p>Grupo izquierda: maquetadores</p>
+<ul>
+<li>Hacer prototipo de la tienda (las pantallas que hagan falta)</li>
+</ul>
+<p>Grupo derecha: evaluadores</p>
+<ul>
+<li><p>Consensuar puntos importantes a evaluar</p></li>
+<li><p>Una vez terminados los prototipos, puntuarlos</p></li>
+<li><p>Poner los datos de varios evaluadores en común</p></li>
+</ul>
+<h2 id="test-de-usuarios-1"><a href="#test-de-usuarios-1"><span class="header-section-number">10.6</span> Test de usuarios</a></h2>
+<p>Grupo izquierda: evaluadores</p>
+<ul>
+<li><p>Consensuar puntos importantes a evaluar</p></li>
+<li><p>Dar ordenes a los usuarios para hacer el test de los 5 segundos</p></li>
+<li><p>Después de preguntar a los usuarios, puntuar los prototipos</p></li>
+<li><p>Poner los datos de varios evaluadores en común</p></li>
+</ul>
+<p>Grupo derecha: usuarios</p>
+<ul>
+<li>Hacen lo que les digan los diseñadores</li>
+</ul>
+<p>Grupo izquierda: usuarios</p>
+<ul>
+<li>Hacen lo que les digan los diseñadores</li>
+</ul>
+<p>Grupo derecha: evaluadores</p>
+<ul>
+<li><p>Consensuar puntos importantes a evaluar</p></li>
+<li><p>Dar ordenes a los usuarios para testear los prototipos</p></li>
+<li><p>Después de observar como usan los usuarios los prototipos, puntuarlos</p></li>
+<li><p>Poner los datos de varios evaluadores en común</p></li>
+</ul>
+<h2 id="test-ab-1"><a href="#test-ab-1"><span class="header-section-number">10.7</span> Test A/B</a></h2>
+<p>El profesor cogerá un prototipo y hará una pequeña modificación</p>
+<p>El profesor enseñará los 2 prototipos a los alumnos</p>
+<p>Los alumnos votarán a mano alzada cual les parece mejor</p>
+<h1 id="acerca-de"><a href="#acerca-de"><span class="header-section-number">11</span> Acerca de</a></h1>
+<h2 id="licencia"><a href="#licencia"><span class="header-section-number">11.1</span> Licencia</a></h2>
+<p>Estas <strong>transparencias</strong> están hechas con:</p>
+<ul>
+<li>MarkdownSlides: <a href="https://github.com/asanzdiego/markdownslides">https://github.com/asanzdiego/markdownslides</a></li>
+</ul>
+<p>Estas <strong>transparencias</strong> están bajo una licencia Creative Commons Reconocimiento-CompartirIgual 3.0:</p>
+<ul>
+<li><a href="http://creativecommons.org/licenses/by-sa/3.0/es">http://creativecommons.org/licenses/by-sa/3.0/es</a></li>
+</ul>
+<h2 id="fuentes"><a href="#fuentes"><span class="header-section-number">11.2</span> Fuentes</a></h2>
+<p>Transparencias:</p>
+<ul>
+<li><a href="https://github.com/asanzdiego/curso-interfaces-web-2014/01-usabilidad/slides">https://github.com/asanzdiego/curso-interfaces-web-2014/01-usabilidad/slides</a></li>
+</ul>
+<p>Código:</p>
+<ul>
+<li><a href="https://github.com/asanzdiego/curso-interfaces-web-2014/01-usabilidad/src">https://github.com/asanzdiego/curso-interfaces-web-2014/01-usabilidad/src</a></li>
+</ul>
+<h2 id="bibliografía"><a href="#bibliografía"><span class="header-section-number">11.3</span> Bibliografía</a></h2>
+<p>Diseño Web Centrado en el Usuario: Usabilidad y Arquitectura de la Información</p>
+<ul>
+<li><a href="http://www.upf.edu/hipertextnet/numero-2/diseno_web.html">http://www.upf.edu/hipertextnet/numero-2/diseno_web.html</a></li>
+</ul>
+<p>Informe APIE sobre Usabilidad</p>
+<ul>
+<li><a href="http://www.nosolousabilidad.com/manual/index.htm">http://www.nosolousabilidad.com/manual/index.htm</a></li>
+</ul>
+<p>Unas notas sobre Usabilidad</p>
+<ul>
+<li><a href="http://www.slideshare.net/betabeers/usabilidad-18953630">http://www.slideshare.net/betabeers/usabilidad-18953630</a></li>
+</ul>
+<p>Pruebas de Usabilidad</p>
+<ul>
+<li><a href="http://www.slideshare.net/pecesama/pruebas-de-usabilidad-10112899">http://www.slideshare.net/pecesama/pruebas-de-usabilidad-10112899</a></li>
+</ul>
+<p>Métodos de Usabilidad y Diseño Centrado en el Usuario</p>
+<ul>
+<li><a href="http://www.slideshare.net/GUINALIU/mtodos-de-evaluacin-de-usabilidad">http://www.slideshare.net/GUINALIU/mtodos-de-evaluacin-de-usabilidad</a></li>
+</ul>
+<p>Prototipado</p>
+<ul>
+<li><a href="http://www.slideshare.net/olgacarreras/prototipado-14077585">http://www.slideshare.net/olgacarreras/prototipado-14077585</a></li>
+</ul>
+<p>Usabilidad y diseño centrado en la experiencia del usuario</p>
+<ul>
+<li><a href="http://www.slideshare.net/laceves/usabilidad-y-diseo-centrado-en-la-experiencia-del-usuario">http://www.slideshare.net/laceves/usabilidad-y-diseo-centrado-en-la-experiencia-del-usuario</a></li>
+</ul>
+<p>¿A qué esperas para usar Test A/B en tu web? ¡Tu competencia ya lo hace!</p>
+<ul>
+<li><a href="http://www.elultimoblog.com/test-ab/">http://www.elultimoblog.com/test-ab/</a></li>
+</ul>
+</body>
+</html>

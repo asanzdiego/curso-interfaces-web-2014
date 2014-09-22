@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="generator" content="pandoc" />
+  <meta name="description" content="Responsive Web Design" />
+  <meta name="author" content="Adolfo Sanz De Diego" />
+  <title>Responsive Web Design</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/reveal.min.css">
+	<!-- For syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/simple.css" id="theme">
+  <!--
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/default.css" id="theme">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/beige.css" id="theme">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/blood.css" id="theme">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/default.css" id="theme">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/moon.css" id="theme">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/night.css" id="theme">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/serif.css" id="theme">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/simple.css" id="theme">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/sky.css" id="theme">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/solarized.css" id="theme">
+  -->
+
+
+	<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+	<link rel="stylesheet" href="../lib/reveal.js-master/css/print/pdf.css" type="text/css" media="print">
+
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/simple.css" type="text/css" media="print">
+  <!--
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/default.css" type="text/css" media="print">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/beige.css" type="text/css" media="print">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/blood.css" type="text/css" media="print">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/default.css" type="text/css" media="print">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/moon.css" type="text/css" media="print">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/night.css" type="text/css" media="print">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/serif.css" type="text/css" media="print">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/simple.css" type="text/css" media="print">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/sky.css" type="text/css" media="print">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/solarized.css" type="text/css" media="print">
+  -->
+
+  <!-- Overwrite images -->
+  <style type="text/css">
+    pre {
+      background: rgba(255, 255, 255, 0.9);
+      color: #222;
+    }
+    code {
+      white-space: pre;
+    }
+    .reveal section img {
+      margin: 15px 0px;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.9);
+    }
+    strong {
+      color: #777
+    }
+    a:hover {
+      text-decoration: underline !important;
+    }
+    h1.title {
+      font-size: 300% !important;
+    }
+    h1 {
+      font-size: 250% !important;
+    }
+    h2 {
+      font-size: 150% !important;
+    }
+    @media print { 
+      #only-print-parent { display: table !important; } 
+      #only-print-child { display: table-cell !important; vertical-align: middle;}
+      h1.title { font-size: 350% !important;}
+      h1 { font-size: 300% !important; }
+      h2 { font-size: 200% !important; }
+    }
+  </style>
+
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="only-print-parent">
+    <div id="only-print-child">
+      <h1 class="title">Responsive Web Design</h2>
+      <h2 class="author">Adolfo Sanz De Diego</h2>
+      <h3 class="date">Septiembre 2014</h3>
+    </div>
+</section>
+
+<section><section id="el-autor" class="titleslide slide level1"><h1><span class="header-section-number">1</span> El autor</h1></section><section id="adolfo-sanz-de-diego" class="slide level2">
+<h2><span class="header-section-number">1.1</span> Adolfo Sanz De Diego</h2>
+<ul>
+<li><p><strong>Antiguo programador web JEE (6 años)</strong></p></li>
+<li><p>Hoy en día:</p>
+<ul>
+<li><strong>Profesor de FP (6 años)</strong>:
+<ul>
+<li>Hardware, Sistemas Operativos</li>
+<li>Redes, Programación</li>
+</ul></li>
+<li><strong>Formador Freelance (3 años)</strong>:
+<ul>
+<li>Java, Android</li>
+<li>JavaScript, jQuery</li>
+<li>JSF, Spring, Hibernate</li>
+<li>Groovy &amp; Grails</li>
+</ul></li>
+</ul></li>
+</ul>
+</section><section id="algunos-proyectos" class="slide level2">
+<h2><span class="header-section-number">1.2</span> Algunos proyectos</h2>
+<ul>
+<li><p>Fundador y/o creador:</p>
+<ul>
+<li><strong>Hackathon Lovers</strong>: <a href="http://hackathonlovers.com">http://hackathonlovers.com</a></li>
+<li><strong>Tweets Sentiment</strong>: <a href="http://tweetssentiment.com">http://tweetssentiment.com</a></li>
+<li><strong>MarkdownSlides</strong>: <a href="https://github.com/asanzdiego/markdownslides">https://github.com/asanzdiego/markdownslides</a></li>
+</ul></li>
+<li><p>Co-fundador y/o co-creador:</p>
+<ul>
+<li><strong>PeliTweets</strong>: <a href="http://pelitweets.com">http://pelitweets.com</a></li>
+<li><strong>Password Manager Generator</strong>: <a href="http://pasmangen.github.io">http://pasmangen.github.io</a></li>
+</ul></li>
+</ul>
+</section><section id="donde-encontrarme" class="slide level2">
+<h2><span class="header-section-number">1.3</span> ¿Donde encontrarme?</h2>
+<ul>
+<li><p>Mi nick: <strong>asanzdiego</strong></p>
+<ul>
+<li>AboutMe: <a href="http://about.me/asanzdiego">http://about.me/asanzdiego</a></li>
+<li>GitHub: <a href="http://github.com/asanzdiego">http://github.com/asanzdiego</a></li>
+<li>Twitter: <a href="http://twitter.com/asanzdiego">http://twitter.com/asanzdiego</a></li>
+<li>Blog: <a href="http://asanzdiego.blogspot.com.es">http://asanzdiego.blogspot.com.es</a></li>
+<li>LinkedIn: <a href="http://www.linkedin.com/in/asanzdiego">http://www.linkedin.com/in/asanzdiego</a></li>
+<li>Google+: <a href="http://plus.google.com/+AdolfoSanzDeDiego">http://plus.google.com/+AdolfoSanzDeDiego</a></li>
+</ul></li>
+</ul>
+</section></section>
+<section><section id="introducción" class="titleslide slide level1"><h1><span class="header-section-number">2</span> Introducción</h1></section><section id="esto-no-es-la-web" class="slide level2">
+<h2><span class="header-section-number">2.1</span> Esto no es la web</h2>
+<figure>
+<img src="../img/brad_frost_1.png" alt="Esto no es la web. Fuente: bradfostweb.com" /><figcaption>Esto no es la web. Fuente: bradfostweb.com</figcaption>
+</figure>
+</section><section id="esto-es-la-web" class="slide level2">
+<h2><span class="header-section-number">2.2</span> Esto es la web</h2>
+<figure>
+<img src="../img/brad_frost_2.png" alt="Esto es la web. Fuente: bradfostweb.com" /><figcaption>Esto es la web. Fuente: bradfostweb.com</figcaption>
+</figure>
+</section><section id="será-esto-la-web" class="slide level2">
+<h2><span class="header-section-number">2.3</span> ¿Será esto la web?</h2>
+<figure>
+<img src="../img/brad_frost_3.png" alt="¿Será esto la web?. Fuente: bradfostweb.com" /><figcaption>¿Será esto la web?. Fuente: bradfostweb.com</figcaption>
+</figure>
+</section><section id="estadísticas" class="slide level2">
+<h2><span class="header-section-number">2.4</span> Estadísticas</h2>
+<figure>
+<img src="../img/StatCounter-resolution-ww-monthly-200903-201408.jpeg" alt="Estadísticas. Fuente: gs.statcounter.com" /><figcaption>Estadísticas. Fuente: gs.statcounter.com</figcaption>
+</figure>
+</section><section id="el-desarrollador" class="slide level2">
+<h2><span class="header-section-number">2.5</span> El desarrollador</h2>
+<figure>
+<img src="../img/globalmoxie.png" alt="El desarrollador atual. Fuente: globalmoxie.com" /><figcaption>El desarrollador atual. Fuente: globalmoxie.com</figcaption>
+</figure>
+</section><section id="responsive-web-design" class="slide level2">
+<h2><span class="header-section-number">2.6</span> Responsive Web Design</h2>
+<figure>
+<img src="../img/rwd.png" alt="Responsive Web Design. Fuente: flickr.com/photos/zergev/" /><figcaption>Responsive Web Design. Fuente: flickr.com/photos/zergev/</figcaption>
+</figure>
+</section><section id="content-is-like-water" class="slide level2">
+<h2><span class="header-section-number">2.7</span> Content is like water</h2>
+<figure>
+<img src="../img/content-is-like-water.jpg" alt="Content is like water. Fuente: fr.wikipedia.org/wiki/Site_web_adaptatif" /><figcaption>Content is like water. Fuente: fr.wikipedia.org/wiki/Site_web_adaptatif</figcaption>
+</figure>
+</section><section id="graceful-degradation" class="slide level2">
+<h2><span class="header-section-number">2.8</span> Graceful degradation</h2>
+<ul>
+<li>Se <strong>desarrolla para los últimos navegadores</strong>, con la posibilidad de que funcione en navegadores antiguos.</li>
+</ul>
+<figure>
+<img src="../img/responsive-design-graceful-degradation.png" alt="Graceful degradation. Fuente: bradfostweb.com" /><figcaption>Graceful degradation. Fuente: bradfostweb.com</figcaption>
+</figure>
+</section><section id="progessive-enhancement" class="slide level2">
+<h2><span class="header-section-number">2.9</span> Progessive enhancement</h2>
+<ul>
+<li>Se <strong>desarrolla una versión básica</strong> completamente operativa, con la posibilidad de ir añadiendo mejoras para los últimos navegadores.</li>
+</ul>
+<figure>
+<img src="../img/responsive-design-progressive-enhancement.png" alt="Progressive enhancement. Fuente: bradfostweb.com" /><figcaption>Progressive enhancement. Fuente: bradfostweb.com</figcaption>
+</figure>
+</section><section id="beneficios-i" class="slide level2">
+<h2><span class="header-section-number">2.10</span> Beneficios (I)</h2>
+<ul>
+<li><p><strong>Reducción de costos</strong>. Pues no hay que hacer varias versiones de una misma página.</p></li>
+<li><p><strong>Eficiencia en la actualización</strong>. El sitio solo se debe actualizar una vez y se ve reflejada en todas las plataformas.</p></li>
+<li><p><strong>Mejora la usabilidad</strong>. El usuario va a tener experiencias de usuario parecidas independientemente del dispositivo que esté usando en cada momento</p></li>
+</ul>
+</section><section id="beneficios-ii" class="slide level2">
+<h2><span class="header-section-number">2.11</span> Beneficios (II)</h2>
+<ul>
+<li><p><strong>Mejora el SEO</strong>. Según las Guidelines de Google el tener una web que se vea correctamente en móviles es un factor que tienen en cuenta a la hora de elaborar los rankings.</p></li>
+<li><p><strong>Impacto en el visitante</strong>. Esta tecnología por ser nueva genera impacto en las personas que la vean en acción, lo que permitirá asociar a la marca con creatividad e innovación.</p></li>
+</ul>
+</section></section>
+<section><section id="ejemplos" class="titleslide slide level1"><h1><span class="header-section-number">3</span> Ejemplos</h1></section><section id="matt-kersley" class="slide level2">
+<h2><span class="header-section-number">3.1</span> Matt Kersley</h2>
+<ul>
+<li>Página de testeo de Matt Kersley
+<ul>
+<li><a href="http://mattkersley.com/responsive">http://mattkersley.com/responsive</a></li>
+</ul></li>
+</ul>
+</section><section id="dconstruct-2011" class="slide level2">
+<h2><span class="header-section-number">3.2</span> dConstruct 2011</h2>
+<ul>
+<li><a href="http://2011.dconstruct.org">http://2011.dconstruct.org</a></li>
+</ul>
+<figure>
+<img src="../img/dConstruct-2011-ejemplo-de-Responsive-Web-Design.jpg" alt="Ejemplo RWD: dConstruct 2011. Fuente:ecbloguer.com" /><figcaption>Ejemplo RWD: dConstruct 2011. Fuente:ecbloguer.com</figcaption>
+</figure>
+</section><section id="boston-globe" class="slide level2">
+<h2><span class="header-section-number">3.3</span> Boston Globe</h2>
+<ul>
+<li><a href="http://www.bostonglobe.com">http://www.bostonglobe.com</a></li>
+</ul>
+<figure>
+<img src="../img/Boston-Globe-ejemplo-de-Responsive-Web-Design.jpg" alt="Ejemplo RWD: Boston Globe. Fuente:ecbloguer.com" /><figcaption>Ejemplo RWD: Boston Globe. Fuente:ecbloguer.com</figcaption>
+</figure>
+</section><section id="food-sense" class="slide level2">
+<h2><span class="header-section-number">3.4</span> Food Sense</h2>
+<ul>
+<li><a href="http://foodsense.is">http://foodsense.is</a></li>
+</ul>
+<figure>
+<img src="../img/Food-Sense-ejemplo-de-Responsive-Web-Design.jpg" alt="Ejemplo RWD: Food Sense. Fuente:ecbloguer.com" /><figcaption>Ejemplo RWD: Food Sense. Fuente:ecbloguer.com</figcaption>
+</figure>
+</section><section id="deren-keskin" class="slide level2">
+<h2><span class="header-section-number">3.5</span> Deren Keskin</h2>
+<ul>
+<li><a href="http://www.deren.me">http://www.deren.me</a></li>
+</ul>
+<figure>
+<img src="../img/Deren-Keskin-ejemplo-de-Responsive-Web-Design.jpg" alt="Ejemplo RWD: Deren Keskin. Fuente:ecbloguer.com" /><figcaption>Ejemplo RWD: Deren Keskin. Fuente:ecbloguer.com</figcaption>
+</figure>
+</section></section>
+<section><section id="diseño-fluido" class="titleslide slide level1"><h1><span class="header-section-number">4</span> Diseño fluido</h1></section><section id="de-px-a-em" class="slide level2">
+<h2><span class="header-section-number">4.1</span> De PX a EM</h2>
+<ul>
+<li><p>Formula: <strong>target ÷ context = result</strong></p>
+<ul>
+<li>target - font-size que tenemos en píxeles</li>
+<li>context - font-size base (por defecto 16px en la mayoría de los navegadores)</li>
+<li>result - resultado que obtenemos en em</li>
+</ul></li>
+<li><p>Es recomendable indicar el cálculo realizado junto a la regla de CSS.</p></li>
+</ul>
+</section><section id="on-line" class="slide level2">
+<h2><span class="header-section-number">4.2</span> On Line</h2>
+<ul>
+<li><a href="http://pxtoem.com">http://pxtoem.com</a></li>
+</ul>
+<figure>
+<img src="../img/pxtoem.png" alt="px to em. Fuente:pxtoem.com" /><figcaption>px to em. Fuente:pxtoem.com</figcaption>
+</figure>
+</section><section id="ejemplo" class="slide level2">
+<h2><span class="header-section-number">4.3</span> Ejemplo</h2>
+<ul>
+<li>Ejemplo para poner 13px por defecto y luego 18px para h1 en em:</li>
+</ul>
+<pre><code>body {
+  font: 13px;
+}
+
+h1 {
+  font-size: 1.3846 em;
+  /* 18px/13px = 1.3846em */
+}</code></pre>
+</section><section id="em-se-hereda" class="slide level2">
+<h2><span class="header-section-number">4.4</span> EM se hereda</h2>
+<ul>
+<li><p>Importante: <strong>las medidas em se heredan</strong>, es decir, un elemento dentro de un elemento tomará como referencia el superior para calcular cuánto es un em.</p></li>
+<li><p>Por ejemplo, si tenemos una caja donde hemos definido una fuente como 0.5em y dentro de esa caja otra con una fuente 0.25em, esta última fuente tendrá 1/4 de tamaño respecto a la 1/2 de tamaño de la fuente general.</p></li>
+</ul>
+</section><section id="de-px-a" class="slide level2">
+<h2><span class="header-section-number">4.5</span> De PX a %</h2>
+<figure>
+<img src="../img/porcentajes.jpg" alt="Cálculo porcentajes. Fuente:aloud.es" /><figcaption>Cálculo porcentajes. Fuente:aloud.es</figcaption>
+</figure>
+</section></section>
+<section><section id="sistema-de-rejilla" class="titleslide slide level1"><h1><span class="header-section-number">5</span> Sistema de rejilla</h1></section><section id="ejemplo-1" class="slide level2">
+<h2><span class="header-section-number">5.1</span> Ejemplo</h2>
+<ul>
+<li>1 columna para xs (&lt;768px)</li>
+<li>2 columnas para sm (≥768px)</li>
+<li>3 columnas para md (≥992px)</li>
+<li>4 columnas para lg (≥1200px)</li>
+</ul>
+</section><section id="uso-de-clases" class="slide level2">
+<h2><span class="header-section-number">5.2</span> Uso de clases</h2>
+<ul>
+<li>Uso de clases en el HTML como <strong>Bootstrap</strong>
+<ul>
+<li><a href="http://getbootstrap.com/css">http://getbootstrap.com/css</a></li>
+</ul></li>
+</ul>
+</section><section id="ejemplo-bootstrap" class="slide level2">
+<h2><span class="header-section-number">5.3</span> Ejemplo Bootstrap</h2>
+<pre><code>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-xs-12 col-sm-6 col-md-4 col-lg-3&quot;&gt;1&lt;/div&gt;
+  &lt;div class=&quot;col-xs-12 col-sm-6 col-md-4 col-lg-3&quot;&gt;2&lt;/div&gt;
+  &lt;div class=&quot;col-xs-12 col-sm-6 col-md-4 col-lg-3&quot;&gt;3&lt;/div&gt;
+  &lt;div class=&quot;col-xs-12 col-sm-6 col-md-4 col-lg-3&quot;&gt;4&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</section><section id="semántico" class="slide level2">
+<h2><span class="header-section-number">5.4</span> Semántico</h2>
+<ul>
+<li><strong>The Semantic Grid System</strong>: Mediante layouts, y sin necesidad de usar clases en HTML.
+<ul>
+<li><a href="http://semantic.gs">http://semantic.gs</a></li>
+</ul></li>
+</ul>
+</section><section id="ejemplo-semantic.gs-html" class="slide level2">
+<h2><span class="header-section-number">5.5</span> Ejemplo semantic.gs (HTML)</h2>
+<pre><code>&lt;header&gt;...&lt;/header&gt;
+&lt;article&gt;...&lt;/article&gt;
+&lt;aside&gt;...&lt;/aside&gt;</code></pre>
+</section><section id="ejemplo-semantic.gs-css" class="slide level2">
+<h2><span class="header-section-number">5.6</span> Ejemplo semantic.gs (CSS)</h2>
+<pre><code>@column-width: 60;
+@gutter-width: 20;
+@columns: 12;
+
+header { .column(12); }
+article { .column(9); }
+aside { .column(3); }
+
+@media (max-device-width: 960px) {
+  article { .column(12); }
+  aside { .column(12); }
+}</code></pre>
+</section></section>
+<section><section id="imágenes-fluidas" class="titleslide slide level1"><h1><span class="header-section-number">6</span> Imágenes fluidas</h1></section><section id="tamaño-máximo" class="slide level2">
+<h2><span class="header-section-number">6.1</span> Tamaño máximo</h2>
+<ul>
+<li>Fijar un <strong>tamaño máximo</strong> (si la imagen no llega, se queda con su tamaño):</li>
+</ul>
+<pre><code>img {
+  max-width:400px;
+}</code></pre>
+</section><section id="ancho-del-contenedor-i" class="slide level2">
+<h2><span class="header-section-number">6.2</span> Ancho del contenedor (I)</h2>
+<ul>
+<li>Ocupar el <strong>ancho del contenedor</strong> (si la imagen no llega, se deforma):</li>
+</ul>
+<pre><code>img {
+  width:100%;
+}</code></pre>
+</section><section id="ancho-del-contenedor-ii" class="slide level2">
+<h2><span class="header-section-number">6.3</span> Ancho del contenedor (II)</h2>
+<ul>
+<li>Ocupar el <strong>ancho del contenedor</strong> (si la imagen no llega, se queda con su tamaño):</li>
+</ul>
+<pre><code>img {
+  max-width:100%;
+}</code></pre>
+</section><section id="ancho-del-contenedor-iii" class="slide level2">
+<h2><span class="header-section-number">6.4</span> Ancho del contenedor (III)</h2>
+<ul>
+<li>Ocupar el <strong>ancho del contenedor hasta un máximo</strong> (si la imagen no llega, se deforma):</li>
+</ul>
+<pre><code>img {
+  width:100%;
+  max-width:400px;
+}</code></pre>
+</section><section id="backgrounds" class="slide level2">
+<h2><span class="header-section-number">6.5</span> Backgrounds</h2>
+<ul>
+<li>Para los background usar <strong>cover</strong></li>
+</ul>
+<pre><code>.background-fluid {
+  width: 100%;
+  background-image:
+    url(img/water.jpg);
+  background-size: cover;
+}</code></pre>
+</section></section>
+<section><section id="viewport" class="titleslide slide level1"><h1><span class="header-section-number">7</span> Viewport</h1></section><section id="orígenes" class="slide level2">
+<h2><span class="header-section-number">7.1</span> Orígenes</h2>
+<ul>
+<li><p>La etiqueta meta para el viewport fue <strong>introducida por Apple</strong> en Safari para móviles en el año 2007, para ayudar a los desarrolladores a mejorar la presentación de sus aplicaciones web en un iPhone.</p></li>
+<li><p>Hoy en día ha sido <strong>ampliamente adoptada por el resto de navegadores móviles</strong>, convirtiéndose en un estándar de facto.</p></li>
+</ul>
+</section><section id="qué-nos-permite" class="slide level2">
+<h2><span class="header-section-number">7.2</span> ¿Qué nos permite?</h2>
+<ul>
+<li>La etiqueta viewport nos permite definir el <strong>ancho, alto y escala del área</strong> usada por el navegador para mostrar contenido.</li>
+</ul>
+</section><section id="tamaño" class="slide level2">
+<h2><span class="header-section-number">7.3</span> Tamaño</h2>
+<ul>
+<li><p>Al fijar el ancho (width) o alto (height) del viewport, <strong>podemos usar un número fijo de pixeles</strong> (ej: 320px, 480px, etc) <strong>o usar dos constantes, device-width y device-height</strong> respectivamente.</p></li>
+<li><p>Se considera una <strong>buena práctica configurar el viewport con device-width y device-height</strong>, en lugar de utilizar un ancho o alto fijo.</p></li>
+</ul>
+</section><section id="escala" class="slide level2">
+<h2><span class="header-section-number">7.4</span> Escala</h2>
+<ul>
+<li><p>La propiedad <strong>initial-scale</strong> controla el nivel de zoom inicial al cargarse la página.</p></li>
+<li><p>Las propiedades <strong>maximum-scale, minimum-scale</strong> controlan el nivel máximo y mínimo de zoom que se le va a permitir usar al usuario.</p></li>
+<li><p>La propiedad <strong>user-scalable [yes|no]</strong> controlan si el usuario puede o no hacer zoom sobre la página.</p></li>
+</ul>
+</section><section id="accesibilidad" class="slide level2">
+<h2><span class="header-section-number">7.5</span> Accesibilidad</h2>
+<ul>
+<li>Es una <strong>buena práctica de accesibilidad no bloquear las opciones de zoom</strong> al usuario.</li>
+</ul>
+</section><section id="ejemplo-2" class="slide level2">
+<h2><span class="header-section-number">7.6</span> Ejemplo</h2>
+<ul>
+<li>Un ejemplo adaptable y accesible sería:</li>
+</ul>
+<pre><code>&lt;meta name=&quot;viewport&quot;
+  content=&quot;width=device-width,
+    initial-scale=1,
+    user-scalable=yes&quot;&gt;</code></pre>
+</section></section>
+<section><section id="media-queries" class="titleslide slide level1"><h1><span class="header-section-number">8</span> Media Queries</h1></section><section id="qué-son" class="slide level2">
+<h2><span class="header-section-number">8.1</span> ¿Qué son?</h2>
+<p>Un Media Query <strong>no sólo nos permite seleccionar el tipo de medio</strong> (all, braille, print, proyection, screen, tty, tv, etc.), <strong>sino además consultar otras características</strong> sobre el dispositivo que esta mostrando la página.</p>
+</section><section id="ejemplo-3" class="slide level2">
+<h2><span class="header-section-number">8.2</span> Ejemplo</h2>
+<ul>
+<li><strong>Ejemplo</strong>: aplicar distintas reglas CSS cuando el área de visualización sea mayor que 480px.</li>
+</ul>
+</section><section id="distintos-css" class="slide level2">
+<h2><span class="header-section-number">8.3</span> Distintos CSS</h2>
+<ul>
+<li>Solución 1: <strong>cargar distintas CSS</strong>:</li>
+</ul>
+<pre><code>&lt;link rel=&quot;stylesheet&quot;
+  type=&quot;text/css&quot;
+  media=&quot;all and (min-width: 480px)&quot;
+  href=&quot;tablet.css&quot; /&gt;
+
+&lt;!-- tablet.css es un CSS con reglas para cuando el área de visualización sea mayor que 480px --&gt;</code></pre>
+</section><section id="mismo-css" class="slide level2">
+<h2><span class="header-section-number">8.4</span> Mismo CSS</h2>
+<ul>
+<li>Solución 2: <strong>definir distintas propiedades dentro del mismo CSS</strong>:</li>
+</ul>
+<pre><code>@media all and (min-width: 480px) {
+
+  /* aquí poner las reglas CSS
+  para cuando el área de visualización
+  sea mayor que 480px*/
+}</code></pre>
+</section><section id="importar-css" class="slide level2">
+<h2><span class="header-section-number">8.5</span> Importar CSS</h2>
+<ul>
+<li>Solución 3: <strong>importar distintas hojas de estilo dentro del mismo CSS</strong>:</li>
+</ul>
+<pre><code>@import url(&quot;tablet.css&quot;)
+  all and (min-width: 480px);
+
+  /* tablet.css es un CSS con reglas
+  para cuando el área de visualización
+  sea mayor que 480px */
+}</code></pre>
+</section><section id="operador-and" class="slide level2">
+<h2><span class="header-section-number">8.6</span> Operador and</h2>
+<ul>
+<li>Es usado para combinar múltiples media features en un sólo Media Query, <strong>requiriendo que cada función devuelve true</strong> para que el Query también lo sea.</li>
+</ul>
+</section><section id="ejemplo-and" class="slide level2">
+<h2><span class="header-section-number">8.7</span> Ejemplo and</h2>
+<pre><code>@media tv
+  and (min-width: 700px)
+  and (orientation: landscape) {
+
+  /* reglas que queremos que
+  se apliquen para televisiones
+  con áreas de visualización
+  mayores de 700px siempre que
+  la pantalla esté en
+  modo landscape */
+}</code></pre>
+</section><section id="operador-or" class="slide level2">
+<h2><span class="header-section-number">8.8</span> Operador 'or'</h2>
+<ul>
+<li><p>Se pueden combinar múltiples Media Queries <strong>separados por comas</strong> en una lista, de tal forma que si alguna de las Media Queries devuelve true, todo la sentencia devolverá true.</p></li>
+<li><p>Esto es <strong>equivalente a un operador or</strong>.</p></li>
+<li><p>Cada Media Query separado por comas en la lista se trata individualmente.</p></li>
+</ul>
+</section><section id="ejemplo-or" class="slide level2">
+<h2><span class="header-section-number">8.9</span> Ejemplo 'or'</h2>
+<pre><code>@media tv,
+  (min-width: 700px),
+  (orientation: landscape) {
+
+  /* reglas que queremos que
+  se apliquen para televisiones,
+  o para dispositivos con áreas
+  de visualización mayores
+  de 700px, o cuando la pantalla
+  está en modo landscape */
+}</code></pre>
+</section><section id="operador-not" class="slide level2">
+<h2><span class="header-section-number">8.10</span> Operador not</h2>
+<ul>
+<li><p>Se utiliza para <strong>negar un Media Query completo</strong>.</p></li>
+<li><p>No se puede negar una característica individualmente, si no solamente el Media Query completo.</p></li>
+</ul>
+</section><section id="ejemplo-not-i" class="slide level2">
+<h2><span class="header-section-number">8.11</span> Ejemplo not (I)</h2>
+<pre><code>@media not tv and max-width(800px), 
+  not screen and max-width(400px) {
+
+  /* reglas que queremos que
+  se apliquen para dispositivos
+  que no sean ni televisiones
+  con áreas de visualización
+  menores de 800px, ni pantallas
+  con áreas de visualización
+  menores de 400px */
+}</code></pre>
+</section><section id="ejemplo-not-ii" class="slide level2">
+<h2><span class="header-section-number">8.12</span> Ejemplo not (II)</h2>
+<ul>
+<li>El anterior ejemplo sería equivalente a:</li>
+</ul>
+<pre><code>@media not (tv and max-width(800px)),
+  not (screen and max-width(400px)) {
+
+  ...
+}</code></pre>
+</section><section id="características-i" class="slide level2">
+<h2><span class="header-section-number">8.13</span> Características (I)</h2>
+<ul>
+<li><p>Características que hacen referencia al <strong>área de visualización</strong>:</p>
+<ul>
+<li><strong>width</strong></li>
+<li><strong>height</strong></li>
+<li><strong>aspect-ratio</strong> [4/3 | 16/9 | ...]</li>
+<li><strong>orientation</strong> [portrait | landscape]</li>
+</ul></li>
+</ul>
+</section><section id="características-ii" class="slide level2">
+<h2><span class="header-section-number">8.14</span> Características (II)</h2>
+<ul>
+<li><p>Características que hacen referencia a la <strong>pantalla del dispositivo</strong>:</p>
+<ul>
+<li><strong>device-width</strong></li>
+<li><strong>device-height</strong></li>
+<li><strong>device-aspect-ratio</strong> [4/3 | 16/9 | ...]</li>
+</ul></li>
+</ul>
+</section><section id="características-iii" class="slide level2">
+<h2><span class="header-section-number">8.15</span> Características (III)</h2>
+<ul>
+<li><p><strong>Otras</strong> características:</p>
+<ul>
+<li><strong>color</strong>: El número de bits de profundidad de color</li>
+<li><strong>monocrome</strong>: El número de bits de profundidad de color, en dispotivos monocromáticos</li>
+<li><strong>resolution</strong>: Densidad de pixels en el dispositivo, medido en dpi</li>
+</ul></li>
+</ul>
+</section><section id="min--y-max-" class="slide level2">
+<h2><span class="header-section-number">8.16</span> Min- y Max-</h2>
+<ul>
+<li><p>A casi todas las características se les puede adjuntar los <strong>prefijos min- y max-</strong></p></li>
+<li><p>De hecho lo habitual es usar dichos prefijos.</p></li>
+</ul>
+</section></section>
+<section><section id="metodologías" class="titleslide slide level1"><h1><span class="header-section-number">9</span> Metodologías</h1></section><section id="desktop-vs-mobile" class="slide level2">
+<h2><span class="header-section-number">9.1</span> Desktop VS Mobile</h2>
+<figure>
+<img src="../img/desktop-first-vs-mobile-first.png" alt="Desktop first VS Mobile first. Fuente: brettjankord.com" /><figcaption>Desktop first VS Mobile first. Fuente: brettjankord.com</figcaption>
+</figure>
+</section><section id="desktop-first" class="slide level2">
+<h2><span class="header-section-number">9.2</span> Desktop First</h2>
+<ul>
+<li>Consiste en <strong>desarrollar para pantallas grandes</strong> y posteriormente adaptar el diseño a pantallas pequeñas.</li>
+</ul>
+</section><section id="df-utiliza-max-width" class="slide level2">
+<h2><span class="header-section-number">9.3</span> DF: utiliza max-width</h2>
+<ul>
+<li>Normalmente los Media Queries utilizan <strong>max-width</strong>, simplificando y ajustando para las pantallas más pequeñas.</li>
+</ul>
+<pre><code>@media all and (max-width: 320px) {
+   /* Estilos para anchos
+   menores a 320px */
+}
+@media all and (max-width: 768px) {
+  /* Estilos para anchos
+  menores a 768px */
+}</code></pre>
+</section><section id="df-problemas" class="slide level2">
+<h2><span class="header-section-number">9.4</span> DF: problemas</h2>
+<ul>
+<li><p>Los Media Query <strong>no están soportados por todos los móviles</strong>.</p></li>
+<li><p>La <strong>versión móvil termina siendo una versión descafeinada</strong> de la web original.</p></li>
+</ul>
+</section><section id="mobile-first" class="slide level2">
+<h2><span class="header-section-number">9.5</span> Mobile first</h2>
+<ul>
+<li>Consiste en <strong>desarrollar para pantallas pequeñas</strong> y posteriormente adaptar el diseño a pantallas grandes.</li>
+</ul>
+</section><section id="mf-utiliza-min-width" class="slide level2">
+<h2><span class="header-section-number">9.6</span> MF: utiliza min-width</h2>
+<ul>
+<li>Ahora los Media Queries utilizan <strong>min-width</strong>, para ajustar el diseño a medida que aumenta el tamaño de pantalla.</li>
+</ul>
+<pre><code>@media all and (min-width: 320px) {
+  /* Estilos para anchos
+  superiores a 320px */
+}
+@media all and (min-width: 768px) {
+  /* Estilos para anchos
+  superiores a 768px */
+}</code></pre>
+</section><section id="mf-ventajas" class="slide level2">
+<h2><span class="header-section-number">9.7</span> MF: ventajas</h2>
+<ul>
+<li><p>Funciona en <strong>móviles y/o navegadores antiguos</strong> que no soportan los Media Queries.</p></li>
+<li><p>Normalmente la <strong>hoja de estilos resultante suele ser más sencilla</strong> que usando la otra vía.</p></li>
+<li><p>Empezar por el móvil nos servirá para <strong>determinar de una manera más clara cual es el contenido realmente importante</strong> de nuestra web.</p></li>
+</ul>
+</section><section id="puntos-de-rotura-i" class="slide level2">
+<h2><span class="header-section-number">9.8</span> Puntos de rotura (I)</h2>
+<ul>
+<li>Normalmente:
+<ul>
+<li>320px para el móvil,</li>
+<li>768px para el tablet,</li>
+<li>1024px para el portatil,</li>
+<li>1200px para el sobremesa.</li>
+</ul></li>
+</ul>
+</section><section id="puntos-de-rotura-ii" class="slide level2">
+<h2><span class="header-section-number">9.9</span> Puntos de rotura (II)</h2>
+<ul>
+<li><p>Lo mejor sería que los puntos de rotura que aplicamos en los Media Query, fueran <strong>en función de nuestro contenido</strong>, en vez de en función del tamaño del dispositivo más vendido.</p></li>
+<li><p>La manera de hacerlo: <strong>ir cambiando poco a poco el ancho del navegador y donde la web se rompa</strong>, aplicar un Media Query.</p></li>
+</ul>
+</section></section>
+<section><section id="acerca-de" class="titleslide slide level1"><h1><span class="header-section-number">10</span> Acerca de</h1></section><section id="licencia" class="slide level2">
+<h2><span class="header-section-number">10.1</span> Licencia</h2>
+<ul>
+<li>Estas <strong>transparencias</strong> están hechas con:
+<ul>
+<li>MarkdownSlides: <a href="https://github.com/asanzdiego/markdownslides">https://github.com/asanzdiego/markdownslides</a></li>
+</ul></li>
+<li>Estas <strong>transparencias</strong> están bajo una licencia Creative Commons Reconocimiento-CompartirIgual 3.0:
+<ul>
+<li><a href="http://creativecommons.org/licenses/by-sa/3.0/es">http://creativecommons.org/licenses/by-sa/3.0/es</a></li>
+</ul></li>
+</ul>
+</section><section id="fuentes" class="slide level2">
+<h2><span class="header-section-number">10.2</span> Fuentes</h2>
+<ul>
+<li>Transparencias:
+<ul>
+<li><a href="https://github.com/asanzdiego/curso-interfaces-web-2014/03-rwd/slides">https://github.com/asanzdiego/curso-interfaces-web-2014/03-rwd/slides</a></li>
+</ul></li>
+<li>Código:
+<ul>
+<li><a href="https://github.com/asanzdiego/curso-interfaces-web-2014/03-rwd/src">https://github.com/asanzdiego/curso-interfaces-web-2014/03-rwd/src</a></li>
+</ul></li>
+</ul>
+</section><section id="bibliografía-i" class="slide level2">
+<h2><span class="header-section-number">10.3</span> Bibliografía (I)</h2>
+<ul>
+<li>Responsive Web Design
+<ul>
+<li><a href="http://www.arkaitzgarro.com/responsive-web-design/index.html">http://www.arkaitzgarro.com/responsive-web-design/index.html</a></li>
+</ul></li>
+<li>Introducción al Diseño Web Adaptable o Responsive Web Design
+<ul>
+<li><a href="http://www.emenia.es/diseno-web-adaptable-o-responsive-web-design">http://www.emenia.es/diseno-web-adaptable-o-responsive-web-design</a></li>
+</ul></li>
+<li>Tutorial: Responsive Web Design
+<ul>
+<li><a href="http://www.mmfilesi.com/blog/tutorial-responsive-web-design-i">http://www.mmfilesi.com/blog/tutorial-responsive-web-design-i</a></li>
+</ul></li>
+</ul>
+</section><section id="bibliografía-ii" class="slide level2">
+<h2><span class="header-section-number">10.4</span> Bibliografía (II)</h2>
+<ul>
+<li>Tutorial: Transforma tu web en Responsive Design
+<ul>
+<li><a href="http://blog.ikhuerta.com/transforma-tu-web-en-responsive-design">http://blog.ikhuerta.com/transforma-tu-web-en-responsive-design</a></li>
+</ul></li>
+<li>Curso responsive web design - Redradix School
+<ul>
+<li><a href="http://www.slideshare.net/Redradix/curso-responsive-web-design-redradix-school">http://www.slideshare.net/Redradix/curso-responsive-web-design-redradix-school</a></li>
+</ul></li>
+<li>Todo lo que necesita saber sobre Responsive Web Design
+<ul>
+<li><a href="http://www.ecbloguer.com/marketingdigital/?p=2635">http://www.ecbloguer.com/marketingdigital/?p=2635</a></li>
+</ul></li>
+</ul>
+</section><section id="bibliografía-iii" class="slide level2">
+<h2><span class="header-section-number">10.5</span> Bibliografía (III)</h2>
+<ul>
+<li>Diseño web fluido y plantilla fluida con HTML5 y CSS3
+<ul>
+<li><a href="http://www.aloud.es/diseno-web-fluido-y-plantilla-fluida">http://www.aloud.es/diseno-web-fluido-y-plantilla-fluida</a></li>
+</ul></li>
+<li>Beneficios del Responsive Web Design en SEO
+<ul>
+<li><a href="http://madridnyc.com/blog/2013/01/29/beneficios-del-responsive-web-design-en-seo">http://madridnyc.com/blog/2013/01/29/beneficios-del-responsive-web-design-en-seo</a></li>
+</ul></li>
+<li>Responsive Web Design Testing Tool
+<ul>
+<li><a href="http://mattkersley.com/responsive">http://mattkersley.com/responsive</a></li>
+</ul></li>
+</ul>
+</section><section id="bibliografía-iv" class="slide level2">
+<h2><span class="header-section-number">10.6</span> Bibliografía (IV)</h2>
+<ul>
+<li>Responsive Web Design
+<ul>
+<li><a href="http://www.ricardocastillo.com/rwd.pdf">http://www.ricardocastillo.com/rwd.pdf</a></li>
+</ul></li>
+<li>Responsive Design y accesibilidad. Buenas y malas prácticas. Errores comunes.
+<ul>
+<li><a href="http://olgacarreras.blogspot.com.es/2014/01/responsive-design-y-accesibilidad.html">http://olgacarreras.blogspot.com.es/2014/01/responsive-design-y-accesibilidad.html</a></li>
+</ul></li>
+<li>Diseño web adaptativo: mejores prácticas
+<ul>
+<li><a href="http://www.emenia.es/diseno-web-adaptativo-mejores-practicas">http://www.emenia.es/diseno-web-adaptativo-mejores-practicas</a></li>
+</ul></li>
+</ul>
+</section><section id="bibliografía-v" class="slide level2">
+<h2><span class="header-section-number">10.7</span> Bibliografía (V)</h2>
+<ul>
+<li>Traducción de &quot;Responsive Web Design&quot; de &quot;A List Apart&quot;
+<ul>
+<li><a href="http://diseñowebresponsivo.com.ar">http://diseñowebresponsivo.com.ar</a></li>
+</ul></li>
+<li>Responsive Design Exercise
+<ul>
+<li><a href="http://blog.garciaechegaray.com/2013/11/29/responsive-design-exercise.html">http://blog.garciaechegaray.com/2013/11/29/responsive-design-exercise.html</a></li>
+</ul></li>
+</ul>
+</section><section id="bibliografía-vi" class="slide level2">
+<h2><span class="header-section-number">10.8</span> Bibliografía (VI)</h2>
+<ul>
+<li>Estadísticas de StatCounter
+<ul>
+<li><a href="http://gs.statcounter.com">http://gs.statcounter.com</a></li>
+</ul></li>
+<li>Página de testeo de Matt Kersley
+<ul>
+<li><a href="http://mattkersley.com/responsive">http://mattkersley.com/responsive</a></li>
+</ul></li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="../lib/reveal.js-master/lib/js/head.min.js"></script>
+  <script src="../lib/reveal.js-master/js/reveal.min.js"></script>
+
+  <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+      });
+    </script>
+  </body>
+</html>

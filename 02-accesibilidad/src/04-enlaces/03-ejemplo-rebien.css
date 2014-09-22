@@ -1,0 +1,27 @@
+span {
+  position: absolute;
+  left: -9999em;
+  width: 1px;
+  overflow: hidden;
+}
+
+a:hover, a:focus, a:active {
+  position: relative;
+}
+
+a:hover span, a:focus span, a:active span {
+  left: 20px;
+  top: 20px;
+  width: 100px;
+  padding: 5px;
+  line-height: 1;
+  font-size: 80%;
+  background: #FFFFF6;
+  border: 1px solid #666;
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover span:before, a:focus span:before, a:active span:before {
+  content: "Mas informacion ";
+}
