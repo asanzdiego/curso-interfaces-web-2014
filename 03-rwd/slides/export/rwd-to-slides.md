@@ -608,10 +608,10 @@ Un Media Query **no sólo nos permite seleccionar el tipo de medio** (all, brail
 ## Fuentes
 
 - Transparencias:
-    - <https://github.com/asanzdiego/curso-interfaces-web-2014/03-rwd/slides>
+    - <https://github.com/asanzdiego/curso-interfaces-web-2014/tree/master/03-rwd/slides>
 
 - Código:
-    - <https://github.com/asanzdiego/curso-interfaces-web-2014/03-rwd/src>
+    - <https://github.com/asanzdiego/curso-interfaces-web-2014/tree/master/03-rwd/src>
 
 ## Bibliografía (I)
 

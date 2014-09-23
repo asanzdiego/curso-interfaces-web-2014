@@ -2,7 +2,7 @@
 
 ## Usabilidad
 
-En este apartado:
+En el [apartado de usabilidad](https://github.com/asanzdiego/curso-interfaces-web-2014/tree/master/01-usabilidad):
 
 - Primero se definen varios términos importantes: **usabilidad, accesibilidad, arquitectura de la información, experiencia de usuario y diseño centrado en el usuario**.
 - Luego se intenta conozcer al usuario de aplicaciones web, **saber como ve, como piensa y como actúa**.
@@ -12,11 +12,11 @@ En este apartado:
 
 **Recursos**:
 
--[Slides](http://www.slideshare.net/asanzdiego/usabilidad-web-38180639)
+- [Slides](http://www.slideshare.net/asanzdiego/usabilidad-web-38180639)
 
 ## Accesibilidad
 
-En este apartado:
+En el [apartado de accesibilidad](https://github.com/asanzdiego/curso-interfaces-web-2014/tree/master/02-accesibilidad):
 
 - Primero veremos una breve introducción sobre accesibilidad web: **objetivos, WAI, WCAG, etc**.
 - Después se enumeran las **directrices POUR**: Perceptible, Operable, Comprensible, Robusto
@@ -34,7 +34,7 @@ En este apartado:
 
 ## Responsive Web Design (Diseño Web Adaptable)
 
-En este apartado:
+En el [apartado de Responsive Web Design](https://github.com/asanzdiego/curso-interfaces-web-2014/tree/master/03-rwd):
 
 - Veremos en primer lugar una introducción, contando que es eso del 'Responsive Web Design' (Diseño Web Adaptable), que **beneficios** tiene, y cual es la diferencia entre '**Graceful degradation**' y '**Progessive enhancement**'.
 - Seguidamente, se exponen varios **ejemplos de sitios web** realizados con esa filosofía.
@@ -46,9 +46,9 @@ En este apartado:
 - [Slides](http://www.slideshare.net/asanzdiego/responsive-web-design-diseo-web-adaptable)
 - [Ejemplos](https://github.com/asanzdiego/curso-interfaces-web-2014/tree/master/03-rwd/src/test/)
 
-# Less, un preprocesador CSS
+# LESS, un preprocesador CSS
 
-En este apartado:
+En el [apartado de LESS](https://github.com/asanzdiego/curso-interfaces-web-2014/tree/master/04-less):
 
 - Veremos primero una breve introducción, contando **qué es 'Less'** y cuales son sus **principales ventajas**.
 - Siguiendo con una explicación de las distintas formas con las que podemos **trabajar con 'Less'**.

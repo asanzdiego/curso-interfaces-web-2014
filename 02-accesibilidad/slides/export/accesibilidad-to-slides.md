@@ -1642,10 +1642,10 @@ window.onload = function() {
 ## Fuentes
 
 - Transparencias:
-    - <https://github.com/asanzdiego/curso-interfaces-web-2014/02-accesibilidad/slides>
+    - <https://github.com/asanzdiego/curso-interfaces-web-2014/tree/master/02-accesibilidad/slides>
 
 - Código:
-    - <https://github.com/asanzdiego/curso-interfaces-web-2014/02-accesibilidad/src>
+    - <https://github.com/asanzdiego/curso-interfaces-web-2014/tree/master/02-accesibilidad/src>
 
 ## Bibliografía (I)
 
