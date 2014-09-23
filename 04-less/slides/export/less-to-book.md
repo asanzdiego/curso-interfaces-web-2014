@@ -1719,11 +1719,11 @@ Estas **transparencias** están bajo una licencia Creative Commons Reconocimient
 
 Transparencias:
 
--  <https://github.com/asanzdiego/curso-interfaces-web-2014/04-less/slides>
+-  <https://github.com/asanzdiego/curso-interfaces-web-2014/tree/master/04-less/slides>
 
 Código:
 
--  <https://github.com/asanzdiego/curso-interfaces-web-2014/01-less/src>
+-  <https://github.com/asanzdiego/curso-interfaces-web-2014/tree/master/01-less/src>
 
 ## Bibliografía
 

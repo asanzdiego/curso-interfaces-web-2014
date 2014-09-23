@@ -984,10 +984,10 @@
 ## Fuentes
 
 - Transparencias:
-    - <https://github.com/asanzdiego/curso-interfaces-web-2014/01-usabilidad/slides>
+    - <https://github.com/asanzdiego/curso-interfaces-web-2014/tree/master/01-usabilidad/slides>
 
 - Código:
-    - <https://github.com/asanzdiego/curso-interfaces-web-2014/01-usabilidad/src>
+    - <https://github.com/asanzdiego/curso-interfaces-web-2014/tree/master/01-usabilidad/src>
 
 ## Bibliografía (I)
 

@@ -2153,10 +2153,10 @@ $ grunt watch
 ## Fuentes
 
 - Transparencias:
-    - <https://github.com/asanzdiego/curso-interfaces-web-2014/05-bootstrap/slides>
+    - <https://github.com/asanzdiego/curso-interfaces-web-2014/tree/master/05-bootstrap/slides>
 
 - Código:
-    - <https://github.com/asanzdiego/curso-interfaces-web-2014/05-bootstrap/src>
+    - <https://github.com/asanzdiego/curso-interfaces-web-2014/tree/master/05-bootstrap/src>
 
 ## Bibliografía
 
