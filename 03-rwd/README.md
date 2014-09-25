@@ -23,11 +23,11 @@ Alternativas:
 
 ## Ejemplos
 
-- [01-ejemplo-fluid-layout.html](https://github.com/asanzdiego/curso-interfaces-web-2014/tree/master/03-rwd/src/test/01-ejemplo-fluid-layout.html)
-- [02-ejemplo-fluid-images.html](https://github.com/asanzdiego/curso-interfaces-web-2014/tree/master/03-rwd/src/test/02-ejemplo-fluid-images.html)
-- [03-ejemplo-background.html](https://github.com/asanzdiego/curso-interfaces-web-2014/tree/master/03-rwd/src/test/03-ejemplo-background.html)
-- [04-ejemplo-desktop-first.html](https://github.com/asanzdiego/curso-interfaces-web-2014/tree/master/03-rwd/src/test/04-ejemplo-desktop-first.html)
-- [05-ejemplo-desktop-first-sin-media-queries.html](https://github.com/asanzdiego/curso-interfaces-web-2014/tree/master/03-rwd/src/test/05-ejemplo-desktop-first-sin-media-queries.html)
-- [06-ejemplo-mobile-first.html](https://github.com/asanzdiego/curso-interfaces-web-2014/tree/master/03-rwd/src/test/06-ejemplo-mobile-first.html)
-- [07-ejemplo-mobile-first-sin-media-queries.html](https://github.com/asanzdiego/curso-interfaces-web-2014/tree/master/03-rwd/src/test/07-ejemplo-mobile-first-sin-media-queries.html)
+- [01-ejemplo-fluid-layout.html](https://asanzdiego.github.io/curso-interfaces-web-2014/03-rwd/src/test/01-ejemplo-fluid-layout.html)
+- [02-ejemplo-fluid-images.html](https://asanzdiego.github.io/curso-interfaces-web-2014/03-rwd/src/test/02-ejemplo-fluid-images.html)
+- [03-ejemplo-background.html](https://asanzdiego.github.io/curso-interfaces-web-2014/03-rwd/src/test/03-ejemplo-background.html)
+- [04-ejemplo-desktop-first.html](https://asanzdiego.github.io/curso-interfaces-web-2014/03-rwd/src/test/04-ejemplo-desktop-first.html)
+- [05-ejemplo-desktop-first-sin-media-queries.html](https://asanzdiego.github.io/curso-interfaces-web-2014/03-rwd/src/test/05-ejemplo-desktop-first-sin-media-queries.html)
+- [06-ejemplo-mobile-first.html](https://asanzdiego.github.io/curso-interfaces-web-2014/03-rwd/src/test/06-ejemplo-mobile-first.html)
+- [07-ejemplo-mobile-first-sin-media-queries.html](https://asanzdiego.github.io/curso-interfaces-web-2014/03-rwd/src/test/07-ejemplo-mobile-first-sin-media-queries.html)
 
