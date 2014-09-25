@@ -4,9 +4,9 @@ echo "*****************************"
 echo "* PUSH CHANGES TO GIT PAGES *"
 echo "*****************************"
 
-FROM='~/Curro/cursos/curso-interfaces-web-2014'
-FOLDERTO='~/Curro/github/gh-pages'
-TO='~/Curro/github/gh-pages/curso-interfaces-web-2014'
+FROM='/home/adolfo/Curro/cursos/curso-interfaces-web-2014'
+FOLDERTO='/home/adolfo/Curro/github/gh-pages'
+TO='/home/adolfo/Curro/github/gh-pages/curso-interfaces-web-2014'
 
 DATE=`date +"%Y.%m.%d-%H:%M"`
 TO_OLD=$TO'-OLD-'$DATE
