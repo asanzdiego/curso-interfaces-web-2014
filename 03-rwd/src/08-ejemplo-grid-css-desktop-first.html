@@ -1,0 +1,107 @@
+<html>
+<head>
+  <title>Plantilla</title>
+  <style>
+  .row {
+    border: 10px solid black;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both
+  }
+  .element {
+    border: 10px solid green;
+    padding: 10px;
+    margin: 10px;
+    width: 11%;
+    float: left;
+  }
+  .image {
+    border: 10px solid blue;
+    padding: 10px;
+    margin: 10px;
+  }
+  .text {
+    border: 10px solid red;
+    padding: 10px;
+    margin: 10px;
+  }
+  @media all and (max-width: 1200px) {
+    .element {
+      width: 26%;
+      color: red
+    }
+  }
+  @media all and (max-width: 992px) {
+    .element {
+      width: 41%;
+      color: green
+    }
+  }
+  @media all and (max-width: 768px) {
+    .element {
+      width: 90%;
+      color: blue;
+    }
+  }
+  </style>
+</head>
+<body>
+  <div class="row">
+    <div class="element">
+      <div class="image">IMAGEN</div>
+      <div class="text">TEXTO</div>
+    </div>
+    <div class="element">
+      <div class="image">IMAGEN</div>
+      <div class="text">TEXTO</div>
+    </div>
+    <div class="element">
+      <div class="image">IMAGEN</div>
+      <div class="text">TEXTO</div>
+    </div>
+    <div class="element">
+      <div class="image">IMAGEN</div>
+      <div class="text">TEXTO</div>
+    </div>
+    <div class="element">
+      <div class="image">IMAGEN</div>
+      <div class="text">TEXTO</div>
+    </div>
+    <div class="element">
+      <div class="image">IMAGEN</div>
+      <div class="text">TEXTO</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="element">
+      <div class="image">IMAGEN</div>
+      <div class="text">TEXTO</div>
+    </div>
+    <div class="element">
+      <div class="image">IMAGEN</div>
+      <div class="text">TEXTO</div>
+    </div>
+    <div class="element">
+      <div class="image">IMAGEN</div>
+      <div class="text">TEXTO</div>
+    </div>
+    <div class="element">
+      <div class="image">IMAGEN</div>
+      <div class="text">TEXTO</div>
+    </div>
+    <div class="element">
+      <div class="image">IMAGEN</div>
+      <div class="text">TEXTO</div>
+    </div>
+    <div class="element">
+      <div class="image">IMAGEN</div>
+      <div class="text">TEXTO</div>
+    </div>
+  </div>
+</body>
+</html>
