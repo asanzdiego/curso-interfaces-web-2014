@@ -23,5 +23,5 @@ a:hover span, a:focus span, a:active span {
 }
 
 a:hover span:before, a:focus span:before, a:active span:before {
-  content: "Mas informacion ";
+  content: "Más información";
 }
